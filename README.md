@@ -1,9 +1,10 @@
 <div align="center">
 
-# 100 apps → an agent toolkit build queue
+# Agent-toolkit buildability across 100 applications: an evidence-validated survey
 
-**Which of 100 apps can become an agent toolkit, what each one needs,
-and how far the answers can be trusted.**
+**Of the 44 apps Composio is missing, 10 could be built this week and 5 need a human
+conversation first. Every answer carries the sentence it came from — and the 71 that
+failed that check were removed rather than published.**
 
 [![live page](https://img.shields.io/badge/live_page-activeangrily.github.io-1c5cab?style=flat-square)](https://activeangrily.github.io/composio-toolkit-research/)
 [![data.json](https://img.shields.io/badge/machine_readable-data.json-52514e?style=flat-square)](https://activeangrily.github.io/composio-toolkit-research/data.json)

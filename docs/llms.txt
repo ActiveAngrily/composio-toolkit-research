@@ -1,4 +1,4 @@
-# 100 apps -> an agent toolkit build queue
+# Agent-toolkit buildability across 100 applications: an evidence-validated survey
 
 Author: Anant Jamuar <jamuaranant@gmail.com> (github.com/ActiveAngrily)
 Source repo: https://github.com/ActiveAngrily/composio-toolkit-research

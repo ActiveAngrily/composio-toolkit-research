@@ -36,6 +36,7 @@ from . import config
 SITE = config.ROOT / "docs"
 REPO_URL = "https://github.com/ActiveAngrily/composio-toolkit-research"
 
+TITLE = "Agent-toolkit buildability across 100 applications: an evidence-validated survey"
 AUTHOR = "Anant Jamuar"
 EMAIL = "jamuaranant@gmail.com"
 GITHUB = "github.com/ActiveAngrily"
@@ -233,6 +234,7 @@ def facts(rows, pat, cov, delta, xc, ua, pass2) -> dict:
                 quarantined_verdicts[f["g"]] += 1
 
     return {
+        "total_claims": sum(v["answered"] for v in cov.values()),
         "rf": rf, "q": q, "refetch_real": refetch_real, "refetch_total": refetch_total,
         "refetch_fabricated": rf.get("QUOTE_NOT_FOUND", 0),
         "overstate_to": q + refetch_real,
@@ -255,7 +257,7 @@ def llms_txt(pat, cov, xc, delta, ua, rows) -> str:
     missing = pat["catalog"]
     fx = facts(rows, pat, cov, delta, xc, ua, None)
     lines = [
-        "# 100 apps -> an agent toolkit build queue",
+        f"# {TITLE}",
         "",
         f"Author: {AUTHOR} <{EMAIL}> ({GITHUB})",
         f"Source repo: {REPO_URL}",
@@ -344,7 +346,7 @@ a:hover{border-bottom-color:#1c5cab}
 header{padding:64px 0 30px;border-bottom:2px solid var(--ink)}
 h1{font-size:35px;line-height:1.16;margin:0 0 12px;font-weight:600;letter-spacing:-.012em;
   max-width:38ch;text-wrap:balance}
-.sub{font-size:18.5px;color:var(--ink2);margin:0 0 26px;max-width:64ch;font-style:italic;
+.sub{font-size:18.5px;color:var(--ink2);margin:0 0 26px;max-width:74ch;font-style:italic;
   text-wrap:pretty}
 .byline{font-family:var(--sans);font-size:13.5px;line-height:1.75;color:var(--ink2)}
 .byline .who{color:var(--ink);font-weight:600;font-size:14.5px;
@@ -361,6 +363,17 @@ h1{font-size:35px;line-height:1.16;margin:0 0 12px;font-weight:600;letter-spacin
 .abstract p{margin:0 0 10px;font-size:16.5px;color:var(--ink2);max-width:74ch}
 .abstract p:last-child{margin-bottom:0}
 .abstract strong{color:var(--ink)}
+/* Structured abstract: labelled sections, as an empirical paper carries them. */
+.abs{display:grid;grid-template-columns:max-content 1fr;gap:11px 22px;margin:0}
+.abs dt{font-family:var(--sans);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;padding-top:5px;white-space:nowrap}
+.abs dd{margin:0;font-size:16px;color:var(--ink2);max-width:76ch}
+.abs dd strong{color:var(--ink)}
+.abs .kw{font-family:var(--sans);font-size:12.5px;color:var(--muted)}
+@media(max-width:880px){
+  .abs{grid-template-columns:1fr;gap:3px 0}
+  .abs dt{padding-top:12px}
+}
 
 /* ---- contents: the page is long, so give a skimmer the map up front ---- */
 .toc{margin:24px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;
@@ -937,7 +950,7 @@ def page(rows, pat, cov, delta, xc, ua, pass2=None, prev_ua=None) -> str:
 
     head = ("<!doctype html>\n<html lang=en><head>\n"
             '<meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">\n'
-            "<title>100 apps → an agent toolkit build queue</title>\n"
+            f"<title>{TITLE}</title>\n"
             f'<meta name=author content="{AUTHOR}">\n'
             '<meta name=description content="100 apps assessed for agent-toolkit '
             'buildability by an agent, with every claim quote-verified against the page it '
@@ -946,10 +959,11 @@ def page(rows, pat, cov, delta, xc, ua, pass2=None, prev_ua=None) -> str:
 
     body = f"""
 <header><div class=wrap>
-  <h1>100 apps &rarr; an agent toolkit build queue</h1>
-  <p class=sub>Composio already covers {cat['in_catalog']} of these 100. This is an account
-  of the other {cat['missing']} &mdash; what credential each needs, whether it can be
-  obtained without talking to a human, and how far the answers can be trusted.</p>
+  <h1>{TITLE}</h1>
+  <p class=sub>Of the {cat['missing']} apps Composio is missing, {len(cat['missing_build_now'])}
+  could be built this week and {len(cat['missing_needs_outreach'])} need a human conversation
+  first. Every answer here carries the sentence it came from &mdash; and the {fx['q']} that
+  failed that check were removed rather than published.</p>
   <div class=byline>
     <span class=who>{AUTHOR}</span>
     <a href="mailto:{EMAIL}">{EMAIL}</a><span class=dot>&middot;</span>
@@ -964,21 +978,69 @@ def page(rows, pat, cov, delta, xc, ua, pass2=None, prev_ua=None) -> str:
 
   <div class=abstract>
     <h2>Abstract</h2>
-    <p>Before building a connector, the four questions that matter are: what credential
-    does this app need, can it be obtained without a human, how large is the API, and is
-    it worth building. This work answers them for 100 apps using an agent running inside
-    Composio's own remote workbench, and then spends most of its effort on a harder
-    question &mdash; <strong>how would we know if the answers were wrong.</strong></p>
-    <p>Every claim carries a verbatim quote, that quote's URL, a source-authority tier,
-    and a verdict from re-reading the page. <strong>{fx['q']} claims failed that check and
-    were quarantined to <span class=mono>unknown</span> rather than reported.</strong>
-    Accuracy is reported as two numbers per field, never one, because a pipeline that
-    answers nothing scores perfectly on precision alone. An independent cross-check
-    against Composio's own registry &mdash; {xc['sample']} apps, no model involved on
-    either side of the comparison &mdash; puts auth agreement at {xc['token_pct']}%
-    token-level and {xc['family_pct']}% family-level.</p>
-    <p><strong>No human verified any of these answers.</strong> That limitation, and
-    what stands in for it, is stated in &sect;8.</p>
+    <dl class=abs>
+      <dt>Context</dt>
+      <dd>Composio turns applications into tools that AI agents can call. Before a connector
+      is built, four questions decide the work: what credential the application requires,
+      whether a developer can obtain that credential without talking to a human, how large
+      the API surface is, and whether it is worth building at all. Answered by hand, this
+      does not scale past a few dozen applications.</dd>
+
+      <dt>Objective</dt>
+      <dd>Answer those four questions across 100 applications spanning ten categories,
+      report the patterns that hold across them rather than the rows, and &mdash; treated
+      here as the harder problem &mdash; establish how far each answer can be trusted.</dd>
+
+      <dt>Method</dt>
+      <dd>An agent running inside Composio's remote workbench planned queries per app,
+      ranked sources by domain authority, fetched pages and extracted eleven fields under a
+      strict contract: <strong>every answer arrives with a verbatim quote and the URL it came
+      from, or is recorded as <span class=mono>unknown</span></strong>. Two further lanes
+      contain no language model &mdash; Composio's public registry of 1,222 toolkits as
+      ground truth, and unauthenticated probes of each app's API base,
+      <span class=mono>/pricing</span> and OpenAPI document. Access and buildability are
+      derived by rule from separately evidenced sub-answers, never asked of the model as one
+      question.</dd>
+
+      <dt>Results</dt>
+      <dd><strong>Composio already covers {cat['in_catalog']} of the 100.</strong> Of the
+      {cat['missing']} remaining, <strong>{len(cat['missing_build_now'])} have self-serve
+      credentials and a documented API today</strong>,
+      {len(cat['missing_needs_outreach'])} require a human conversation before any code, and
+      <strong>{cat['missing_with_official_mcp']} already ship an official MCP server</strong>
+      ({fx['mcp_vendor']} evidenced on the vendor's own domain) &mdash; so the catalog gap is
+      smaller than its size suggests and is partly closing without Composio. Across all 100,
+      <strong>{static_path} accept a static secret</strong>, which makes per-vendor OAuth
+      registration &mdash; the expensive part &mdash; optional far more often than an auth
+      histogram implies. Coverage is shaped rather than random ({strong_txt}, against
+      <strong>{thin_txt}</strong>). Where a blocker exists it is most often price
+      ({pat['blockers'].get('paid-plan', 0)} apps) rather than partnership
+      ({pat['blockers'].get('partner-gate', 0)}).</dd>
+
+      <dt>Verification</dt>
+      <dd>Each of the {fx['total_claims']} claims was re-checked against the page it cited;
+      <strong>{fx['q']} failed and were quarantined to <span class=mono>unknown</span> rather
+      than reported.</strong> Coverage and precision are reported separately per field, since
+      a pipeline that answers nothing scores perfectly on precision alone. An independent
+      cross-check against Composio's registry ({xc['sample']} apps, no model on either side)
+      puts auth agreement at {xc['token_pct']}% token-level and {xc['family_pct']}%
+      family-level &mdash; <strong>down from 82.1%</strong>, because tightening the evidence
+      standard removed correct answers along with incorrect ones.</dd>
+
+      <dt>Limitations</dt>
+      <dd><strong>No human verified any of these answers, and no browser-driven lane
+      ran</strong> &mdash; both are verification means the brief names. Coverage, not
+      correctness, is the weak point: access is answered for only
+      {fx['access_lo']}&ndash;{fx['access_hi']}% of apps, and
+      {ua['overall'].get('unclassified', 0)} abstentions cannot be attributed between vendor
+      non-disclosure and our own retrieval failure. Both are stated in full in
+      &sect;8.</dd>
+
+      <dt>Keywords</dt>
+      <dd class=kw>agent-assisted research &middot; evidence validation &middot; quote
+      fidelity &middot; source-authority tiering &middot; API access gating &middot; MCP
+      &middot; buildability triage</dd>
+    </dl>
   </div>
 
   <ol class=toc><li><b>1</b><a href="#s1">Findings</a></li><li><b>2</b><a href="#s2">Access by category</a></li><li><b>3</b><a href="#s3">The build queue</a></li><li><b>4</b><a href="#s4">All 100, with the evidence</a></li><li><b>5</b><a href="#s5">Method</a></li><li><b>6</b><a href="#s6">Verification</a></li><li><b>7</b><a href="#s7">Where the agent was wrong</a></li><li><b>8</b><a href="#s8">Limitations</a></li><li><b>9</b><a href="#s9">Reproduction</a></li></ol>
