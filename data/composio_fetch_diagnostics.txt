@@ -1,0 +1,38 @@
+Loaded 100 apps from data/apps.csv
+
+Probing API bases...
+  200  https://backend.composio.dev/api/v3.1/toolkits?limit=1   ok
+Using base: https://backend.composio.dev/api/v3.1
+
+Fetching toolkit registry...
+  page 1: +1000 toolkits (total 1000)
+  page 2: +222 toolkits (total 1222)
+Wrote data/composio_toolkits.json (1222 toolkits)
+
+Wrote data/composio_match.csv
+
+Fetching per-toolkit detail for 57 matched slugs...
+  10/57
+  20/57
+  30/57
+  40/57
+  50/57
+Wrote data/composio_toolkit_details.json
+
+==============================================================
+  GATE A:  57/100 apps found in Composio's catalog
+           55 exact, 2 fuzzy (fuzzy ones need eyeballing)
+==============================================================
+  Lane A is viable as the ground-truth oracle.
+
+Per-category matches:
+   5/10  CRM and Sales
+   6/10  Support and Helpdesk
+   4/10  Communications and Messaging
+   8/10  Marketing, Ads, Email and Social
+   2/10  Ecommerce
+   6/10  Data, SEO and Scraping
+   8/10  Developer, Infra and Data platforms
+   9/10  Productivity and Project Management
+   6/10  Finance and Fintech
+   3/10  AI, Research and Media-native

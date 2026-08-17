@@ -1,7 +1,14 @@
-# scripts/fetch_composio_registry.py needs NOTHING - standard library only.
-# These are for the research agent and scoring code.
-httpx>=0.27
-tenacity>=8.2
-pydantic>=2.7
-anthropic>=0.40
-python-dotenv>=1.0
+# scripts/fetch_composio_registry.py and agent/registry.py need NOTHING beyond the
+# standard library -- no install step, so the registry pull works anywhere.
+
+# The research agent's HTTP probes and standalone LLM calls:
+requests>=2.31
+
+# Only for --backend sdk (running outside Composio's workbench). Inside the
+# workbench, search / fetch / LLM are provided by the environment.
+# composio>=0.7
+
+# Optional: lets agent/probe.py read YAML OpenAPI specs as well as JSON.
+# pyyaml>=6.0
+
+# Tests need nothing at all:  python tests/test_agent.py

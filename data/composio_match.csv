@@ -1,0 +1,101 @@
+id,app,category,matched,match_method,match_score,composio_slug,composio_name,auth_schemes,managed_auth_schemes,no_auth,auth_guide_url,tools_count,triggers_count,composio_categories
+1,Salesforce,CRM and Sales,True,exact:slug_guess,1.0,salesforce,Salesforce,OAUTH2|S2S_OAUTH2,OAUTH2,False,,184,7,crm|contact management
+2,HubSpot,CRM and Sales,True,exact:slug_guess,1.0,hubspot,HubSpot,OAUTH2|API_KEY,OAUTH2,False,,244,2,crm|marketing automation
+3,Pipedrive,CRM and Sales,True,exact:slug_guess,1.0,pipedrive,Pipedrive,OAUTH2|API_KEY,,False,,399,3,crm|sales & crm
+4,Attio,CRM and Sales,True,exact:slug_guess,1.0,attio,Attio,OAUTH2,OAUTH2,False,,99,0,crm
+5,Twenty,CRM and Sales,False,none,0.0,,,,,,,,,
+6,Podio,CRM and Sales,False,none,0.0,,,,,,,,,
+7,Zoho CRM,CRM and Sales,False,none,0.0,,,,,,,,,
+8,Close,CRM and Sales,True,exact:slug_guess,1.0,close,Close,API_KEY,,False,,6,0,crm|drip emails
+9,Copper,CRM and Sales,False,none,0.0,,,,,,,,,
+10,DealCloud,CRM and Sales,False,none,0.0,,,,,,,,,
+11,Zendesk,Support and Helpdesk,True,exact:slug_guess,1.0,zendesk,Zendesk,OAUTH2,OAUTH2,False,,451,2,crm|customer support
+12,Intercom,Support and Helpdesk,True,exact:slug_guess,1.0,intercom,Intercom,OAUTH2,OAUTH2,False,,133,0,customer support|crm
+13,Freshdesk,Support and Helpdesk,True,exact:slug_guess,1.0,freshdesk,Freshdesk,API_KEY,,False,,178,0,crm|customer support
+14,Front,Support and Helpdesk,False,none,0.0,,,,,,,,,
+15,Pylon,Support and Helpdesk,False,none,0.0,,,,,,,,,
+16,LiveAgent,Support and Helpdesk,False,none,0.0,,,,,,,,,
+17,Plain,Support and Helpdesk,True,exact:slug_guess,1.0,plain,Plain,API_KEY,,False,,22,11,customer support
+18,Help Scout,Support and Helpdesk,True,exact:slug_guess,1.0,help_scout,Help Scout,OAUTH2,,False,,129,0,customer support|communication
+19,Gorgias,Support and Helpdesk,True,exact:slug_guess,1.0,gorgias,Gorgias,API_KEY|OAUTH2,OAUTH2,False,,32,0,crm|customer support
+20,Gladly,Support and Helpdesk,False,none,0.0,,,,,,,,,
+21,Slack,Communications and Messaging,True,exact:slug_guess,1.0,slack,Slack,OAUTH2,OAUTH2,False,,158,9,team chat|team collaboration
+22,Twilio,Communications and Messaging,False,none,0.0,,,,,,,,,
+23,Zoho Cliq,Communications and Messaging,False,none,0.0,,,,,,,,,
+24,Lark (Larksuite),Communications and Messaging,False,none,0.0,,,,,,,,,
+25,Pumble,Communications and Messaging,False,none,0.0,,,,,,,,,
+26,Discord,Communications and Messaging,True,exact:slug_guess,1.0,discord,Discord,OAUTH2,OAUTH2,False,,23,1,team chat|team collaboration
+27,Telegram,Communications and Messaging,True,exact:slug_guess,1.0,telegram,Telegram,API_KEY,,False,,18,0,team chat|notifications
+28,WhatsApp Business,Communications and Messaging,True,exact:slug_guess,1.0,whatsapp,WhatsApp,OAUTH2|API_KEY,OAUTH2,False,,57,1,phone & sms|communication
+29,Aircall,Communications and Messaging,False,none,0.0,,,,,,,,,
+30,Vonage,Communications and Messaging,False,none,0.0,,,,,,,,,
+31,Google Ads,"Marketing, Ads, Email and Social",True,exact:slug_guess,1.0,googleads,Google Ads,OAUTH2,OAUTH2,False,,22,0,ads & conversion
+32,Meta Ads,"Marketing, Ads, Email and Social",True,exact:slug_guess,1.0,metaads,Meta Ads,OAUTH2|API_KEY,,False,,51,0,ads & conversion|social media marketing
+33,LinkedIn Ads,"Marketing, Ads, Email and Social",True,exact:slug_guess,1.0,linkedin_ads,Linkedin Ads,OAUTH2,,False,,28,0,marketing|ads & conversion
+34,GoHighLevel,"Marketing, Ads, Email and Social",True,fuzzy,0.9,highlevel,Highlevel,OAUTH2,,False,,218,0,marketing automation|crm
+35,Mailchimp,"Marketing, Ads, Email and Social",True,exact:slug_guess,1.0,mailchimp,Mailchimp,OAUTH2,OAUTH2,False,,272,4,email newsletters|marketing automation
+36,Klaviyo,"Marketing, Ads, Email and Social",True,exact:slug_guess,1.0,klaviyo,Klaviyo,API_KEY|OAUTH2,,False,,225,0,marketing automation|email newsletters
+37,systeme.io,"Marketing, Ads, Email and Social",False,none,0.0,,,,,,,,,
+38,Pinterest,"Marketing, Ads, Email and Social",True,exact:slug_guess,1.0,pinterest,Pinterest,OAUTH2,,False,,24,0,social media accounts|marketing
+39,Threads (Meta),"Marketing, Ads, Email and Social",False,none,0.0,,,,,,,,,
+40,SendGrid,"Marketing, Ads, Email and Social",True,exact:slug_guess,1.0,sendgrid,SendGrid,API_KEY,,False,,359,0,transactional email|email newsletters
+41,Shopify,Ecommerce,True,exact:slug_guess,1.0,shopify,Shopify,API_KEY|OAUTH2|S2S_OAUTH2,,False,,315,0,ecommerce
+42,WooCommerce,Ecommerce,False,none,0.0,,,,,,,,,
+43,BigCommerce,Ecommerce,False,none,0.0,,,,,,,,,
+44,Salesforce Commerce Cloud,Ecommerce,False,none,0.0,,,,,,,,,
+45,Magento (Adobe Commerce),Ecommerce,False,none,0.0,,,,,,,,,
+46,Squarespace,Ecommerce,False,none,0.0,,,,,,,,,
+47,Ecwid,Ecommerce,False,none,0.0,,,,,,,,,
+48,Gumroad,Ecommerce,True,exact:slug_guess,1.0,gumroad,Gumroad,OAUTH2,OAUTH2,False,,7,0,ecommerce
+49,Amazon Selling Partner,Ecommerce,False,none,0.0,,,,,,,,,
+50,fanbasis,Ecommerce,False,none,0.0,,,,,,,,,
+51,DataForSEO,"Data, SEO and Scraping",True,exact:slug_guess,1.0,dataforseo,Dataforseo,BASIC,,False,,312,0,developer tools|marketing
+52,SE Ranking,"Data, SEO and Scraping",False,none,0.0,,,,,,,,,
+53,Ahrefs,"Data, SEO and Scraping",True,exact:slug_guess,1.0,ahrefs,Ahrefs,API_KEY,,False,,40,0,marketing automation|analytics
+54,MrScraper,"Data, SEO and Scraping",True,exact:slug_guess,1.0,mrscraper,MrScraper,API_KEY,,False,,11,0,ai web scraping|developer tools
+55,Apify,"Data, SEO and Scraping",True,exact:slug_guess,1.0,apify,Apify,API_KEY,,False,,112,0,ai web scraping|developer tools
+56,Firecrawl,"Data, SEO and Scraping",True,exact:slug_guess,1.0,firecrawl,Firecrawl,API_KEY,,False,,29,0,ai web scraping|developer tools
+57,Bright Data,"Data, SEO and Scraping",True,exact:slug_guess,1.0,brightdata,Bright Data,API_KEY,,False,,10,0,ai web scraping|developer tools
+58,Sherlock,"Data, SEO and Scraping",False,none,0.0,,,,,,,,,
+59,Waterfall.io,"Data, SEO and Scraping",False,none,0.0,,,,,,,,,
+60,Clay,"Data, SEO and Scraping",False,none,0.0,,,,,,,,,
+61,GitHub,"Developer, Infra and Data platforms",True,exact:slug_guess,1.0,github,GitHub,OAUTH2,OAUTH2,False,,871,46,developer tools
+62,Vercel,"Developer, Infra and Data platforms",True,exact:slug_guess,1.0,vercel,Vercel,API_KEY,,False,,131,0,developer tools
+63,Netlify,"Developer, Infra and Data platforms",False,none,0.0,,,,,,,,,
+64,Cloudflare,"Developer, Infra and Data platforms",True,exact:slug_guess,1.0,cloudflare,Cloudflare,API_KEY,,False,,20,0,security & identity tools|developer tools
+65,Supabase,"Developer, Infra and Data platforms",True,exact:slug_guess,1.0,supabase,Supabase,OAUTH2|API_KEY,OAUTH2,False,,124,0,developer tools|databases
+66,Neo4j,"Developer, Infra and Data platforms",True,exact:slug_guess,1.0,neo4j,Neo4J,OAUTH2|BASIC|API_KEY|S2S_OAUTH2,,False,,21,0,developer tools
+67,Snowflake,"Developer, Infra and Data platforms",True,exact:slug_guess,1.0,snowflake,Snowflake,OAUTH2,,False,,16,0,databases|analytics
+68,MongoDB Atlas,"Developer, Infra and Data platforms",False,none,0.0,,,,,,,,,
+69,Datadog,"Developer, Infra and Data platforms",True,exact:slug_guess,1.0,datadog,Datadog,OAUTH2|API_KEY|BEARER_TOKEN,,False,,64,0,server monitoring|developer tools
+70,Sentry,"Developer, Infra and Data platforms",True,exact:slug_guess,1.0,sentry,Sentry,OAUTH2,OAUTH2,False,,209,0,developer tools|server monitoring
+71,Notion,Productivity and Project Management,True,exact:slug_guess,1.0,notion,Notion,OAUTH2|API_KEY,OAUTH2,False,,53,8,notes|documents|project management
+72,Airtable,Productivity and Project Management,True,exact:slug_guess,1.0,airtable,Airtable,OAUTH2|API_KEY,OAUTH2,False,,24,6,productivity|spreadsheets|databases
+73,Linear,Productivity and Project Management,True,exact:slug_guess,1.0,linear,Linear,OAUTH2|API_KEY,OAUTH2,False,,46,12,project management|task management
+74,Jira,Productivity and Project Management,True,exact:slug_guess,1.0,jira,Jira,OAUTH2|S2S_OAUTH2|API_KEY,OAUTH2,False,,97,3,project management|task management
+75,Asana,Productivity and Project Management,True,exact:slug_guess,1.0,asana,Asana,OAUTH2,OAUTH2,False,,153,6,project management|task management
+76,Monday.com,Productivity and Project Management,True,exact:slug_guess,1.0,monday,Monday,OAUTH2,OAUTH2,False,,121,0,project management|task management
+77,ClickUp,Productivity and Project Management,True,exact:slug_guess,1.0,clickup,ClickUp,OAUTH2|API_KEY,OAUTH2,False,,162,21,productivity|project management|task management
+78,Coda,Productivity and Project Management,True,exact:slug_guess,1.0,coda,Coda,API_KEY,,False,,109,4,productivity|project management
+79,Smartsheet,Productivity and Project Management,False,none,0.0,,,,,,,,,
+80,Harvest,Productivity and Project Management,True,exact:slug_guess,1.0,harvest,Harvest,OAUTH2,OAUTH2,False,,57,0,time tracking software|proposal & invoice management
+81,Stripe,Finance and Fintech,True,exact:slug_guess,1.0,stripe,Stripe,API_KEY|OAUTH2,OAUTH2,False,,425,7,payment processing|ecommerce
+82,Plaid,Finance and Fintech,True,fuzzy,0.909,placid,Placid,API_KEY,,False,,11,0,images & design|video & audio
+83,Binance,Finance and Fintech,False,none,0.0,,,,,,,,,
+84,Paygent Connect,Finance and Fintech,False,none,0.0,,,,,,,,,
+85,iPayX,Finance and Fintech,False,none,0.0,,,,,,,,,
+86,QuickBooks,Finance and Fintech,True,exact:slug_guess,1.0,quickbooks,QuickBooks,OAUTH2,OAUTH2,False,,114,0,accounting|payment processing
+87,Xero,Finance and Fintech,True,exact:slug_guess,1.0,xero,Xero,OAUTH2,,False,,53,0,accounting
+88,Brex,Finance and Fintech,True,exact:slug_guess,1.0,brex,Brex,OAUTH2|API_KEY,,False,,84,0,accounting
+89,Ramp,Finance and Fintech,True,exact:slug_guess,1.0,ramp,Ramp,OAUTH2,,False,,88,0,accounting
+90,PitchBook,Finance and Fintech,False,none,0.0,,,,,,,,,
+91,NotebookLM,"AI, Research and Media-native",True,exact:slug_guess,1.0,notebook_lm,NotebookLM,OAUTH2,,False,,11,0,ai assistants|notes|education
+92,Otter AI,"AI, Research and Media-native",False,none,0.0,,,,,,,,,
+93,Fathom,"AI, Research and Media-native",True,exact:slug_guess,1.0,fathom,Fathom,OAUTH2|API_KEY,OAUTH2,False,,7,0,ai meeting assistants|transcription
+94,Consensus,"AI, Research and Media-native",True,exact:slug_guess,1.0,consensus,Consensus,API_KEY,,False,,1,0,artificial intelligence|education
+95,Reducto,"AI, Research and Media-native",False,none,0.0,,,,,,,,,
+96,Devin,"AI, Research and Media-native",False,none,0.0,,,,,,,,,
+97,higgsfield,"AI, Research and Media-native",False,none,0.0,,,,,,,,,
+98,Mermaid CLI,"AI, Research and Media-native",False,none,0.0,,,,,,,,,
+99,YouTube Transcript,"AI, Research and Media-native",False,none,0.0,,,,,,,,,
+100,Grain,"AI, Research and Media-native",False,none,0.0,,,,,,,,,
