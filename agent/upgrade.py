@@ -53,6 +53,45 @@ NOT_ASKED_IN_PASS1 = {"primary_blocker", "product_class"}
 # rest of the unknown accounting believable.
 NEVER_QUERIED_IN_PASS1 = {"existing_mcp"}
 
+# The URL-strict re-grade needs the page text pass 1 retained, and that text lives in
+# Composio's workbench. So the verdicts are computed there once and committed here, and
+# every other environment reproduces the identical dataset from them. Only exceptions
+# are recorded; a quote-bearing field absent from the file graded `valid`.
+GRADE_CODES = {"T": "truncated-evidence", "F": "QUOTE_NOT_FOUND", "N": "near-miss",
+               "W": "wrong-url", "U": "unverifiable-url", "Q": "no-quote"}
+
+
+def load_strict_grades(path: pathlib.Path) -> dict[tuple[int, str], str]:
+    if not path.exists():
+        return {}
+    out: dict[tuple[int, str], str] = {}
+    for token in path.read_text().split():
+        if token.startswith("#") or "=" not in token or "." not in token:
+            continue
+        left, code = token.split("=", 1)
+        app_id, field = left.split(".", 1)
+        if code in GRADE_CODES:
+            out[(int(app_id), field)] = GRADE_CODES[code]
+    return out
+
+
+def apply_strict_grades(record_id: int, extracted: dict, checks: dict,
+                        grades: dict[tuple[int, str], str]) -> dict:
+    """Replace the offline verdict with the workbench's URL-strict one wherever the
+    field carries a quote. Fields with no quote keep the locally derived verdict --
+    abstained, absence-claim or not-asked-pass1 need no page text to decide."""
+    for field, check in checks.items():
+        if not (extracted.get(field) or {}).get("quote"):
+            continue
+        if check["verdict"] == "not-asked-pass1":
+            continue
+        verdict = grades.get((record_id, field), "valid")
+        check["verdict"] = verdict
+        check["evidenced"] = verdict in ("valid", "near-miss") and \
+            check.get("tier", 5) <= schema.EVIDENCED_MAX_TIER
+        check["needs_refetch"] = verdict == "truncated-evidence"
+    return checks
+
 
 # --------------------------------------------------------------------------- input
 
@@ -153,7 +192,8 @@ def regrade(record: dict, app_name: str, app_hint: str) -> tuple[dict, dict, lis
 
 # ------------------------------------------------------------------------- upgrade
 
-def upgrade_record(record: dict, matches: dict) -> dict:
+def upgrade_record(record: dict, matches: dict,
+                   strict: dict[tuple[int, str], str] | None = None) -> dict:
     app_name, app_hint = record["app"], record.get("hint", "")
     reg = matches.get(record["id"], {})
 
@@ -171,6 +211,10 @@ def upgrade_record(record: dict, matches: dict) -> dict:
     staged = dict(record)
     staged["extracted"] = extracted
     extracted, checks, quarantined, reasons = regrade(staged, app_name, app_hint)
+    if strict:
+        checks = apply_strict_grades(record["id"], extracted, checks, strict)
+        extracted, more = evidence.quarantine(extracted, checks, reasons)
+        quarantined += [q for q in more if q not in quarantined]
 
     detectors = record.get("detectors") or []
     probes = reparse_probe_bodies(record)
@@ -370,6 +414,8 @@ def main(argv=None) -> int:
     p.add_argument("--batches", default="outputs/pass1_batches",
                    help="directory of pass-1 batch_*.json files (they retain page text)")
     p.add_argument("--out", default=None)
+    p.add_argument("--grades", default="data/pass1_strict_grades.txt",
+                   help="committed URL-strict verdicts from the workbench re-grade")
     args = p.parse_args(argv)
 
     config.load_dotenv()
@@ -380,7 +426,10 @@ def main(argv=None) -> int:
     print(f"pass 1: {len(records1)} records | registry: "
           f"{sum(1 for m in matches.values() if m['in_catalog'])} of 100 in catalog")
 
-    records2 = [upgrade_record(r, matches) for r in records1]
+    strict = load_strict_grades(pathlib.Path(args.grades))
+    print(f"strict grades: {len(strict)} recorded exceptions"
+          f"{' (none found -- run with --batches in the workbench)' if not strict else ''}")
+    records2 = [upgrade_record(r, matches, strict) for r in records1]
 
     out = pathlib.Path(args.out or config.OUTPUTS / "dataset_v2.json")
     payload = {

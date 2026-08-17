@@ -1,33 +1,35 @@
 {
   "auth": {
     "families": {
-      "both": 45,
-      "static-secret": 37,
-      "oauth-dance": 13,
-      "unknown": 4,
+      "both": 40,
+      "static-secret": 36,
+      "oauth-dance": 12,
+      "unknown": 11,
       "none": 1
     },
     "raw_methods": {
-      "OAUTH2": 58,
-      "BEARER": 45,
-      "API_KEY": 43,
+      "OAUTH2": 52,
+      "API_KEY": 41,
+      "BEARER": 40,
       "BASIC": 14,
-      "JWT": 8,
+      "JWT": 7,
       "NONE": 1
     },
-    "headline_static_secret_path": 82
+    "headline_static_secret_path": 76
   },
   "access_by_category": {
     "AI, Research and Media-native": {
       "unknown": 4,
       "partner-or-sales-gate": 3,
-      "free": 2,
+      "free-trial": 1,
+      "free": 1,
       "no-public-api": 1
     },
     "CRM and Sales": {
       "partner-or-sales-gate": 2,
       "unknown": 6,
-      "free": 2
+      "free": 1,
+      "free-trial": 1
     },
     "Communications and Messaging": {
       "unknown": 5,
@@ -51,8 +53,9 @@
     },
     "Ecommerce": {
       "paid-tier-required": 2,
-      "free": 2,
-      "unknown": 6
+      "free-trial": 1,
+      "unknown": 6,
+      "free": 1
     },
     "Finance and Fintech": {
       "unknown": 4,
@@ -68,9 +71,8 @@
       "unknown": 2
     },
     "Productivity and Project Management": {
-      "unknown": 6,
-      "free": 3,
-      "app-review": 1
+      "unknown": 7,
+      "free": 3
     },
     "Support and Helpdesk": {
       "unknown": 2,
@@ -81,19 +83,19 @@
     }
   },
   "access_overall": {
-    "unknown": 39,
-    "free": 23,
+    "unknown": 40,
+    "free": 20,
     "paid-tier-required": 14,
-    "app-review": 12,
+    "app-review": 11,
     "partner-or-sales-gate": 8,
-    "no-public-api": 2,
-    "free-trial": 2
+    "free-trial": 5,
+    "no-public-api": 2
   },
   "blockers": {
-    "none": 48,
+    "none": 49,
     "unclear": 16,
     "paid-plan": 14,
-    "app-review": 12,
+    "app-review": 11,
     "partner-gate": 8,
     "no-public-api": 2
   },
@@ -140,8 +142,8 @@
     ]
   },
   "mcp": {
-    "unknown": 75,
-    "official": 23,
+    "unknown": 76,
+    "official": 22,
     "community": 2
   },
   "breadth": {

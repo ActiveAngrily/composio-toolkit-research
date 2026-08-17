@@ -1,9 +1,9 @@
 {
   "sample": 56,
-  "token_level_agree": 46,
-  "family_level_agree": 52,
-  "token_pct": 82.1,
-  "family_pct": 92.9,
+  "token_level_agree": 43,
+  "family_level_agree": 49,
+  "token_pct": 76.8,
+  "family_pct": 87.5,
   "disagreements": [
     {
       "app": "Freshdesk",
@@ -28,14 +28,29 @@
       "cause": "transport-vs-credential"
     },
     {
+      "app": "Slack",
+      "registry": [
+        "OAUTH2"
+      ],
+      "agent": [],
+      "family_agrees": false,
+      "cause": "recall-miss"
+    },
+    {
       "app": "Discord",
       "registry": [
         "OAUTH2"
       ],
-      "agent": [
-        "API_KEY",
-        "BEARER"
+      "agent": [],
+      "family_agrees": false,
+      "cause": "recall-miss"
+    },
+    {
+      "app": "LinkedIn Ads",
+      "registry": [
+        "OAUTH2"
       ],
+      "agent": [],
       "family_agrees": false,
       "cause": "recall-miss"
     },
@@ -79,6 +94,16 @@
       "app": "Vercel",
       "registry": [
         "API_KEY"
+      ],
+      "agent": [],
+      "family_agrees": false,
+      "cause": "recall-miss"
+    },
+    {
+      "app": "Supabase",
+      "registry": [
+        "API_KEY",
+        "OAUTH2"
       ],
       "agent": [],
       "family_agrees": false,

@@ -2,27 +2,33 @@
   "overall": {
     "unclassified": 347,
     "retrieval-failed": 75,
+    "quote-failed-validation": 29,
     "not-applicable": 7
   },
   "per_field": {
     "api_access_tier": {
       "unclassified": 69,
-      "not-applicable": 2
+      "not-applicable": 2,
+      "quote-failed-validation": 1
     },
     "approval_gate": {
       "unclassified": 61,
+      "quote-failed-validation": 6,
       "not-applicable": 1
     },
     "auth_methods": {
+      "quote-failed-validation": 7,
       "unclassified": 3,
       "not-applicable": 1
     },
     "credential_self_issue": {
       "unclassified": 10,
+      "quote-failed-validation": 8,
       "not-applicable": 1
     },
     "existing_mcp": {
-      "retrieval-failed": 75
+      "retrieval-failed": 75,
+      "quote-failed-validation": 1
     },
     "one_liner": {
       "unclassified": 62
@@ -31,14 +37,17 @@
       "unclassified": 2
     },
     "protocol": {
-      "unclassified": 21
+      "unclassified": 21,
+      "quote-failed-validation": 3
     },
     "rate_limits_documented": {
       "unclassified": 66,
-      "not-applicable": 2
+      "not-applicable": 2,
+      "quote-failed-validation": 1
     },
     "signup_self_serve": {
-      "unclassified": 53
+      "unclassified": 53,
+      "quote-failed-validation": 2
     }
   }
 }

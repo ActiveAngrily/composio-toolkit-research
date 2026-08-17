@@ -2,82 +2,121 @@
   "one_liner": {
     "answered": 38,
     "coverage_pct": 38.0,
-    "evidenced": 0,
-    "evidenced_pct_of_answered": 0.0,
+    "evidenced": 36,
+    "evidenced_pct_of_answered": 94.7,
     "verdicts": {
-      "no-retained-text": 100
+      "no-retained-text": 62,
+      "valid": 38
     }
   },
   "auth_methods": {
-    "answered": 96,
-    "coverage_pct": 96.0,
-    "evidenced": 0,
-    "evidenced_pct_of_answered": 0.0,
+    "answered": 89,
+    "coverage_pct": 89.0,
+    "evidenced": 67,
+    "evidenced_pct_of_answered": 75.3,
     "verdicts": {
-      "no-retained-text": 100
+      "valid": 69,
+      "truncated-evidence": 13,
+      "QUOTE_NOT_FOUND": 7,
+      "near-miss": 5,
+      "no-retained-text": 3,
+      "wrong-url": 3
     }
   },
   "signup_self_serve": {
-    "answered": 47,
-    "coverage_pct": 47.0,
-    "evidenced": 0,
-    "evidenced_pct_of_answered": 0.0,
+    "answered": 45,
+    "coverage_pct": 45.0,
+    "evidenced": 35,
+    "evidenced_pct_of_answered": 77.8,
     "verdicts": {
-      "no-retained-text": 100
+      "no-retained-text": 53,
+      "valid": 37,
+      "truncated-evidence": 6,
+      "near-miss": 2,
+      "QUOTE_NOT_FOUND": 2
     }
   },
   "api_access_tier": {
-    "answered": 29,
-    "coverage_pct": 29.0,
-    "evidenced": 0,
-    "evidenced_pct_of_answered": 0.0,
+    "answered": 28,
+    "coverage_pct": 28.0,
+    "evidenced": 18,
+    "evidenced_pct_of_answered": 64.3,
     "verdicts": {
-      "no-retained-text": 100
+      "no-retained-text": 71,
+      "valid": 21,
+      "truncated-evidence": 4,
+      "near-miss": 2,
+      "wrong-url": 1,
+      "QUOTE_NOT_FOUND": 1
     }
   },
   "credential_self_issue": {
-    "answered": 89,
-    "coverage_pct": 89.0,
-    "evidenced": 0,
-    "evidenced_pct_of_answered": 0.0,
+    "answered": 81,
+    "coverage_pct": 81.0,
+    "evidenced": 57,
+    "evidenced_pct_of_answered": 70.4,
     "verdicts": {
-      "no-retained-text": 100
+      "valid": 50,
+      "truncated-evidence": 18,
+      "near-miss": 13,
+      "no-retained-text": 11,
+      "QUOTE_NOT_FOUND": 8
     }
   },
   "approval_gate": {
-    "answered": 38,
-    "coverage_pct": 38.0,
-    "evidenced": 0,
-    "evidenced_pct_of_answered": 0.0,
+    "answered": 32,
+    "coverage_pct": 32.0,
+    "evidenced": 18,
+    "evidenced_pct_of_answered": 56.2,
     "verdicts": {
-      "no-retained-text": 100
+      "no-retained-text": 63,
+      "valid": 20,
+      "truncated-evidence": 8,
+      "QUOTE_NOT_FOUND": 6,
+      "wrong-url": 2,
+      "near-miss": 1
     }
   },
   "protocol": {
-    "answered": 79,
-    "coverage_pct": 79.0,
-    "evidenced": 0,
-    "evidenced_pct_of_answered": 0.0,
+    "answered": 76,
+    "coverage_pct": 76.0,
+    "evidenced": 61,
+    "evidenced_pct_of_answered": 80.3,
     "verdicts": {
-      "no-retained-text": 100
+      "valid": 58,
+      "no-retained-text": 23,
+      "truncated-evidence": 9,
+      "near-miss": 6,
+      "QUOTE_NOT_FOUND": 2,
+      "wrong-url": 1,
+      "unverifiable-url": 1
     }
   },
   "rate_limits_documented": {
-    "answered": 32,
-    "coverage_pct": 32.0,
-    "evidenced": 0,
-    "evidenced_pct_of_answered": 0.0,
+    "answered": 31,
+    "coverage_pct": 31.0,
+    "evidenced": 20,
+    "evidenced_pct_of_answered": 64.5,
     "verdicts": {
-      "no-retained-text": 100
+      "no-retained-text": 67,
+      "valid": 16,
+      "truncated-evidence": 11,
+      "near-miss": 5,
+      "QUOTE_NOT_FOUND": 1
     }
   },
   "existing_mcp": {
-    "answered": 25,
-    "coverage_pct": 25.0,
-    "evidenced": 0,
-    "evidenced_pct_of_answered": 0.0,
+    "answered": 24,
+    "coverage_pct": 24.0,
+    "evidenced": 14,
+    "evidenced_pct_of_answered": 58.3,
     "verdicts": {
-      "no-retained-text": 100
+      "no-retained-text": 76,
+      "valid": 12,
+      "truncated-evidence": 6,
+      "near-miss": 4,
+      "QUOTE_NOT_FOUND": 1,
+      "wrong-url": 1
     }
   },
   "product_class": {
@@ -92,11 +131,11 @@
   "primary_blocker": {
     "answered": 98,
     "coverage_pct": 98.0,
-    "evidenced": 0,
-    "evidenced_pct_of_answered": 0.0,
+    "evidenced": 7,
+    "evidenced_pct_of_answered": 7.1,
     "verdicts": {
       "not-asked-pass1": 92,
-      "no-retained-text": 8
+      "valid": 8
     }
   }
 }

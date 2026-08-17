@@ -1,0 +1,131 @@
+# 100 apps -> an agent toolkit build queue
+
+Source repo: https://github.com/ActiveAngrily/composio-toolkit-research
+Machine-readable dataset: ./data.json
+
+## What this is
+100 apps researched for agent-toolkit buildability by an agent running in
+Composio's remote workbench. Every claim carries a verbatim quote, that
+quote's URL, a source-authority tier, and a validation verdict from
+re-reading the page. Claims whose quote could not be verified are
+quarantined to unknown rather than reported.
+
+## Headline
+- Composio already covers 56 of the 100. 44 are not in the catalog.
+- 76 of 100 accept a static secret, so most need no OAuth app registered.
+- 11 of the 44 missing apps already have an official MCP server built by someone else.
+- Auth cross-check against Composio's own registry on 56 apps: 76.8% token-level, 87.5% family-level.
+
+## Patterns
+- auth families: {"both": 40, "static-secret": 36, "oauth-dance": 12, "unknown": 11, "none": 1}
+- access: {"unknown": 40, "free": 20, "paid-tier-required": 14, "app-review": 11, "partner-or-sales-gate": 8, "free-trial": 5, "no-public-api": 2}
+- blockers: {"none": 49, "unclear": 16, "paid-plan": 14, "app-review": 11, "partner-gate": 8, "no-public-api": 2}
+- buildability: {"already-built": 56, "unknown": 16, "build-with-caveats": 14, "build-now": 9, "needs-outreach": 5}
+
+## Honest limits
+- 75 claims cannot be verified offline because only half of each page's text was retained. They are labelled, not counted as errors.
+- 347 abstentions are unclassified: pass 1 never recorded WHY it abstained, so 'the vendor does not publish this' cannot be separated from 'we did not find it'.
+- 75 abstentions are provably our own gap.
+
+## Per-app data
+app | category | auth_family | access | buildability | blocker | in_composio_catalog
+Salesforce | CRM and Sales | oauth-dance | partner-or-sales-gate | already-built | partner-gate | yes
+HubSpot | CRM and Sales | oauth-dance | unknown | already-built | none | yes
+Pipedrive | CRM and Sales | oauth-dance | free | already-built | none | yes
+Attio | CRM and Sales | both | unknown | already-built | none | yes
+Twenty | CRM and Sales | both | free-trial | build-now | none | no
+Podio | CRM and Sales | both | partner-or-sales-gate | needs-outreach | partner-gate | no
+Zoho CRM | CRM and Sales | oauth-dance | unknown | unknown | unclear | no
+Close | CRM and Sales | both | unknown | already-built | none | yes
+Copper | CRM and Sales | both | unknown | unknown | unclear | no
+DealCloud | CRM and Sales | both | unknown | unknown | unclear | no
+Zendesk | Support and Helpdesk | both | unknown | already-built | none | yes
+Intercom | Support and Helpdesk | both | unknown | already-built | none | yes
+Freshdesk | Support and Helpdesk | static-secret | paid-tier-required | already-built | paid-plan | yes
+Front | Support and Helpdesk | both | paid-tier-required | build-with-caveats | paid-plan | no
+Pylon | Support and Helpdesk | static-secret | partner-or-sales-gate | needs-outreach | partner-gate | no
+LiveAgent | Support and Helpdesk | static-secret | free | build-now | none | no
+Plain | Support and Helpdesk | static-secret | free | already-built | none | yes
+Help Scout | Support and Helpdesk | oauth-dance | paid-tier-required | already-built | paid-plan | yes
+Gorgias | Support and Helpdesk | both | app-review | already-built | app-review | yes
+Gladly | Support and Helpdesk | static-secret | paid-tier-required | build-with-caveats | paid-plan | no
+Slack | Communications and Messaging | unknown | unknown | already-built | none | yes
+Twilio | Communications and Messaging | static-secret | free | unknown | unclear | no
+Zoho Cliq | Communications and Messaging | unknown | paid-tier-required | build-with-caveats | paid-plan | no
+Lark | Communications and Messaging | static-secret | unknown | unknown | unclear | no
+Pumble | Communications and Messaging | both | app-review | build-with-caveats | app-review | no
+Discord | Communications and Messaging | unknown | unknown | already-built | none | yes
+Telegram | Communications and Messaging | static-secret | free | already-built | none | yes
+WhatsApp Business | Communications and Messaging | both | app-review | already-built | app-review | yes
+Aircall | Communications and Messaging | both | unknown | unknown | unclear | no
+Vonage | Communications and Messaging | static-secret | unknown | unknown | unclear | no
+Google Ads | Marketing, Ads, Email and Social | both | app-review | already-built | app-review | yes
+Meta Ads | Marketing, Ads, Email and Social | both | app-review | already-built | app-review | yes
+LinkedIn Ads | Marketing, Ads, Email and Social | unknown | partner-or-sales-gate | already-built | partner-gate | yes
+GoHighLevel | Marketing, Ads, Email and Social | both | paid-tier-required | already-built | paid-plan | yes
+Mailchimp | Marketing, Ads, Email and Social | both | free | already-built | none | yes
+Klaviyo | Marketing, Ads, Email and Social | both | unknown | already-built | none | yes
+systeme.io | Marketing, Ads, Email and Social | static-secret | free | build-now | none | no
+Pinterest | Marketing, Ads, Email and Social | oauth-dance | app-review | already-built | app-review | yes
+Threads | Marketing, Ads, Email and Social | oauth-dance | app-review | build-with-caveats | app-review | no
+SendGrid | Marketing, Ads, Email and Social | static-secret | unknown | already-built | none | yes
+Shopify | Ecommerce | static-secret | paid-tier-required | already-built | paid-plan | yes
+WooCommerce | Ecommerce | static-secret | free-trial | build-now | none | no
+BigCommerce | Ecommerce | both | unknown | unknown | unclear | no
+Salesforce Commerce Cloud | Ecommerce | both | unknown | unknown | unclear | no
+Magento Adobe Commerce | Ecommerce | unknown | unknown | unknown | unclear | no
+Squarespace | Ecommerce | both | paid-tier-required | build-with-caveats | paid-plan | no
+Ecwid | Ecommerce | both | free | build-now | none | no
+Gumroad | Ecommerce | oauth-dance | unknown | already-built | none | yes
+Amazon Selling Partner | Ecommerce | oauth-dance | unknown | unknown | unclear | no
+fanbasis | Ecommerce | static-secret | unknown | unknown | unclear | no
+DataForSEO | Data, SEO and Scraping | static-secret | paid-tier-required | already-built | paid-plan | yes
+SE Ranking | Data, SEO and Scraping | static-secret | paid-tier-required | build-with-caveats | paid-plan | no
+Ahrefs | Data, SEO and Scraping | both | app-review | already-built | app-review | yes
+MrScraper | Data, SEO and Scraping | static-secret | unknown | already-built | none | yes
+Apify | Data, SEO and Scraping | static-secret | unknown | already-built | none | yes
+Firecrawl | Data, SEO and Scraping | static-secret | free | already-built | none | yes
+Bright Data | Data, SEO and Scraping | static-secret | free | already-built | none | yes
+Sherlock | Data, SEO and Scraping | unknown | no-public-api | build-with-caveats | no-public-api | no
+Waterfall.io | Data, SEO and Scraping | static-secret | partner-or-sales-gate | needs-outreach | partner-gate | no
+Clay | Data, SEO and Scraping | static-secret | paid-tier-required | build-with-caveats | paid-plan | no
+GitHub | Developer, Infra and Data platforms | static-secret | free | already-built | none | yes
+Vercel | Developer, Infra and Data platforms | unknown | free-trial | already-built | none | yes
+Netlify | Developer, Infra and Data platforms | oauth-dance | free | build-now | none | no
+Cloudflare | Developer, Infra and Data platforms | static-secret | free | already-built | none | yes
+Supabase | Developer, Infra and Data platforms | unknown | free | already-built | none | yes
+Neo4j | Developer, Infra and Data platforms | static-secret | free | already-built | none | yes
+Snowflake | Developer, Infra and Data platforms | both | unknown | already-built | none | yes
+MongoDB Atlas | Developer, Infra and Data platforms | both | free | build-now | none | no
+Datadog | Developer, Infra and Data platforms | static-secret | unknown | already-built | none | yes
+Sentry | Developer, Infra and Data platforms | both | paid-tier-required | already-built | paid-plan | yes
+Notion | Productivity and Project Management | both | unknown | already-built | none | yes
+Airtable | Productivity and Project Management | both | free | already-built | none | yes
+Linear | Productivity and Project Management | both | unknown | already-built | none | yes
+Jira | Productivity and Project Management | both | unknown | already-built | none | yes
+Asana | Productivity and Project Management | both | free | already-built | none | yes
+Monday.com | Productivity and Project Management | both | unknown | already-built | none | yes
+ClickUp | Productivity and Project Management | both | unknown | already-built | none | yes
+Coda | Productivity and Project Management | static-secret | free | already-built | none | yes
+Smartsheet | Productivity and Project Management | unknown | unknown | unknown | unclear | no
+Harvest | Productivity and Project Management | both | unknown | already-built | none | yes
+Stripe | Finance and Fintech | static-secret | unknown | already-built | none | yes
+Plaid | Finance and Fintech | both | paid-tier-required | build-with-caveats | paid-plan | no
+Binance | Finance and Fintech | static-secret | app-review | build-with-caveats | app-review | no
+Paygent Connect | Finance and Fintech | static-secret | paid-tier-required | build-with-caveats | paid-plan | no
+iPayX | Finance and Fintech | unknown | app-review | build-with-caveats | app-review | no
+QuickBooks | Finance and Fintech | oauth-dance | unknown | already-built | none | yes
+Xero | Finance and Fintech | oauth-dance | unknown | already-built | none | yes
+Brex | Finance and Fintech | static-secret | unknown | already-built | none | yes
+Ramp | Finance and Fintech | both | app-review | already-built | app-review | yes
+PitchBook | Finance and Fintech | static-secret | free-trial | unknown | unclear | no
+NotebookLM | AI, Research and Media-native | none | unknown | already-built | none | yes
+Otter AI | AI, Research and Media-native | static-secret | partner-or-sales-gate | needs-outreach | partner-gate | no
+Fathom | AI, Research and Media-native | both | unknown | already-built | none | yes
+Consensus | AI, Research and Media-native | both | partner-or-sales-gate | already-built | partner-gate | yes
+Reducto | AI, Research and Media-native | static-secret | free-trial | build-now | none | no
+Devin | AI, Research and Media-native | static-secret | unknown | unknown | unclear | no
+higgsfield | AI, Research and Media-native | static-secret | free | build-now | none | no
+Mermaid CLI | AI, Research and Media-native | unknown | no-public-api | build-with-caveats | no-public-api | no
+YouTube Transcript | AI, Research and Media-native | both | unknown | unknown | unclear | no
+Grain | AI, Research and Media-native | both | partner-or-sales-gate | needs-outreach | partner-gate | no

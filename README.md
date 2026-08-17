@@ -1,54 +1,93 @@
 # 100 apps → an agent toolkit build queue
 
-Composio take-home (AI Product Ops). Research 100 apps for agent-toolkit buildability,
-find the patterns, do it with an agent, and prove the answers are trustworthy.
+Composio take-home (AI Product Ops). 100 apps researched for agent-toolkit buildability
+by an agent, with every claim quote-verified against the page it came from.
 
-**Live page:** _(link once deployed)_
-
-> Status: scaffolding. This README gets rewritten once the pipeline exists.
+**Live page:** https://activeangrily.github.io/composio-toolkit-research/
 
 ---
 
-## Quick start
+## Run it
 
 ```bash
-git clone <this repo>
-cd composio_assignment
+git clone https://github.com/ActiveAngrily/composio-toolkit-research
+cd composio-toolkit-research
+cp .env.example .env        # add your COMPOSIO_API_KEY
 
-# Lane A — Composio's own registry (standard library only, no install needed)
-export COMPOSIO_API_KEY=ak_xxx
+# one app, end to end — the fastest way to see what this does
+python -m agent.run_research --app "Notion"
+
+# retrieval + probes only, no LLM needed
+python -m agent.run_research --app "Pylon" --sources-only
+
+# Composio's own toolkit registry: which of the 100 they already cover
 python3 scripts/fetch_composio_registry.py
+
+# re-derive the whole dataset from the recorded pass-1 evidence, offline
+python -m agent.upgrade
+
+# rebuild the page
+python -m agent.build_site
+
+# every rule described on the page, checked — no network, no deps
+python tests/test_agent.py
 ```
 
----
+Search, fetch and the registry need only `COMPOSIO_API_KEY`. Extraction needs a model:
+inside Composio's remote workbench one is provided (`--backend workbench`, the default);
+outside it, set `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` (`--backend sdk`).
 
-## What's here
+## What ran where
+
+- **Research** ran in **Composio's remote workbench** — open internet, `COMPOSIO_SEARCH_WEB`
+  for search, `COMPOSIO_SEARCH_FETCH_URL_CONTENT` for pages, and a GPT-family model for
+  extraction. That model is a different vendor from the Claude session that wrote this code,
+  so the cross-checks are cross-vendor rather than a model grading itself.
+- **The registry pull** ran on a laptop (`scripts/fetch_composio_registry.py`, stdlib only).
+- **Validation, scoring and the page** are pure compute over committed files and run anywhere.
+- `data/pass1_strict_grades.txt` holds the URL-strict quote verdicts, computed once in the
+  workbench where the retained page text lives, so `agent/upgrade.py` reproduces the identical
+  dataset in any environment.
+
+## Layout
 
 ```
-data/
-  apps.csv                    the 100 apps from the brief, machine-readable
-  composio_toolkits.json      Composio's toolkit registry (generated)
-  composio_match.csv          the 100 apps ↔ Composio slugs (generated)
-  composio_toolkit_details.json  per-toolkit auth detail (generated)
-scripts/
-  fetch_composio_registry.py  Lane A step 1 — runs on your machine
-agent/                        the research pipeline
-site/                         the deliverable HTML page
-outputs/                      datasets, scores, audit results
-docs/
-  PLAN.md                     plan of execution
+agent/
+  run_research.py   CLI: search → fetch → extract → validate → probe → derive
+  schema.py         fields, enums, normalisation, source-authority tiers
+  prompts.py        the quote-or-unknown contract
+  providers.py      search / fetch / LLM — one interface, two backends
+  evidence.py       phrase scanner, quote grading, quarantine
+  probe.py          API-base probe, /pricing redirect probe, OpenAPI spec discovery
+  derive.py         auth family, access, buildability — by rule, never by model
+  registry.py       Composio's registry: ground truth + a 56-app accuracy check
+  upgrade.py        re-derive the dataset offline
+  build_site.py     the deliverable page
+data/               the 100 apps, the registry dump, the strict grades
+outputs/            datasets, coverage, patterns, the pass-1 → pass-2 delta
+tests/              every rule above, runnable with no dependencies
+docs/               GitHub Pages source AND the written record
+  index.html          the deliverable, self-contained
+  data.json           the same findings, machine-readable
+  llms.txt            the same findings, for an agent
+  PLAN.md             plan of execution, written before the results existed
+  IMPLEMENTATION.md   build order and the constraints that shaped it
+  ASSIGNMENT.md       the brief
 ```
 
-## Approach in one paragraph
+## Honest limits
 
-Three independent lanes produce every answer, then a reconciler compares them.
-**Lane A** asks sources that cannot hallucinate — Composio's own toolkit registry
-and machine-readable OpenAPI specs. **Lane B** is an LLM that may only answer with a
-verbatim quote copied from a documentation page it actually opened, plus that page's
-URL; if it can't find supporting text, the answer is `unknown`. **Lane C** verifies:
-cross-lane disagreements get re-researched, every citation is mechanically checked
-(does that sentence really appear on that URL?), the hard tail gets a browser pass,
-and a held-out 20-app human audit is the ground truth everything is scored against.
-
-Accuracy is reported per field, across four passes, starting from a deliberately
-naive no-retrieval baseline so the improvement is measured rather than asserted.
+- **Coverage, not correctness, is the weak spot.** Of the claims made, 56–95% carry a quote
+  verified on a vendor-owned page. But the access fields — which tier includes API access —
+  are answered for only 28–45% of apps, and that is the column the build queue most needs.
+- **75 claims cannot be judged offline.** Pass 1 showed the model 5,000 characters per page
+  and retained 2,500, so a quote from the back half is unverifiable without re-fetching. They
+  are labelled `truncated-evidence` and excluded from both sides of the accuracy ratio;
+  counting them as fabrications would have inflated the improvement 2.6×.
+- **347 abstentions are `unclassified`.** Pass 1 never recorded *why* it abstained, so
+  "the vendor does not publish this" cannot be separated from "we did not find it". Only the
+  75 missing MCP answers are provably ours — pass 1 issued three queries per app and none of
+  them was an MCP query.
+- **The human audit was cut for time**, along with a second retrieval pass and the no-retrieval
+  pass-0 baseline. The accuracy claims here rest on the 56-app registry cross-check and
+  mechanical quote validation, both automated. The page says so.

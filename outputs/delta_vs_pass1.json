@@ -7,14 +7,20 @@
     "no-quote": 8
   },
   "pass2_verdicts": {
-    "no-retained-text": 908,
-    "not-asked-pass1": 192
+    "no-retained-text": 429,
+    "valid": 329,
+    "not-asked-pass1": 192,
+    "truncated-evidence": 75,
+    "near-miss": 38,
+    "QUOTE_NOT_FOUND": 28,
+    "wrong-url": 8,
+    "unverifiable-url": 1
   },
   "pass1_ungraded_slots": 188,
-  "quarantined_claims": 0,
+  "quarantined_claims": 29,
   "citations_total": 483,
   "citations_below_tier2": 42,
-  "needing_refetch": 0,
+  "needing_refetch": 75,
   "contradictions_pass1": 7,
-  "contradictions_now": 33
+  "contradictions_now": 35
 }
