@@ -1,0 +1,18 @@
+# secrets
+.env
+.env.*
+*.key
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# sync payloads between the agent sandbox and this machine
+.sync/
+*.tar.gz
+
+# large intermediate artifacts (the final dataset IS committed)
+outputs/raw/
+outputs/cache/
