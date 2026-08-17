@@ -7,23 +7,23 @@
     "no-quote": 8
   },
   "pass2_verdicts": {
-    "no-retained-text": 429,
-    "valid": 296,
+    "valid": 409,
+    "no-retained-text": 332,
     "not-asked-pass1": 192,
-    "truncated-evidence": 71,
-    "near-miss": 35,
+    "near-miss": 65,
+    "registry-fact": 36,
     "QUOTE_NOT_FOUND": 28,
     "unnamed-subject": 24,
-    "off-topic-evidence": 13,
     "wrong-url": 8,
     "not-a-description": 3,
+    "off-topic-evidence": 2,
     "unverifiable-url": 1
   },
   "pass1_ungraded_slots": 188,
-  "quarantined_claims": 69,
-  "citations_total": 483,
-  "citations_below_tier2": 42,
-  "needing_refetch": 75,
+  "quarantined_claims": 71,
+  "citations_total": 580,
+  "citations_below_tier2": 57,
+  "needing_refetch": 0,
   "contradictions_pass1": 7,
-  "contradictions_now": 35
+  "contradictions_now": 36
 }

@@ -1,10 +1,10 @@
 {
   "auth": {
     "families": {
-      "both": 40,
-      "static-secret": 36,
+      "both": 39,
+      "static-secret": 34,
+      "unknown": 14,
       "oauth-dance": 12,
-      "unknown": 11,
       "none": 1
     },
     "raw_methods": {
@@ -15,7 +15,7 @@
       "JWT": 7,
       "NONE": 1
     },
-    "headline_static_secret_path": 76
+    "headline_static_secret_path": 73
   },
   "access_by_category": {
     "AI, Research and Media-native": {
@@ -35,7 +35,8 @@
       "unknown": 5,
       "free": 2,
       "paid-tier-required": 1,
-      "app-review": 2
+      "free-trial": 1,
+      "app-review": 1
     },
     "Data, SEO and Scraping": {
       "paid-tier-required": 3,
@@ -58,10 +59,10 @@
       "free": 1
     },
     "Finance and Fintech": {
-      "unknown": 4,
+      "unknown": 5,
       "paid-tier-required": 2,
-      "app-review": 3,
-      "free-trial": 1
+      "free-trial": 2,
+      "app-review": 1
     },
     "Marketing, Ads, Email and Social": {
       "app-review": 4,
@@ -72,38 +73,39 @@
     },
     "Productivity and Project Management": {
       "unknown": 7,
-      "free": 3
+      "free": 2,
+      "free-trial": 1
     },
     "Support and Helpdesk": {
-      "unknown": 2,
-      "paid-tier-required": 4,
+      "unknown": 3,
+      "paid-tier-required": 3,
       "partner-or-sales-gate": 1,
       "free": 2,
       "app-review": 1
     }
   },
   "access_overall": {
-    "unknown": 40,
-    "free": 20,
-    "paid-tier-required": 14,
-    "app-review": 11,
+    "unknown": 42,
+    "free": 19,
+    "paid-tier-required": 13,
     "partner-or-sales-gate": 8,
-    "free-trial": 5,
+    "free-trial": 8,
+    "app-review": 8,
     "no-public-api": 2
   },
   "blockers": {
-    "none": 49,
-    "unclear": 16,
-    "paid-plan": 14,
-    "app-review": 11,
+    "none": 50,
+    "unclear": 19,
+    "paid-plan": 13,
     "partner-gate": 8,
+    "app-review": 8,
     "no-public-api": 2
   },
   "buildability": {
     "already-built": 56,
-    "unknown": 16,
-    "build-with-caveats": 14,
-    "build-now": 9,
+    "unknown": 19,
+    "build-now": 10,
+    "build-with-caveats": 10,
     "needs-outreach": 5
   },
   "catalog": {
@@ -121,10 +123,11 @@
       "Productivity and Project Management": 9,
       "Support and Helpdesk": 6
     },
-    "missing_with_official_mcp": 6,
+    "missing_with_official_mcp": 25,
     "missing_build_now": [
       "Twenty",
       "LiveAgent",
+      "Pumble",
       "systeme.io",
       "WooCommerce",
       "Ecwid",
@@ -142,14 +145,14 @@
     ]
   },
   "mcp": {
-    "unknown": 89,
-    "official": 10,
-    "community": 1
+    "official": 64,
+    "unknown": 18,
+    "community": 18
   },
   "breadth": {
-    "unknown": 44,
-    "broad": 18,
-    "narrow": 16,
+    "unknown": 40,
+    "broad": 19,
+    "narrow": 19,
     "medium": 15,
     "very-broad": 7
   }

@@ -406,7 +406,14 @@ def main(argv=None) -> int:
     payload["pass2_report"] = report
 
     pathlib.Path(args.out).write_text(json.dumps(payload, indent=2))
-    print(f"wrote {args.out}")
+    # Refresh the companion files too. agent.upgrade writes them from the v2 payload; if
+    # pass 2 does not overwrite them they keep describing a superseded pass while the
+    # page describes this one -- outputs/coverage.json said existing_mcp was 11% answered
+    # while the published page said 82%, which is exactly the kind of contradiction a
+    # reviewer finds first. Whichever pass ran last owns these files.
+    for name in ("patterns", "coverage", "delta_vs_pass1", "auth_cross_check", "unknown_audit"):
+        (config.OUTPUTS / f"{name}.json").write_text(json.dumps(payload[name], indent=2))
+    print(f"wrote {args.out} and refreshed 5 companion files in {config.OUTPUTS}")
     upgrade._report(payload)
     return 0
 

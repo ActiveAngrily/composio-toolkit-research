@@ -1,5 +1,6 @@
 # 100 apps -> an agent toolkit build queue
 
+Author: Anant Jamuar <jamuaranant@gmail.com> (github.com/ActiveAngrily)
 Source repo: https://github.com/ActiveAngrily/composio-toolkit-research
 Machine-readable dataset: ./data.json
 
@@ -13,7 +14,7 @@ quarantined to unknown rather than reported.
 ## Headline
 - Composio already covers 56 of the 100. 44 are not in the catalog.
 - 73 of 100 accept a static secret, so most need no OAuth app registered.
-- 25 of the 44 missing apps already have an official MCP server built by someone else.
+- 25 of the 44 missing apps claim an official MCP server; 22 of those rest on the vendor's own domain.
 - Auth cross-check against Composio's own registry on 56 apps: 75.0% token-level, 83.9% family-level.
 
 ## Patterns
@@ -23,7 +24,11 @@ quarantined to unknown rather than reported.
 - buildability: {"already-built": 56, "unknown": 19, "build-now": 10, "build-with-caveats": 10, "needs-outreach": 5}
 
 ## Honest limits
-- 0 claims cannot be verified offline because only half of each page's text was retained. They are labelled, not counted as errors.
+- NO HUMAN VERIFIED ANY OF THESE ANSWERS. Every accuracy number here is
+  machine-checked. The by-hand audit the brief asks for was not performed;
+  the blank sheet and its pre-registered sampling rule are in the repo at
+  outputs/human_audit.csv and agent/audit.py.
+- Access coverage is 24-42%: which pricing tier includes API access is the field vendors publish least.
 - 311 abstentions are unclassified: pass 1 never recorded WHY it abstained, so 'the vendor does not publish this' cannot be separated from 'we did not find it'.
 - 0 abstentions are provably our own gap.
 

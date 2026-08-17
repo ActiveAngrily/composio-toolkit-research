@@ -1,9 +1,8 @@
 {
   "overall": {
-    "unclassified": 347,
-    "retrieval-failed": 75,
-    "evidence-about-another-product": 40,
-    "quote-failed-validation": 29,
+    "unclassified": 311,
+    "quote-failed-validation": 43,
+    "evidence-about-another-product": 31,
     "not-applicable": 7
   },
   "per_field": {
@@ -27,17 +26,16 @@
     },
     "credential_self_issue": {
       "unclassified": 10,
-      "quote-failed-validation": 8,
+      "quote-failed-validation": 9,
       "evidence-about-another-product": 5,
       "not-applicable": 1
     },
     "existing_mcp": {
-      "retrieval-failed": 75,
-      "evidence-about-another-product": 13,
-      "quote-failed-validation": 1
+      "quote-failed-validation": 14,
+      "evidence-about-another-product": 4
     },
     "one_liner": {
-      "unclassified": 62,
+      "unclassified": 26,
       "evidence-about-another-product": 5
     },
     "primary_blocker": {

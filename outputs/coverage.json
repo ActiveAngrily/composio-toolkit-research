@@ -1,12 +1,13 @@
 {
   "one_liner": {
-    "answered": 33,
-    "coverage_pct": 33.0,
-    "evidenced": 33,
+    "answered": 69,
+    "coverage_pct": 69.0,
+    "evidenced": 69,
     "evidenced_pct_of_answered": 100.0,
     "verdicts": {
-      "no-retained-text": 62,
+      "registry-fact": 36,
       "valid": 33,
+      "no-retained-text": 26,
       "not-a-description": 3,
       "unnamed-subject": 2
     }
@@ -14,13 +15,12 @@
   "auth_methods": {
     "answered": 86,
     "coverage_pct": 86.0,
-    "evidenced": 67,
-    "evidenced_pct_of_answered": 77.9,
+    "evidenced": 79,
+    "evidenced_pct_of_answered": 91.9,
     "verdicts": {
-      "valid": 66,
-      "truncated-evidence": 13,
+      "valid": 75,
+      "near-miss": 9,
       "QUOTE_NOT_FOUND": 7,
-      "near-miss": 5,
       "unnamed-subject": 3,
       "no-retained-text": 3,
       "wrong-url": 3
@@ -29,71 +29,66 @@
   "signup_self_serve": {
     "answered": 42,
     "coverage_pct": 42.0,
-    "evidenced": 35,
-    "evidenced_pct_of_answered": 83.3,
+    "evidenced": 41,
+    "evidenced_pct_of_answered": 97.6,
     "verdicts": {
       "no-retained-text": 53,
-      "valid": 34,
-      "truncated-evidence": 6,
+      "valid": 38,
+      "near-miss": 4,
       "unnamed-subject": 3,
-      "near-miss": 2,
       "QUOTE_NOT_FOUND": 2
     }
   },
   "api_access_tier": {
     "answered": 24,
     "coverage_pct": 24.0,
-    "evidenced": 18,
-    "evidenced_pct_of_answered": 75.0,
+    "evidenced": 22,
+    "evidenced_pct_of_answered": 91.7,
     "verdicts": {
       "no-retained-text": 71,
-      "valid": 17,
+      "valid": 20,
       "unnamed-subject": 4,
-      "truncated-evidence": 4,
-      "near-miss": 2,
+      "near-miss": 3,
       "wrong-url": 1,
       "QUOTE_NOT_FOUND": 1
     }
   },
   "credential_self_issue": {
-    "answered": 76,
-    "coverage_pct": 76.0,
-    "evidenced": 57,
-    "evidenced_pct_of_answered": 75.0,
+    "answered": 75,
+    "coverage_pct": 75.0,
+    "evidenced": 73,
+    "evidenced_pct_of_answered": 97.3,
     "verdicts": {
-      "valid": 47,
-      "truncated-evidence": 17,
-      "near-miss": 12,
+      "valid": 58,
+      "near-miss": 18,
       "no-retained-text": 11,
-      "QUOTE_NOT_FOUND": 8,
-      "unnamed-subject": 5
+      "QUOTE_NOT_FOUND": 9,
+      "unnamed-subject": 4
     }
   },
   "approval_gate": {
     "answered": 29,
     "coverage_pct": 29.0,
-    "evidenced": 18,
-    "evidenced_pct_of_answered": 62.1,
+    "evidenced": 25,
+    "evidenced_pct_of_answered": 86.2,
     "verdicts": {
       "no-retained-text": 63,
-      "valid": 17,
-      "truncated-evidence": 8,
+      "valid": 23,
       "QUOTE_NOT_FOUND": 6,
+      "near-miss": 3,
       "unnamed-subject": 3,
-      "wrong-url": 2,
-      "near-miss": 1
+      "wrong-url": 2
     }
   },
   "protocol": {
     "answered": 74,
     "coverage_pct": 74.0,
-    "evidenced": 61,
-    "evidenced_pct_of_answered": 82.4,
+    "evidenced": 70,
+    "evidenced_pct_of_answered": 94.6,
     "verdicts": {
-      "valid": 56,
+      "valid": 63,
       "no-retained-text": 23,
-      "truncated-evidence": 9,
-      "near-miss": 6,
+      "near-miss": 8,
       "QUOTE_NOT_FOUND": 2,
       "unnamed-subject": 2,
       "wrong-url": 1,
@@ -103,29 +98,27 @@
   "rate_limits_documented": {
     "answered": 30,
     "coverage_pct": 30.0,
-    "evidenced": 20,
-    "evidenced_pct_of_answered": 66.7,
+    "evidenced": 30,
+    "evidenced_pct_of_answered": 100.0,
     "verdicts": {
       "no-retained-text": 67,
-      "valid": 15,
-      "truncated-evidence": 11,
-      "near-miss": 5,
+      "valid": 23,
+      "near-miss": 8,
       "unnamed-subject": 1,
       "QUOTE_NOT_FOUND": 1
     }
   },
   "existing_mcp": {
-    "answered": 11,
-    "coverage_pct": 11.0,
-    "evidenced": 5,
-    "evidenced_pct_of_answered": 45.5,
+    "answered": 82,
+    "coverage_pct": 82.0,
+    "evidenced": 65,
+    "evidenced_pct_of_answered": 79.3,
     "verdicts": {
-      "no-retained-text": 76,
-      "off-topic-evidence": 13,
-      "valid": 4,
-      "truncated-evidence": 3,
-      "near-miss": 2,
-      "QUOTE_NOT_FOUND": 1,
+      "valid": 69,
+      "no-retained-text": 15,
+      "near-miss": 12,
+      "off-topic-evidence": 2,
+      "unnamed-subject": 1,
       "wrong-url": 1
     }
   },
