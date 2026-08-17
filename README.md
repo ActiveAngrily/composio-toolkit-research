@@ -1,66 +1,90 @@
+<div align="center">
+
 # 100 apps → an agent toolkit build queue
 
-Composio take-home (AI Product Ops). 100 apps researched for agent-toolkit buildability
-by an agent, with every claim quote-verified against the page it came from.
+**Which of 100 apps can become an agent toolkit, what each one needs,
+and how far the answers can be trusted.**
 
-**Anant Jamuar** · jamuaranant@gmail.com · [github.com/ActiveAngrily](https://github.com/ActiveAngrily)
+[![live page](https://img.shields.io/badge/live_page-activeangrily.github.io-1c5cab?style=flat-square)](https://activeangrily.github.io/composio-toolkit-research/)
+[![data.json](https://img.shields.io/badge/machine_readable-data.json-52514e?style=flat-square)](https://activeangrily.github.io/composio-toolkit-research/data.json)
+[![llms.txt](https://img.shields.io/badge/for_agents-llms.txt-52514e?style=flat-square)](https://activeangrily.github.io/composio-toolkit-research/llms.txt)
+![python](https://img.shields.io/badge/python-3.10%2B-1c5cab?style=flat-square)
+[![tests](https://img.shields.io/badge/tests-no_network_no_deps-0ca30c?style=flat-square)](tests/test_agent.py)
 
-**Live page:** https://activeangrily.github.io/composio-toolkit-research/
+Composio take-home · AI Product Ops
+<br>
+**Anant Jamuar** · [jamuaranant@gmail.com](mailto:jamuaranant@gmail.com) · [github.com/ActiveAngrily](https://github.com/ActiveAngrily)
 
-Every number below is computed from `outputs/dataset_v3.json` and reproduced by
-`python -m agent.build_site`; the same figures are in `docs/data.json`. If a number here
-ever disagrees with the page, the page is right and this file is stale — which has already
-happened once, and is why nothing in the page's prose is typed by hand any more.
+</div>
 
 ---
 
-## Run it
+Composio already covers **56** of these 100 apps. This project is an account of the other
+**44** — built by an agent running inside Composio's own remote workbench, where every
+claim carries a verbatim quote, that quote's URL, a source-authority tier, and a verdict
+from re-reading the page. Claims whose quote did not check out are **quarantined to
+`unknown` rather than reported**.
+
+> **Where the numbers live.** Every figure is computed from `outputs/dataset_v3.json` at
+> build time and published on the page and in `docs/data.json`. Nothing is transcribed by
+> hand — four numbers once drifted that way, which is why the generator now derives all of
+> them. **If this file ever disagrees with the page, the page is right.**
+
+## Quickstart
 
 ```bash
 git clone https://github.com/ActiveAngrily/composio-toolkit-research
 cd composio-toolkit-research
-cp .env.example .env        # add your COMPOSIO_API_KEY
+cp .env.example .env          # add COMPOSIO_API_KEY
 
-# one app, end to end — the fastest way to see what this does
-python -m agent.run_research --app "Notion"
-
-# retrieval + probes only, no LLM needed
-python -m agent.run_research --app "Pylon" --sources-only
-
-# Composio's own toolkit registry: which of the 100 they already cover
-python3 scripts/fetch_composio_registry.py
-
-# re-derive the whole dataset from the recorded pass-1 evidence, offline
-python -m agent.upgrade
-
-# replay the pass-2 repairs (offline), or re-run them live against the workbench
-python -m agent.pass2
-python -m agent.pass2 --refetch --mcp
-
-# rebuild the page
-python -m agent.build_site
-
-# every rule described on the page, checked — no network, no deps
-python tests/test_agent.py
+python -m agent.run_research --app "Notion"   # one app, end to end
 ```
 
+That single command is the whole pipeline on one app: plan queries → search → rank by
+source authority → fetch → scan for gate phrases → extract with a quote per field →
+re-read the cited page to validate → probe the live API → derive the verdict by rule.
+
+**No key? The dataset still reproduces.** The steps that need the network ran once, and
+their results are committed — so `upgrade` → `pass2` → `build_site` rebuilds the identical
+dataset and the identical page on any machine, offline.
+
+```bash
+python -m agent.upgrade && python -m agent.pass2 && python -m agent.build_site
+```
+
+## Every command
+
+| Command | What it does | Needs |
+| :-- | :-- | :-- |
+| `agent.run_research --app "Notion"` | One app, end to end | key + model |
+| `agent.run_research --app "Pylon" --sources-only` | Retrieval and probes only | key |
+| `scripts/fetch_composio_registry.py` | Composio's 1,222-toolkit registry | key |
+| `agent.upgrade` | Re-derive all 100 records from recorded evidence | — |
+| `agent.pass2` | Replay the pass-2 repairs | — |
+| `agent.pass2 --refetch --mcp` | Re-run those repairs live instead | key + model |
+| `agent.build_site` | Rebuild the page, `data.json` and `llms.txt` | — |
+| `agent.audit --sheet` | Regenerate the blind human-audit sheet | — |
+| `tests/test_agent.py` | Every rule the page describes | — |
+
 Search, fetch and the registry need only `COMPOSIO_API_KEY`. Extraction needs a model:
-inside Composio's remote workbench one is provided (`--backend workbench`, the default);
-outside it, set `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` (`--backend sdk`).
+inside Composio's workbench one is provided (`--backend workbench`, the default); outside
+it, set `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` (`--backend sdk`).
 
-## What ran where
+## Three lanes, deliberately independent
 
-- **Research** ran in **Composio's remote workbench** — open internet, `COMPOSIO_SEARCH_WEB`
-  for search, `COMPOSIO_SEARCH_FETCH_URL_CONTENT` for pages, and a GPT-family model for
-  extraction. That model is a different vendor from the Claude session that wrote this code,
-  so the cross-checks are cross-vendor rather than a model grading itself.
-- **The registry pull** ran on a laptop (`scripts/fetch_composio_registry.py`, stdlib only).
-- **Validation, scoring and the page** are pure compute over committed files and run anywhere.
-- `data/pass1_strict_grades.txt` holds the URL-strict quote verdicts, computed once in the
-  workbench where the retained page text lives, so `agent/upgrade.py` reproduces the identical
-  dataset in any environment.
+Two of them contain no language model, which is what makes the third one checkable.
 
-## Layout
+| Lane | What it is | Model? |
+| :-- | :-- | :-- |
+| **A** | Composio's public toolkit registry — 1,222 toolkits, 56 of the 100 matched, with their recorded auth and tool counts | no |
+| **B** | The research agent: `COMPOSIO_SEARCH_WEB`, `COMPOSIO_SEARCH_FETCH_URL_CONTENT`, GPT-family extraction | yes |
+| **C** | Behavioural probes: API base, `GET /pricing` following redirects, OpenAPI spec discovery | no |
+
+Disagreements between the lanes are **recorded, not resolved**. Lane A is also the
+accuracy check on lane B: 56 apps of non-model ground truth, no human effort.
+
+<details>
+<summary><b>Repo map</b></summary>
 
 ```
 agent/
@@ -68,67 +92,46 @@ agent/
   schema.py         fields, enums, normalisation, source-authority tiers
   prompts.py        the quote-or-unknown contract
   providers.py      search / fetch / LLM — one interface, two backends
-  evidence.py       phrase scanner, quote grading, quarantine
-  probe.py          API-base probe, /pricing redirect probe, OpenAPI spec discovery
+  evidence.py       phrase scanner, quote grading, subject check, quarantine
+  probe.py          API-base probe, /pricing redirect probe, spec discovery
   derive.py         auth family, access, buildability — by rule, never by model
-  registry.py       Composio's registry: ground truth + a 56-app accuracy check
+  registry.py       Composio's registry: ground truth + the 56-app cross-check
   upgrade.py        re-derive the dataset offline
-  pass2.py          refetch truncated evidence, MCP discovery query, probes
+  pass2.py          refetch truncated evidence, MCP query, probes
   audit.py          the human-audit sheet and its scorer
   build_site.py     the deliverable page
-data/               the 100 apps, the registry dump, the strict grades
-outputs/            datasets, coverage, patterns, the pass-1 → pass-2 delta
-tests/              every rule above, runnable with no dependencies
+data/               the 100 apps, the registry dump, the recorded patches
+outputs/            datasets v1→v3, coverage, patterns, the pass-1 → pass-2 delta
+tests/              every rule above, no dependencies
 docs/               GitHub Pages source AND the written record
-  index.html          the deliverable, self-contained
+  index.html          the deliverable, self-contained, nothing fetched at load
   data.json           the same findings, machine-readable
   llms.txt            the same findings, for an agent
-  PLAN.md             plan of execution, written before the results existed
+  PLAN.md             written before the results existed
   IMPLEMENTATION.md   build order and the constraints that shaped it
   ASSIGNMENT.md       the brief
 ```
 
+</details>
+
 ## Honest limits
 
-- **No human verified any of these answers.** The brief asks for a by-hand cross-check and it
-  was not done. The blank sheet is at `outputs/human_audit.csv`, with its sampling rule
-  pre-registered in `agent/audit.py` before any result existed (stratify by verdict, then take
-  the app with the fewest evidenced fields and the app with the most from each stratum —
-  deliberately over-sampling the weakest claims, so any accuracy it produced would be a lower
-  bound, not an estimate). It is unfilled. **Every accuracy number in this repo is
-  machine-checked.** What stands in for the human check is the 56-app registry cross-check:
-  wider than the planned hand-audit, and independent of the model in a way an audit run by
-  this project's own author would not have been. What it cannot substitute for: quote
-  *fidelity* is verified throughout; factual *correctness* where no page states a thing
-  plainly is not.
-- **Coverage, not correctness, is the weak spot.** Of the claims made, 79–100% carry a quote
-  verified on a vendor-owned page. But the access fields — which tier includes API access —
-  are answered for only 24–42% of apps, and that is the column the build queue most needs. The
-  re-query for it was designed and cut for time.
-- **The 75 claims we refused to guess about.** Pass 1 showed the model 5,000 characters per
-  page and retained 2,500, so 75 claims became unverifiable offline. Calling them fabrications
-  was tempting and wrong: `agent.pass2 --refetch` re-pulled the 53 pages behind them and found
-  **53 verbatim, 21 reformatted, 1 fabricated**. Counting them as errors would have taken the
-  published error count from 71 to 145 — a 2.0× overstatement of the problem being fixed.
-- **`existing_mcp` went from 24% to 82% answered** once a query was written for it
-  (`agent.pass2 --mcp`). Nobody asked in the first pass. Of the answers that arrived, 3 were
-  *rejected* by validation rather than shipped.
-- **A real sentence about the wrong product is the error that matters.** Quote validation
-  cannot catch it — the quote is genuinely on the page it cites; the page is about something
-  else. A name-mention check (`evidence.subject_check`) quarantines 29 such claims (24 whose
-  evidence never names the app, 2 MCP claims whose evidence never mentions MCP, 3 one-liners
-  that were authentication instructions): iPayX's description of iPaymu, Sherlock's MCP server
-  for the Covertlabs platform, GoHighLevel's access story lifted from n8n's docs. It has a
-  known blind spot: **Paygent Connect** and **Mermaid CLI** both share a brand with the right
-  answer, so lookalike domains pass every test here. Both were caught by reading the rendered
-  table, not by any checker.
-- **311 abstentions are `unclassified`.** Pass 1 never recorded *why* it abstained, so
-  "the vendor does not publish this" cannot be separated from "we did not find it".
-- **No no-retrieval pass-0 baseline was run.** The improvement story runs pass 1 → pass 2,
-  which is real, but would be starker against a naive anchor.
-- **The deliverable broke its own deployment.** Brex's auth docs contain the literal string
-  `Bearer {{your user_token here}}`. Quoted verbatim, as the contract requires, it reached
-  GitHub Pages — where Jekyll parses `{{…}}` as a template tag, failed the build, and silently
-  kept serving a stale commit. Fixed with `docs/.nojekyll` rather than by editing the quote:
-  the evidence is the artefact and it stays byte-exact. `agent/build_site.py` now writes that
-  file on every build so a fresh clone cannot lose it.
+The page carries these in full ([§8](https://activeangrily.github.io/composio-toolkit-research/#s8)).
+The three that matter most:
+
+- **No human verified any of these answers.** The brief asks for a by-hand cross-check and
+  it was not done. The blank sheet is at `outputs/human_audit.csv`, its sampling rule
+  pre-registered in `agent/audit.py` before any result existed. Every accuracy number here
+  is machine-checked. The 56-app registry cross-check stands in for it — wider, and
+  independent of the model in a way an author-run audit would not have been.
+- **No browser-driven lane ran.** The brief names browser-use; the Pylon case it was needed
+  for became a deterministic redirect probe run across all 100 instead. That buys
+  reproducibility and loses everything only a real browser sees.
+- **Coverage, not correctness, is the weak spot.** Of the claims made, 79–100% carry a
+  quote verified on a vendor-owned page — but the access fields are answered for only
+  24–42% of apps, and that is the column a build queue most needs.
+
+**The number worth arguing with:** agreement with Composio's registry *fell* from 82.1% to
+75.0% as evidence standards tightened, because quarantining unevidenced claims removed
+correct answers along with wrong ones. A verification pass in which every number improves
+is a verification pass nobody should trust.

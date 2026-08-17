@@ -580,6 +580,18 @@ BigCommerce offers three types of OAuth-based API accounts... GraphQL Adminâ€¦â€
   substitute for: quote <em>fidelity</em> is verified throughout, but factual
   <em>correctness</em> where no page states a thing plainly is not.</div>
 
+  <div class="callout flat"><strong>No browser-driven lane ran either.</strong> The brief
+  names browser-use as one verification means, and there is no headless-browser pass here.
+  What replaced it is narrower and wider at once: the case that motivated it was Pylon,
+  where documents said nothing and a browser settled the question in one page load, so that
+  behaviour &mdash; <span class=mono>GET /pricing</span>, follow every redirect, see where
+  you land &mdash; was implemented as a deterministic HTTP probe and run across all 100
+  apps instead of a browser across a handful (&sect;6.1). That trade buys reproducibility
+  with no key and costs everything a real browser would have caught:
+  <strong>JavaScript-rendered pricing, cookie walls, and anything behind a login are
+  invisible to it.</strong> The 5 apps that returned 403 to an automated request are
+  exactly where a browser would have earned its place.</div>
+
   <div class=two style="margin-top:26px">
     <div class=card><h3>What is missing from the data</h3>
       <p><strong>Access coverage is 24&ndash;42%.</strong>
