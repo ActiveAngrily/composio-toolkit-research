@@ -1,5 +1,5 @@
 {
-  "generated_from": "outputs/dataset_v2.json",
+  "generated_from": "outputs/dataset_v3.json",
   "repo": "https://github.com/ActiveAngrily/composio-toolkit-research",
   "apps": [
     {
@@ -33,9 +33,9 @@
           "v": "OAUTH2",
           "q": "OAuth 2.0 is an open protocol that authorizes secure data sharing between applications through the exchange of tokens.",
           "u": "https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_oauth_and_connected_apps.htm",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "signup_self_serve": {
@@ -99,7 +99,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "app-review",
@@ -182,9 +182,9 @@
           "v": "yes",
           "q": "You'll then make an API request to `/oauth/v3/token` with a request body that includes the `code`, the `redirect_uri`, your app's `client_id` and `client_secret`, and a `grant_type` of `authorization_code` to get an [access_token and refresh_token]",
           "u": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/oauth/working-with-oauth",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -215,13 +215,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "HubSpot offers two distinct MCP (Model Context Protocol) servers \u2014 one for connecting any MCP\u2011compatible AI tool or agent to your CRM, and one for building on the HubSpot Developer Platform.",
+          "u": "https://developers.hubspot.com/ai-tools/mcp",
+          "g": "near-miss",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -461,13 +461,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Attio MCP is Attio's hosted MCP server that gives AI tools secure access to your Attio workspace.",
+          "u": "https://docs.attio.com/mcp/overview",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -583,13 +583,13 @@
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "community",
+          "q": "A Model Context Protocol (MCP) server that provides seamless integration with the Twenty CRM API",
+          "u": "https://github.com/jezweb/twenty-mcp/",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -711,7 +711,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "none",
@@ -829,13 +829,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Zoho CRM provides these as pre-built MCP servers, so you don't need to build, host, or maintain any infrastructure.",
+          "u": "https://www.zoho.com/crm/developer/docs/mcp/overview.html",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -953,13 +953,13 @@
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Close's MCP server is an officially supported across the Claude ecosystem.",
+          "u": "https://help.close.com/docs/mcp-server",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -1075,13 +1075,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "community",
+          "q": "Unofficial. Built to show what an official Copper MCP server could look like.",
+          "u": "https://github.com/hasankhadra/copper-mcp",
+          "g": "near-miss",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -1199,13 +1199,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "# DealCloud MCP Server",
+          "u": "https://api.docs.dealcloud.com/mcp",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unknown",
@@ -1288,9 +1288,9 @@
           "v": "yes",
           "q": "API tokens are auto-generated passwords in the Zendesk Admin Center.",
           "u": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -1306,9 +1306,9 @@
           "v": "REST",
           "q": "The Zendesk v2 API is an SSL-only API, regardless of how your account is configured.",
           "u": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "rate_limits_documented": {
@@ -1321,13 +1321,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "community",
+          "q": "Model Context Protocol (MCP) server for Zendesk Support \u2014 connect AI agents in **Cursor**, **VS Code**, **Claude Desktop**, **watsonx Orchestrate**, and **IBM Code Engine** to 14 ticket tools",
+          "u": "https://github.com/markusvankempen/zendesk-mcp",
+          "g": "near-miss",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -1443,13 +1443,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Intercom hosts a remote MCP server that follows the authenticated remote MCP specification",
+          "u": "https://developers.intercom.com/docs/guides/mcp",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -1565,13 +1565,13 @@
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "The Freshworks Model Context Protocol (MCP) server enables AI tools like Cursor and Claude to securely connect and interact with Freshdesk.",
+          "u": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "paid-plan",
@@ -1645,9 +1645,9 @@
           "v": "paid",
           "q": "API rate limits 50/min 100/min 200/min 500/min",
           "u": "https://front.com/webassets/pages/pricing/Front-Pricing-One-Pager-2023-03-06.pdf",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "credential_self_issue": {
@@ -1681,18 +1681,18 @@
           "v": "yes",
           "q": "API rate limits 50/min 100/min 200/min 500/min",
           "u": "https://front.com/webassets/pages/pricing/Front-Pricing-One-Pager-2023-03-06.pdf",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "existing_mcp": {
           "v": "official",
           "q": "MCP server allows you to connect Front data exposed via MCP server to clients like Claude, ChatGPT, and others.",
           "u": "https://dev.frontapp.com/docs/authentication",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "primary_blocker": {
@@ -1812,13 +1812,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
+          "v": "official",
+          "q": "Official Pylon MCP server.",
+          "u": "https://growthengineer.ai/mcp-servers/pylon",
+          "g": "valid",
+          "t": 4,
           "e": false,
-          "r": "retrieval-failed"
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -1937,13 +1937,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "LiveAgent exposes a built-in MCP server (Model Context Protocol) that lets you connect external AI tools \u2014 such as Claude Desktop, Cursor, claude.ai, FlowHunt, or any other MCP-compatible client \u2014 directly to your LiveAg",
+          "u": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -2305,13 +2305,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "The Gorgias Model Context Protocol (MCP) app allows your third-party AI assistant to access your Gorgias data and account, so it can read and analyze your helpdesk tickets, and audit and update your Gorgias settings.",
+          "u": "https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "app-review",
@@ -2367,9 +2367,9 @@
           "v": "BASIC",
           "q": "Gladly API uses token-based Basic Authentication.",
           "u": "https://developer.gladly.com/rest/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "signup_self_serve": {
@@ -2394,18 +2394,18 @@
           "v": "yes",
           "q": "A token will be generated and named New Token by default.",
           "u": "https://help.gladly.com/developer-tutorials/docs/setup-and-testing",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
           "v": "none",
           "q": "An API token can be used to perform any API request without restriction.",
           "u": "https://developer.gladly.com/rest/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "protocol": {
@@ -2427,13 +2427,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
+          "v": "community",
+          "q": "Gladly MCP Server\n\nBuilt by StackOne",
+          "u": "https://www.stackone.com/connectors/gladly/mcp/",
+          "g": "valid",
+          "t": 4,
           "e": false,
-          "r": "retrieval-failed"
+          "r": ""
         },
         "primary_blocker": {
           "v": "paid-plan",
@@ -2555,7 +2555,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "unclear",
@@ -2611,9 +2611,9 @@
           "v": "API_KEY",
           "q": "API key permissions",
           "u": "https://www.twilio.com/content/dam/twilio-com/global/en/pricing/all-pricing/twi121--sendgrid-pricing-pdf-st1.pdf",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "signup_self_serve": {
@@ -2638,9 +2638,9 @@
           "v": "yes",
           "q": "API key permissions",
           "u": "https://www.twilio.com/content/dam/twilio-com/global/en/pricing/all-pricing/twi121--sendgrid-pricing-pdf-st1.pdf",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -2677,7 +2677,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "none",
@@ -2795,13 +2795,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Any AI model or agent can use our official MCP server to access your Cliq data",
+          "u": "https://www.zoho.com/cliq/help/platform/zoho-cliq-mcp.html",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -2884,9 +2884,9 @@
           "v": "yes",
           "q": "Call the obtain tenant_access_token for custom apps API and get the `tenant_access_token` for the custom app using the app credentials.",
           "u": "https://open.larksuite.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -2917,13 +2917,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "This is the Feishu/Lark official OpenAPI MCP (Model Context Protocol) tool designed to help users quickly connect to the Feishu/Lark platform and enable efficient collaboration between AI Agents and Feishu/Lark.",
+          "u": "https://github.com/larksuite/lark-openapi-mcp",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -3161,13 +3161,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "community",
+          "q": "An open-source Model Context Protocol (MCP) server for Discord \u2014 built for AI assistants that need to actually do useful work in a Discord server, not just send messages.",
+          "u": "https://www.npmjs.com/package/discord-mcp-plus",
+          "g": "near-miss",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -3283,13 +3283,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "community",
+          "q": "# Telegram MCP Server",
+          "u": "https://github.com/mcp-telegram/mcp-telegram/",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -3392,9 +3392,9 @@
           "v": "REST",
           "q": "The WhatsApp Business Platform is built on Graph API and uses HTTP protocol.",
           "u": "https://developers.facebook.com/docs/whatsapp/cloud-api/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "rate_limits_documented": {
@@ -3413,7 +3413,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "unclear",
@@ -3529,13 +3529,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "community",
+          "q": "This MCP server is NOT built, maintained, or endorsed by Aircall.",
+          "u": "https://github.com/themobilefirstco/aircall-mcp-server",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -3651,13 +3651,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Vonage provides a few different individual MCP implementations, based on your needs.",
+          "u": "https://developer.vonage.com/en/mcp-server/conceptual-guides/introduction-to-vonage-mcp",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -3724,9 +3724,9 @@
           "v": "yes",
           "q": "If you don't have one, follow the instructions to sign up for a developer token.",
           "u": "https://developers.google.com/google-ads/api/rest/auth",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "api_access_tier": {
@@ -3742,9 +3742,9 @@
           "v": "yes",
           "q": "Once you have an OAuth 2.0 client ID, client secret, and refresh token, you can generate a new access token for use in API calls with the curl command line tool:",
           "u": "https://developers.google.com/google-ads/api/rest/auth",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -3775,13 +3775,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "The Google Ads MCP server provides a standardized bridge to the Google Ads API, which lets AI agents analyze and retrieve campaign data using natural language.",
+          "u": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -3884,9 +3884,9 @@
           "v": "REST",
           "q": "You can try any API call you would like to make to the Marketing API.",
           "u": "https://developers.facebook.com/docs/marketing-api/best-practices/",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "rate_limits_documented": {
@@ -3902,9 +3902,9 @@
           "v": "community",
           "q": "Facebook Marketing Developer Community group",
           "u": "https://developers.facebook.com/docs/marketing-api/best-practices/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "primary_blocker": {
@@ -3972,9 +3972,9 @@
           "v": "yes",
           "q": "LinkedIn products can be enabled after creating a new application.",
           "u": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "api_access_tier": {
@@ -3990,18 +3990,18 @@
           "v": "yes",
           "q": "The full process your application will need to implement for 3-legged tokens is described in Authorization Code Flow.",
           "u": "https://learn.microsoft.com/en-us/linkedin/marketing/authentication/lms-generate-an-access-token?view=li-lms-2026-05",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
           "v": "partner-approval",
           "q": "Developers seeking to build a marketing related integration using Advertising API permissions must be approved.",
           "u": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "protocol": {
@@ -4026,9 +4026,9 @@
           "v": "official",
           "q": "More information of LinkedIn Marketing Partners [here](https://business.linkedin.com/marketing-solutions/marketing-partners).",
           "u": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "primary_blocker": {
@@ -4211,9 +4211,9 @@
           "v": "API_KEY, OAUTH2",
           "q": "You can authenticate requests using either your API key or an OAuth access token, depending on your use case.",
           "u": "https://mailchimp.com/developer/marketing/docs/fundamentals/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "signup_self_serve": {
@@ -4247,18 +4247,18 @@
           "v": "none",
           "q": "After successfully registering your application, you\u2019ll see the client_id and client_secret at the bottom of the page, which you\u2019ll need to implement the OAuth 2 workflow on your server.",
           "u": "https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "protocol": {
           "v": "REST",
           "q": "The Marketing API generally follows REST conventions, with some deviations.",
           "u": "https://mailchimp.com/developer/marketing/docs/fundamentals/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "rate_limits_documented": {
@@ -4277,7 +4277,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "unclear",
@@ -4360,9 +4360,9 @@
           "v": "yes",
           "q": "Navigate to your account\u2019s Settings page and select **[API keys]**.",
           "u": "https://developers.klaviyo.com/en/docs/authenticate_",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -4393,13 +4393,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
+          "v": "official",
+          "q": "Official Klaviyo MCP server for managing campaigns, flows, profiles, events, catalogs, templates, segments, and reporting via AI clients.",
+          "u": "https://growthengineer.ai/mcp-servers/klaviyo",
+          "g": "valid",
+          "t": 4,
           "e": false,
-          "r": "retrieval-failed"
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -4517,13 +4517,13 @@
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "For technical details, please refer to our official MCP documentation: https://developer.systeme.io/docs/mcp-server",
+          "u": "https://help.systeme.io/article/9489-how-to-use-systeme-ios-mcp",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -4606,9 +4606,9 @@
           "v": "yes",
           "q": "Once your app is approved for Trial access you can generate a token to test the API without setting up the Oauth flow.",
           "u": "https://developers.pinterest.com/docs/getting-started/authentication/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -4639,13 +4639,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
+          "v": "official",
+          "q": "Over the last year, Pinterest has gone from \u201cMCP sounds interesting\u201d to running a growing ecosystem of Model Context Protocol (MCP) servers, a central registry, and production integrations",
+          "u": "https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1",
+          "g": "valid",
+          "t": 4,
           "e": false,
-          "r": "retrieval-failed"
+          "r": ""
         },
         "primary_blocker": {
           "v": "app-review",
@@ -4730,9 +4730,9 @@
           "v": "yes",
           "q": "To get a short-lived access token, implement the Authorization Window into your app.",
           "u": "https://developers.facebook.com/docs/threads/get-started/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -4748,9 +4748,9 @@
           "v": "REST",
           "q": "POST https://graph.threads.com/oauth/access_token",
           "u": "https://developers.facebook.com/docs/threads/get-started/get-access-tokens-and-permissions/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "rate_limits_documented": {
@@ -4763,13 +4763,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "community",
+          "q": "`threads-mcp` is a stdio MCP server for the official Threads API.",
+          "u": "https://github.com/poisonstefani-dev/threads-mcp",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "app-review",
@@ -4885,13 +4885,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "community",
+          "q": "Built and maintained by a SendGrid engineer, as an independent project \u2014 not an official SendGrid product.",
+          "u": "https://www.npmjs.com/package/sendgrid-mcp",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -4947,9 +4947,9 @@
           "v": "BEARER",
           "q": "To query the Storefront API with a public access token, include it as an `X-Shopify-Storefront-Access-Token` header on all client-side requests.",
           "u": "https://shopify.dev/docs/api/usage/authentication",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "signup_self_serve": {
@@ -4974,9 +4974,9 @@
           "v": "yes",
           "q": "To use public access, you need to create a public access token for your app by making a request to the GraphQL Admin API's `storefrontAccessTokenCreate` mutation.",
           "u": "https://shopify.dev/docs/api/usage/authentication",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -5001,19 +5001,19 @@
           "v": "yes",
           "q": "Learn more about Storefront API rate limits.",
           "u": "https://shopify.dev/docs/api/usage/authentication",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "community",
+          "q": "# Shopify MCP Server",
+          "u": "https://github.com/aserper/shopify-mcp",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "paid-plan",
@@ -5069,9 +5069,9 @@
           "v": "BASIC",
           "q": "For Authorization, choose basic auth and enter your consumer key and consumer secret keys from WooCommerce into the username and password fields.",
           "u": "https://developer.woocommerce.com/docs/apis/rest-api/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "signup_self_serve": {
@@ -5087,9 +5087,9 @@
           "v": "free",
           "q": "Unlimited products, orders, and APIs.",
           "u": "https://woocommerce.com/pricing/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "credential_self_issue": {
@@ -5105,9 +5105,9 @@
           "v": "none",
           "q": "You must use the `/wc-auth/v1/authorize` endpoint and pass the above parameters as a query string.",
           "u": "https://developer.woocommerce.com/docs/apis/rest-api/authentication/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "protocol": {
@@ -5129,13 +5129,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Remote WordPress MCP Server (`mcp-adapter`) - Is provided by the bundled WordPress MCP Adapter package",
+          "u": "https://developer.woocommerce.com/docs/features/mcp/",
+          "g": "near-miss",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -5200,9 +5200,9 @@
           "v": "yes",
           "q": "Merchants generate single-store API credentials when they create API accounts in their store control panel, in the Settings > Store-level API accounts menu.",
           "u": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "api_access_tier": {
@@ -5218,9 +5218,9 @@
           "v": "yes",
           "q": "Merchants generate single-store API credentials when they create API accounts in their store control panel, in the Settings > Store-level API accounts menu.",
           "u": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -5245,19 +5245,19 @@
           "v": "yes",
           "q": "429 | Too Many Requests | When an OAuth client exceeds the rate limit for API requests to a store.",
           "u": "https://docs.bigcommerce.com/developer/api-reference/rest/overview",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "The BigCommerce MCP server lets AI agents interact with a BigCommerce storefront using purpose-built commerce tools.",
+          "u": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -5381,7 +5381,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "none",
@@ -5499,13 +5499,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "community",
+          "q": "An [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server for **Adobe Commerce / Magento 2** administration.",
+          "u": "https://github.com/thomastx05/magento-mcp",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -5570,9 +5570,9 @@
           "v": "yes",
           "q": "Log in to a Squarespace site.\nIn the left nav, click Settings; scroll down and click Advanced.\nClick Developer API Keys.\nClick the GENERATE KEY button.",
           "u": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "api_access_tier": {
@@ -5588,9 +5588,9 @@
           "v": "yes",
           "q": "Log in to a Squarespace site.\nIn the left nav, click Settings; scroll down and click Advanced.\nClick Developer API Keys.\nClick the GENERATE KEY button.",
           "u": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -5615,19 +5615,19 @@
           "v": "yes",
           "q": "ensure all requests abide by Squarespace rate limits.",
           "u": "https://developers.squarespace.com/commerce-apis/making-requests",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
+          "v": "community",
+          "q": "Squarespace MCP Server Built by StackOne",
+          "u": "https://www.stackone.com/connectors/squarespace/mcp/",
+          "g": "valid",
+          "t": 4,
           "e": false,
-          "r": "retrieval-failed"
+          "r": ""
         },
         "primary_blocker": {
           "v": "paid-plan",
@@ -5743,13 +5743,13 @@
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
+          "v": "community",
+          "q": "Ecwid MCP is an MCP server built by ecwid-dev.",
+          "u": "https://mymcptools.com/servers/ecwid-mcp",
+          "g": "valid",
+          "t": 4,
           "e": false,
-          "r": "retrieval-failed"
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -5859,19 +5859,19 @@
           "v": "unknown",
           "q": "Unfortunately, the search results do not provide specific information about API rate limits for the Gumroad API.",
           "u": "https://rollout.com/integration-guides/gumroad/api-essentials",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 3,
           "e": false,
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "community",
+          "q": "A Model Context Protocol (MCP) server implementation for Gumroad API",
+          "u": "https://github.com/rmarescu/gumroad-mcp",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -5956,7 +5956,7 @@
           "v": "yes",
           "q": "Get this value when you register your application.",
           "u": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 4,
           "e": false,
           "r": ""
@@ -5989,13 +5989,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "community",
+          "q": "MCP server exposing Amazon Selling Partner API to Claude Desktop and other MCP clients.",
+          "u": "https://github.com/christian-ramos/mcp-amazon-sp-api",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unknown",
@@ -6209,9 +6209,9 @@
           "v": "none",
           "q": "Note that it is not possible to pass the login and password in URL parameters. Also, you do not have to make a separate authentication call to obtain API credentials. Basic authentication is the only way to access DataForSEO API; credentials should always be passed in the header of the request.",
           "u": "https://docs.dataforseo.com/v3/auth/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "protocol": {
@@ -6227,9 +6227,9 @@
           "v": "yes",
           "q": "Rate limit HTTP headers we use: `X-RateLimit-Limit` \u2013 the rate limit ceiling per minute for the given endpoint; `X-RateLimit-Remaining` \u2013 the number of requests remaining in the current rate limit window.",
           "u": "https://docs.dataforseo.com/v3/",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "existing_mcp": {
@@ -6297,9 +6297,9 @@
           "v": "API_KEY",
           "q": "Include an `Authorization` header in your request, with the value `Token YOUR_API_KEY`.",
           "u": "https://seranking.com/api/data/getting-started/",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "signup_self_serve": {
@@ -6333,18 +6333,18 @@
           "v": "none",
           "q": "You can test your key by fetching your subscription details. The `200 OK` response confirms that your key is working correctly.",
           "u": "https://seranking.com/api/data/getting-started/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "protocol": {
           "v": "REST",
           "q": "curl -X GET 'https://api.seranking.com/v1/account/subscription' \\\n-H 'Authorization: Token YOUR_API_KEY'",
           "u": "https://seranking.com/api/data/getting-started/",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "rate_limits_documented": {
@@ -6360,9 +6360,9 @@
           "v": "official",
           "q": "Connect via MCP and work with your SEO and AEO data inside Claude, Codex, Cursor, or any other AI tool.",
           "u": "https://seranking.com/api.html",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "primary_blocker": {
@@ -6603,13 +6603,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "https://mcp.mrscraper.com/mcp",
+          "u": "https://docs.mrscraper.com/docs/getting-started/mcp-server",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -6689,13 +6689,13 @@
           "r": "unclassified"
         },
         "credential_self_issue": {
-          "v": "yes",
+          "v": "unknown",
           "q": "To access the Apify API in your integrations, you need to authenticate using your secret API token. You can find it on the API & Integrations page in Apify Console.",
           "u": "https://docs.apify.com/integrations/api.md",
-          "g": "truncated-evidence",
+          "g": "QUOTE_NOT_FOUND",
           "t": 1,
           "e": false,
-          "r": ""
+          "r": "quote-failed-validation"
         },
         "approval_gate": {
           "v": "unknown",
@@ -6725,13 +6725,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "The Apify's MCP server ([mcp.apify.com](https://mcp.apify.com)) allows AI applications and agents to interact with the Apify platform using Model Context Protocol (MCP).",
+          "u": "https://docs.apify.com/integrations/mcp",
+          "g": "near-miss",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -6755,7 +6755,7 @@
       "dis": [
         "product_class=api but no protocol found"
       ],
-      "qn": 1,
+      "qn": 2,
       "gate": false
     },
     {
@@ -6843,19 +6843,19 @@
           "v": "yes",
           "q": "When you exceed your plan's rate or concurrency limits, the API returns a `429` status code. See [Rate Limits](/rate-limits) for per-plan limits.",
           "u": "https://docs.firecrawl.dev/api-reference/v2-introduction",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Official Firecrawl MCP Server - Adds powerful web scraping and search to Cursor, Claude and any other LLM clients.",
+          "u": "https://github.com/firecrawl/firecrawl-mcp-server/",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -6965,19 +6965,19 @@
           "v": "yes",
           "q": "Accounts operating on the free tier (unfunded) are restricted to a default rate limit of 1,000 requests per minute across the SERP API, Web Unlocker API and Proxy products.",
           "u": "https://docs.brightdata.com/general/account/billing-and-pricing/free-tier",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Use the Bright Data MCP server to give AI agents real-time access to public web data with 5,000 free requests per month and zero infrastructure setup.",
+          "u": "https://docs.brightdata.com/ai/mcp-server/overview",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -7093,13 +7093,13 @@
           "r": "not-applicable"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
+          "v": "official",
+          "q": "An official Model Context Protocol (MCP) server for the Covertlabs infostealer intelligence platform.",
+          "u": "https://conare.ai/marketplace/mcp/sherlock-mcp",
+          "g": "valid",
+          "t": 4,
           "e": false,
-          "r": "retrieval-failed"
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -7221,7 +7221,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "paid-plan",
@@ -7340,9 +7340,9 @@
           "v": "official",
           "q": "Clay MCPGive reps the best prospecting data in their AI tools!",
           "u": "https://www.clay.com/pricing",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "primary_blocker": {
@@ -7459,13 +7459,13 @@
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "GitHub's official MCP Server",
+          "u": "https://github.com/github/github-mcp-server",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -7581,13 +7581,13 @@
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Author: Vercel",
+          "u": "https://www.npmjs.com/package/mcp-handler",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -7643,9 +7643,9 @@
           "v": "OAUTH2",
           "q": "Netlify uses OAuth2 for authentication.",
           "u": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "signup_self_serve": {
@@ -7670,9 +7670,9 @@
           "v": "yes",
           "q": "To generate a personal access token (PAT):",
           "u": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -7703,13 +7703,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Netlify's Official MCP server",
+          "u": "https://github.com/netlify/netlify-mcp",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -7765,9 +7765,9 @@
           "v": "API_KEY, BEARER",
           "q": "If using Email + API Key authentication, include the following arguments in the cURL command to add the two required HTTP headers to the request:\n--header \"X-Auth-Email: $CLOUDFLARE_EMAIL\" \\--header \"X-Auth-Key: $CLOUDFLARE_API_KEY\" \n\nIf using API Token (the preferred authentication method), include the following arguments in the cURL command to add the required HTTP header to the request:\n--heade",
           "u": "https://developers.cloudflare.com/style-guide/api-content-strategy/guidelines-for-curl-commands/",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "signup_self_serve": {
@@ -7825,13 +7825,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Cloudflare runs a catalog of managed remote MCP servers which you can connect to using OAuth on clients like Claude \u2197, Windsurf \u2197, our own AI Playground \u2197 or any SDK that supports MCP \u2197.",
+          "u": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -8071,13 +8071,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Neo4j official MCP Server",
+          "u": "https://github.com/neo4j/mcp/",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -8193,13 +8193,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Snowflake-managed MCP server",
+          "u": "https://docs.snowflake.com/en/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -8315,13 +8315,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "The MongoDB MCP Server is our official MCP server implementation",
+          "u": "https://www.mongodb.com/docs/mcp-server/overview/",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -8437,13 +8437,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "Select one of our official client libraries languages in each endpoint to see code examples from that library.",
-          "u": "https://docs.datadoghq.com/api/latest.md",
-          "g": "QUOTE_NOT_FOUND",
-          "t": 1,
-          "e": false,
-          "r": "quote-failed-validation"
+          "v": "official",
+          "q": "Official Datadog MCP Server",
+          "u": "https://github.com/datadog-labs/mcp-server",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -8559,13 +8559,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Sentry MCP Server",
+          "u": "https://mcp.sentry.dev/",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -8683,13 +8683,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Official Notion MCP Server",
+          "u": "https://github.com/makenotion/notion-mcp-server",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -8805,13 +8805,13 @@
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
+          "v": "official",
+          "q": "The Airtable MCP server is the official Model Context Protocol endpoint maintained by Airtable",
+          "u": "https://growthengineer.ai/mcp-servers/airtable",
+          "g": "valid",
+          "t": 4,
           "e": false,
-          "r": "retrieval-failed"
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -8933,7 +8933,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "unclear",
@@ -9016,9 +9016,9 @@
           "v": "yes",
           "q": "The token is generated from a user's Atlassian Account, encoded, then added to the header for requests to the API.",
           "u": "https://developer.atlassian.com/cloud/jira/platform/security-overview/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -9049,13 +9049,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Official remote MCP server for Atlassian.",
+          "u": "https://github.com/atlassian/atlassian-mcp-server/",
+          "g": "valid",
+          "t": 2,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -9120,9 +9120,9 @@
           "v": "yes",
           "q": "You can test in any of your existing workspaces, create a free account.",
           "u": "https://developers.asana.com/docs/overview",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "api_access_tier": {
@@ -9293,13 +9293,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "The Platform MCP is monday.com's hosted MCP (Model Context Protocol) server, maintained by the monday.com AI team.",
+          "u": "https://developer.monday.com/api-reference/docs/mondaycom-mcp",
+          "g": "near-miss",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -9415,13 +9415,13 @@
           "r": "quote-failed-validation"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Your AI models and agents can use our official MCP (Model Context Protocol) server to access your ClickUp data in a simple and secure way.",
+          "u": "https://help.clickup.com/hc/en-us/articles/33335772678423-What-is-ClickUp-MCP",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -9539,13 +9539,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
+          "v": "official",
+          "q": "It is Coda's official, Coda-hosted Model Context Protocol server at https://coda.io/apis/mcp.",
+          "u": "https://www.gamut.so/mcp/project-management/coda",
+          "g": "valid",
+          "t": 4,
           "e": false,
-          "r": "retrieval-failed"
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -9663,13 +9663,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "The Smartsheet MCP Server is an open, protocol-based integration layer built on Anthropic's Model Context Protocol standard.",
+          "u": "https://www.smartsheet.com/content-center/product-insights/product-updates/introducing-smartsheet-mcp-server",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -9779,19 +9779,19 @@
           "v": "yes",
           "q": "The rate limit for general API requests is 100 requests per 15 seconds.",
           "u": "https://help.getharvest.com/api-v2/introduction/overview/general/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Set the Remote MCP server URL to: https://api.harvestapp.com/mcp",
+          "u": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -9913,7 +9913,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "unclear",
@@ -9969,9 +9969,9 @@
           "v": "API_KEY, OAUTH2",
           "q": "Create or refresh an OAuth access token\nYour Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.",
           "u": "https://plaid.com/docs/api/oauth/",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "signup_self_serve": {
@@ -10029,13 +10029,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "The **Dashboard MCP server** is a remote MCP server hosted by Plaid.",
+          "u": "https://plaid.com/docs/resources/mcp/",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "paid-plan",
@@ -10151,12 +10151,12 @@
           "r": ""
         },
         "existing_mcp": {
-          "v": "official",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
+          "v": "community",
+          "q": "MCP server for Binance exchange - spot trading, staking, wallet, NFT, pay, mining, and more",
+          "u": "https://www.npmjs.com/package/@nirholas/binance-mcp-server",
+          "g": "valid",
+          "t": 2,
+          "e": true,
           "r": ""
         },
         "primary_blocker": {
@@ -10279,7 +10279,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "none",
@@ -10403,7 +10403,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "none",
@@ -10521,13 +10521,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
+          "v": "official",
+          "q": "Intuit ships an official QuickBooks Online MCP server",
+          "u": "https://kipper.com/blog/setup-quickbooks-mcp/",
+          "g": "valid",
+          "t": 4,
           "e": false,
-          "r": "retrieval-failed"
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -10639,9 +10639,9 @@
           "v": "yes",
           "q": "Rate Limits | 1000 per day per org | 5000 per day per org | 5000 per day per org | 5000 per day per org | 5000 per day per org",
           "u": "https://developer.xero.com/pricing",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "existing_mcp": {
@@ -10754,9 +10754,9 @@
           "v": "REST",
           "q": "Brex currently only offers a production API server at`https://api.brex.com`. This is the base URL for all API calls.",
           "u": "https://developer.brex.com/guides/authentication",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "rate_limits_documented": {
@@ -10769,13 +10769,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
+          "v": "official",
+          "q": "Yes \u2014 Brex ships an official MCP server, and it\u2019s hosted by Brex. The endpoint is`https://api.brex.com/mcp`",
+          "u": "https://www.usecarly.com/blog/brex-mcp/",
+          "g": "valid",
+          "t": 4,
           "e": false,
-          "r": "retrieval-failed"
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -10897,7 +10897,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "app-review",
@@ -11013,13 +11013,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
+          "v": "official",
+          "q": "Yes, this MCP server is officially provided and maintained by PitchBook.",
+          "u": "https://apigene.ai/mcp/official/pitchbook",
+          "g": "valid",
+          "t": 4,
           "e": false,
-          "r": "retrieval-failed"
+          "r": ""
         },
         "primary_blocker": {
           "v": "unclear",
@@ -11077,9 +11077,9 @@
           "v": "NONE",
           "q": "The client requires valid Google session cookies obtained via browser login:",
           "u": "https://github.com/teng-lin/notebooklm-py/blob/main/docs/python-api.md",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 2,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "signup_self_serve": {
@@ -11104,9 +11104,9 @@
           "v": "yes",
           "q": "await master_token_remint(get_storage_path())               # read -> mint -> persist -> reload",
           "u": "https://github.com/teng-lin/notebooklm-py/blob/main/docs/python-api.md",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 2,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "approval_gate": {
@@ -11246,9 +11246,9 @@
           "v": "REST",
           "q": "GET /channels",
           "u": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "rate_limits_documented": {
@@ -11264,9 +11264,9 @@
           "v": "official",
           "q": "Webhooks are the recommended way to build export integrations with Otter.",
           "u": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "primary_blocker": {
@@ -11383,13 +11383,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Fathom now offers an official MCP (Model Context Protocol) server, allowing you to connect your Fathom meeting data to AI assistants like ChatGPT, Claude, and more.",
+          "u": "https://developers.fathom.ai/mcp-docs",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -11456,18 +11456,18 @@
           "v": "yes",
           "q": "No account is needed to get started, connect directly and try it out.",
           "u": "https://docs.consensus.app/docs/mcp",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "api_access_tier": {
           "v": "enterprise-only",
           "q": "Contact Consensus for enterprise API access at https://consensus.app/home/api/.",
           "u": "https://docs.consensus.app/docs/mcp",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "credential_self_issue": {
@@ -11483,9 +11483,9 @@
           "v": "business-verification",
           "q": "Contact Consensus for enterprise API access at https://consensus.app/home/api/.",
           "u": "https://docs.consensus.app/docs/mcp",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "protocol": {
@@ -11751,13 +11751,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "unknown",
-          "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "retrieval-failed"
+          "v": "official",
+          "q": "Official MCPs will show up with a blue checkmark, indicating that they are made by the parent service company.",
+          "u": "https://docs.devin.ai/desktop/cascade/mcp",
+          "g": "valid",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "primary_blocker": {
           "v": "none",
@@ -11831,9 +11831,9 @@
           "v": "free",
           "q": "You can generate without a paid plan, but access is limited to a small set of models and doesn't include credits.",
           "u": "https://higgsfield.ai/creator-hub/help-center/plans-and-subscriptions/how-do-higgsfield-plans-work",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "credential_self_issue": {
@@ -12057,9 +12057,9 @@
           "v": "API_KEY, OAUTH2",
           "q": "TranscriptAPI supports two authentication methods to work with different MCP platforms:\n- OAuth (Recommended)\n- API Key",
           "u": "https://transcriptapi.com/docs/mcp/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "signup_self_serve": {
@@ -12179,7 +12179,7 @@
           "v": "API_KEY, OAUTH2",
           "q": "Grain offers both OAuth and API_KEY authentication modes.",
           "u": "https://docs.nango.dev/docs/integrations/all/grain",
-          "g": "truncated-evidence",
+          "g": "near-miss",
           "t": 3,
           "e": false,
           "r": ""
@@ -12215,7 +12215,7 @@
           "v": "partner-approval",
           "q": "The Grain Public API is still in beta. Developer access is limited to select partners. Please reach out to Grain's support for more questions.",
           "u": "https://docs.nango.dev/docs/integrations/all/grain",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 3,
           "e": false,
           "r": ""
@@ -12224,18 +12224,18 @@
           "v": "REST",
           "q": "API Domain is:`https://api.grain.com`",
           "u": "https://developers.grain.com/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "rate_limits_documented": {
           "v": "yes",
           "q": "Grain allows a total of`300` requests per minute.",
           "u": "https://developers.grain.com/",
-          "g": "truncated-evidence",
+          "g": "valid",
           "t": 1,
-          "e": false,
+          "e": true,
           "r": ""
         },
         "existing_mcp": {
@@ -12245,7 +12245,7 @@
           "g": "no-retained-text",
           "t": 5,
           "e": false,
-          "r": "retrieval-failed"
+          "r": "quote-failed-validation"
         },
         "primary_blocker": {
           "v": "partner-gate",
@@ -12394,7 +12394,7 @@
         "Productivity and Project Management": 9,
         "Support and Helpdesk": 6
       },
-      "missing_with_official_mcp": 11,
+      "missing_with_official_mcp": 27,
       "missing_build_now": [
         "Twenty",
         "LiveAgent",
@@ -12415,9 +12415,9 @@
       ]
     },
     "mcp": {
-      "unknown": 76,
-      "official": 22,
-      "community": 2
+      "official": 68,
+      "community": 18,
+      "unknown": 14
     },
     "breadth": {
       "unknown": 44,
@@ -12441,13 +12441,12 @@
     "auth_methods": {
       "answered": 89,
       "coverage_pct": 89.0,
-      "evidenced": 67,
-      "evidenced_pct_of_answered": 75.3,
+      "evidenced": 79,
+      "evidenced_pct_of_answered": 88.8,
       "verdicts": {
-        "valid": 69,
-        "truncated-evidence": 13,
+        "valid": 78,
+        "near-miss": 9,
         "QUOTE_NOT_FOUND": 7,
-        "near-miss": 5,
         "no-retained-text": 3,
         "wrong-url": 3
       }
@@ -12455,67 +12454,62 @@
     "signup_self_serve": {
       "answered": 45,
       "coverage_pct": 45.0,
-      "evidenced": 35,
-      "evidenced_pct_of_answered": 77.8,
+      "evidenced": 41,
+      "evidenced_pct_of_answered": 91.1,
       "verdicts": {
         "no-retained-text": 53,
-        "valid": 37,
-        "truncated-evidence": 6,
-        "near-miss": 2,
+        "valid": 41,
+        "near-miss": 4,
         "QUOTE_NOT_FOUND": 2
       }
     },
     "api_access_tier": {
       "answered": 28,
       "coverage_pct": 28.0,
-      "evidenced": 18,
-      "evidenced_pct_of_answered": 64.3,
+      "evidenced": 22,
+      "evidenced_pct_of_answered": 78.6,
       "verdicts": {
         "no-retained-text": 71,
-        "valid": 21,
-        "truncated-evidence": 4,
-        "near-miss": 2,
+        "valid": 24,
+        "near-miss": 3,
         "wrong-url": 1,
         "QUOTE_NOT_FOUND": 1
       }
     },
     "credential_self_issue": {
-      "answered": 81,
-      "coverage_pct": 81.0,
-      "evidenced": 57,
-      "evidenced_pct_of_answered": 70.4,
+      "answered": 80,
+      "coverage_pct": 80.0,
+      "evidenced": 73,
+      "evidenced_pct_of_answered": 91.2,
       "verdicts": {
-        "valid": 50,
-        "truncated-evidence": 18,
-        "near-miss": 13,
+        "valid": 61,
+        "near-miss": 19,
         "no-retained-text": 11,
-        "QUOTE_NOT_FOUND": 8
+        "QUOTE_NOT_FOUND": 9
       }
     },
     "approval_gate": {
       "answered": 32,
       "coverage_pct": 32.0,
-      "evidenced": 18,
-      "evidenced_pct_of_answered": 56.2,
+      "evidenced": 25,
+      "evidenced_pct_of_answered": 78.1,
       "verdicts": {
         "no-retained-text": 63,
-        "valid": 20,
-        "truncated-evidence": 8,
+        "valid": 26,
         "QUOTE_NOT_FOUND": 6,
-        "wrong-url": 2,
-        "near-miss": 1
+        "near-miss": 3,
+        "wrong-url": 2
       }
     },
     "protocol": {
       "answered": 76,
       "coverage_pct": 76.0,
-      "evidenced": 61,
-      "evidenced_pct_of_answered": 80.3,
+      "evidenced": 70,
+      "evidenced_pct_of_answered": 92.1,
       "verdicts": {
-        "valid": 58,
+        "valid": 65,
         "no-retained-text": 23,
-        "truncated-evidence": 9,
-        "near-miss": 6,
+        "near-miss": 8,
         "QUOTE_NOT_FOUND": 2,
         "wrong-url": 1,
         "unverifiable-url": 1
@@ -12524,27 +12518,24 @@
     "rate_limits_documented": {
       "answered": 31,
       "coverage_pct": 31.0,
-      "evidenced": 20,
-      "evidenced_pct_of_answered": 64.5,
+      "evidenced": 30,
+      "evidenced_pct_of_answered": 96.8,
       "verdicts": {
         "no-retained-text": 67,
-        "valid": 16,
-        "truncated-evidence": 11,
-        "near-miss": 5,
+        "valid": 24,
+        "near-miss": 8,
         "QUOTE_NOT_FOUND": 1
       }
     },
     "existing_mcp": {
-      "answered": 24,
-      "coverage_pct": 24.0,
-      "evidenced": 14,
-      "evidenced_pct_of_answered": 58.3,
+      "answered": 86,
+      "coverage_pct": 86.0,
+      "evidenced": 71,
+      "evidenced_pct_of_answered": 82.6,
       "verdicts": {
-        "no-retained-text": 76,
-        "valid": 12,
-        "truncated-evidence": 6,
-        "near-miss": 4,
-        "QUOTE_NOT_FOUND": 1,
+        "valid": 73,
+        "no-retained-text": 14,
+        "near-miss": 12,
         "wrong-url": 1
       }
     },
@@ -12577,20 +12568,19 @@
       "no-quote": 8
     },
     "pass2_verdicts": {
-      "no-retained-text": 429,
-      "valid": 329,
+      "valid": 438,
+      "no-retained-text": 367,
       "not-asked-pass1": 192,
-      "truncated-evidence": 75,
-      "near-miss": 38,
+      "near-miss": 66,
       "QUOTE_NOT_FOUND": 28,
       "wrong-url": 8,
       "unverifiable-url": 1
     },
     "pass1_ungraded_slots": 188,
-    "quarantined_claims": 29,
-    "citations_total": 483,
-    "citations_below_tier2": 42,
-    "needing_refetch": 75,
+    "quarantined_claims": 30,
+    "citations_total": 545,
+    "citations_below_tier2": 54,
+    "needing_refetch": 0,
     "contradictions_pass1": 7,
     "contradictions_now": 35
   },
@@ -12744,8 +12734,7 @@
   "unknown_audit": {
     "overall": {
       "unclassified": 347,
-      "retrieval-failed": 75,
-      "quote-failed-validation": 29,
+      "quote-failed-validation": 43,
       "not-applicable": 7
     },
     "per_field": {
@@ -12766,12 +12755,11 @@
       },
       "credential_self_issue": {
         "unclassified": 10,
-        "quote-failed-validation": 8,
+        "quote-failed-validation": 9,
         "not-applicable": 1
       },
       "existing_mcp": {
-        "retrieval-failed": 75,
-        "quote-failed-validation": 1
+        "quote-failed-validation": 14
       },
       "one_liner": {
         "unclassified": 62

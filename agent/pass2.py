@@ -205,6 +205,57 @@ def _safe(fn, record, provs):
         return {"id": record["id"], "ok": False, "why": f"{type(exc).__name__}: {exc}"}
 
 
+# ------------------------------------------------------------------ recorded patch
+
+def apply_patch(records: list[dict], patch: dict) -> dict:
+    """Apply a recorded pass-2 result instead of re-running it.
+
+    Both repairs need the network and one needs a model, so they run once in the
+    workbench and the outcome is committed to `data/pass2_patch.json`. Every other
+    environment then reproduces the identical dataset from it -- same reasoning as
+    `data/pass1_strict_grades.txt`. Re-running with --refetch --mcp regenerates the
+    patch from scratch; this path just replays it.
+    """
+    tally: collections.Counter = collections.Counter()
+    by_id = {r["id"]: r for r in records}
+
+    for key, verdict in (patch.get("refetch") or {}).items():
+        app_id, field = key.split(".", 1)
+        rec = by_id.get(int(app_id))
+        if not rec or field not in rec["quote_checks"]:
+            continue
+        check = rec["quote_checks"][field]
+        check.update(verdict=verdict, needs_refetch=False, resolved_by="refetch",
+                     evidenced=verdict in ("valid", "near-miss")
+                     and check.get("tier", 5) <= schema.EVIDENCED_MAX_TIER)
+        tally[f"refetch:{verdict}"] += 1
+
+    for app_id, cell in (patch.get("mcp") or {}).items():
+        rec = by_id.get(int(app_id))
+        if not rec:
+            continue
+        if cell.get("v"):
+            rec["extracted"]["existing_mcp"] = {
+                "value": cell["v"], "quote": cell.get("q", ""), "url": cell.get("u", ""),
+                **({"source": cell["src"]} if cell.get("src") else {})}
+            rec["quote_checks"]["existing_mcp"] = {
+                "verdict": cell.get("g", "valid"), "tier": cell.get("t", 5),
+                "evidenced": bool(cell.get("e")), "resolved_by": "pass2-mcp-query"}
+            (rec.setdefault("unknown_reason", {})).pop("existing_mcp", None)
+            tally[f"mcp:{cell['v']}"] += 1
+        elif cell.get("rsn"):
+            rec.setdefault("unknown_reason", {})["existing_mcp"] = cell["rsn"]
+            tally["mcp:rejected"] += 1
+
+    for r in records:
+        reasons = r.setdefault("unknown_reason", {})
+        r["extracted"], removed = evidence.quarantine(r["extracted"], r["quote_checks"], reasons)
+        for item in removed:
+            if item not in r["quarantined"]:
+                r["quarantined"].append(item)
+    return dict(tally.most_common())
+
+
 # ----------------------------------------------------------------------- rederive
 
 def rederive(records: list[dict], matches: dict) -> list[dict]:
@@ -241,20 +292,30 @@ def main(argv=None) -> int:
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--all-apps", action="store_true",
                    help="query MCP for all 100, not only the blanks")
+    p.add_argument("--patch", default="data/pass2_patch.json",
+                   help="replay the recorded pass-2 result instead of re-running it "
+                        "(default when neither --refetch nor --mcp is given)")
     args = p.parse_args(argv)
-
-    if not (args.refetch or args.mcp):
-        p.print_help()
-        return 2
 
     config.load_dotenv()
     payload = json.loads(pathlib.Path(args.src).read_text())
     records = payload["dataset"]
     matches = registry.load_matches()
-    provs = providers_mod.build(args.backend)
-    print(f"backend={provs.label}  records={len(records)}")
-
     report: dict = {}
+    live = args.refetch or args.mcp
+
+    if not live:
+        patch_path = pathlib.Path(args.patch)
+        if not patch_path.exists():
+            p.print_help()
+            return 2
+        print(f"replaying {patch_path} (no network) -- pass --refetch --mcp to re-run live")
+        report["replayed"] = apply_patch(records, json.loads(patch_path.read_text()))
+        print(f"  {report['replayed']}")
+
+    provs = providers_mod.build(args.backend) if live else None
+    if live:
+        print(f"backend={provs.label}  records={len(records)}")
     if args.refetch:
         out = run_refetch(records, provs)
         report["refetch"] = {"urls": out["urls"], "chars": out["chars"],

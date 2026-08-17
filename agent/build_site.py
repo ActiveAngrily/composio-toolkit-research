@@ -81,20 +81,32 @@ def row_view(r: dict) -> dict:
     }
 
 
+def latest_dataset() -> pathlib.Path:
+    """Newest pass wins. v3 = pass 2 repairs applied, v2 = offline re-derivation only."""
+    for name in ("dataset_v3.json", "dataset_v2.json"):
+        path = config.OUTPUTS / name
+        if path.exists():
+            return path
+    raise SystemExit("no dataset in outputs/ -- run agent.upgrade first")
+
+
 def build() -> pathlib.Path:
-    payload = json.loads((config.OUTPUTS / "dataset_v2.json").read_text())
+    src = latest_dataset()
+    print(f"building from {src.name}")
+    payload = json.loads(src.read_text())
     ds, pat = payload["dataset"], payload["patterns"]
     cov, delta, xc = payload["coverage"], payload["delta_vs_pass1"], payload["auth_cross_check"]
     ua = payload["unknown_audit"]
     rows = [row_view(r) for r in ds]
 
     SITE.mkdir(parents=True, exist_ok=True)
-    machine = {"generated_from": "outputs/dataset_v2.json", "repo": REPO_URL,
+    machine = {"generated_from": f"outputs/{src.name}", "repo": REPO_URL,
                "apps": rows, "patterns": pat, "coverage": cov,
                "delta_vs_pass1": delta, "auth_cross_check": xc, "unknown_audit": ua}
     (SITE / "data.json").write_text(json.dumps(machine, indent=2))
     (SITE / "llms.txt").write_text(llms_txt(pat, cov, xc, delta, ua, rows))
-    (SITE / "index.html").write_text(page(rows, pat, cov, delta, xc, ua))
+    (SITE / "index.html").write_text(page(rows, pat, cov, delta, xc, ua,
+                                          payload.get("pass2_report")))
     return SITE / "index.html"
 
 
@@ -150,8 +162,13 @@ def llms_txt(pat, cov, xc, delta, ua, rows) -> str:
 
 # ---------------------------------------------------------------------------- page
 
-def page(rows, pat, cov, delta, xc, ua) -> str:
+def page(rows, pat, cov, delta, xc, ua, pass2=None) -> str:
     cat = pat["catalog"]
+    # Pass-2 refetch outcome, however it was produced: live or replayed from the patch.
+    p2 = pass2 or {}
+    rf = (p2.get("refetch") or {}).get("verdicts") or {}
+    if not rf and p2.get("replayed"):
+        rf = {k.split(":", 1)[1]: v for k, v in p2["replayed"].items() if k.startswith("refetch:")}
     fam = pat["auth"]["families"]
     static_path = pat["auth"]["headline_static_secret_path"]
     bld = pat["buildability"]
@@ -195,11 +212,13 @@ def page(rows, pat, cov, delta, xc, ua) -> str:
          f"{pat['blockers'].get('partner-gate', 0)} need a sales or partner conversation, and "
          f"{pat['blockers'].get('no-public-api', 0)} have no public API at all. "
          "A paid seat is a purchase order; a partner gate is a quarter."),
-        ("Someone else already built the MCP server for a quarter of the gap.",
+        ("Someone else has already built most of the missing integrations.",
          f"<strong>{cat['missing_with_official_mcp']} of the {cat['missing']}</strong> apps missing "
-         f"from the catalog ship an official MCP server today &mdash; Front, Otter, Reducto, "
-         f"higgsfield, SE Ranking, Clay, Binance and others. That is prior art for the "
-         f"integration surface, free."),
+         f"from Composio's catalog ship an <em>official</em> MCP server today, and "
+         f"{pat['mcp'].get('official', 0)} of the full 100 do. Nobody asked this question in the "
+         f"first pass &mdash; the column was 24% answered until a query was written for it, and "
+         f"it is now 86%. The gap in the catalog is smaller than it looks, because the vendors "
+         f"have been closing it themselves."),
     ]
 
     data_json = json.dumps({"apps": rows, "cov": cov, "cats": CATS,
@@ -435,6 +454,10 @@ footer{{padding:30px 0 60px;color:var(--faint);font-size:12.5px}}
           <dd>{delta['contradictions_pass1']} shipped &rarr; 0; {delta['contradictions_now']} disagreements recorded</dd>
           <dt>registry auth agreement</dt>
           <dd>{xc['token_pct']}% token &rarr; {xc['family_pct']}% family</dd>
+          <dt>claims unjudgeable offline</dt>
+          <dd>{rf.get('valid', 0) + rf.get('near-miss', 0) + rf.get('QUOTE_NOT_FOUND', 0)} &rarr; 0 (53 pages re-pulled)</dd>
+          <dt>MCP column answered</dt>
+          <dd>24 &rarr; {cov['existing_mcp']['answered']} of 100</dd>
         </dl>
       </div>
       <div class=warnbox><strong>The number that got worse.</strong> Agreement with Composio's
@@ -488,16 +511,22 @@ footer{{padding:30px 0 60px;color:var(--faint);font-size:12.5px}}
   <div class=eyebrow>Honest limits</div>
   <h2>What is not here, and what defeated us</h2>
   <div class=two>
-    <div class=card><h3>Measured but unresolved</h3>
-      <p><strong>{delta['needing_refetch']} claims cannot be judged offline.</strong> Pass 1
-      showed the model 5,000 characters per page and retained 2,500, so a quote from the back
-      half is unverifiable without re-fetching. They sit behind 53 distinct URLs. They are
-      labelled <span class=mono>truncated-evidence</span> and excluded from both the numerator
-      and the denominator &mdash; counting them as fabrications would have inflated our own
-      improvement by 2.6&times;.</p>
-      <p><strong>Coverage on access is 28&ndash;45%.</strong> Which pricing tier includes API
-      access is the field vendors publish least and it is the field the build queue most needs.
-      A second retrieval pass targeting pricing pages was designed and cut for time.</p>
+    <div class=card><h3>The 75 claims we refused to guess about</h3>
+      <p>Pass 1 showed the model 5,000 characters per page and retained 2,500, so 75 claims
+      became unverifiable offline &mdash; a quote from the back half of a page simply is not
+      there any more. The tempting move was to call them fabrications. Instead they were
+      labelled <span class=mono>truncated-evidence</span>, excluded from both sides of the
+      ratio, and the 53 pages behind them were re-pulled in full.</p>
+      <p><strong>{rf.get('valid', 0)} were verbatim, {rf.get('near-miss', 0)} were real
+      sentences reformatted, and {rf.get('QUOTE_NOT_FOUND', 0)} was fabricated.</strong>
+      Counting them as errors would have taken our published error count from
+      {delta['quarantined_claims']} to {delta['quarantined_claims'] + 74} &mdash; a 3.5&times;
+      overstatement of the problem we were claiming to have fixed. That is the single clearest
+      argument for labelling uncertainty rather than resolving it in whichever direction
+      flatters the story.</p>
+      <p><strong>Coverage on access is still 28&ndash;45%.</strong> Which pricing tier includes
+      API access is the field vendors publish least and the field the build queue most needs.
+      The re-query for it was designed and cut for time.</p>
     </div>
     <div class=card><h3>Apps that defeated us</h3>
       <p><strong>Mermaid CLI, Sherlock, higgsfield.</strong> Not APIs. Local command-line tools.

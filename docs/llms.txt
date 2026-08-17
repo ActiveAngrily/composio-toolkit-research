@@ -13,7 +13,7 @@ quarantined to unknown rather than reported.
 ## Headline
 - Composio already covers 56 of the 100. 44 are not in the catalog.
 - 76 of 100 accept a static secret, so most need no OAuth app registered.
-- 11 of the 44 missing apps already have an official MCP server built by someone else.
+- 27 of the 44 missing apps already have an official MCP server built by someone else.
 - Auth cross-check against Composio's own registry on 56 apps: 76.8% token-level, 87.5% family-level.
 
 ## Patterns
@@ -23,9 +23,9 @@ quarantined to unknown rather than reported.
 - buildability: {"already-built": 56, "unknown": 16, "build-with-caveats": 14, "build-now": 9, "needs-outreach": 5}
 
 ## Honest limits
-- 75 claims cannot be verified offline because only half of each page's text was retained. They are labelled, not counted as errors.
+- 0 claims cannot be verified offline because only half of each page's text was retained. They are labelled, not counted as errors.
 - 347 abstentions are unclassified: pass 1 never recorded WHY it abstained, so 'the vendor does not publish this' cannot be separated from 'we did not find it'.
-- 75 abstentions are provably our own gap.
+- 0 abstentions are provably our own gap.
 
 ## Per-app data
 app | category | auth_family | access | buildability | blocker | in_composio_catalog
