@@ -1,49 +1,54 @@
 {
   "one_liner": {
-    "answered": 38,
-    "coverage_pct": 38.0,
-    "evidenced": 36,
-    "evidenced_pct_of_answered": 94.7,
+    "answered": 33,
+    "coverage_pct": 33.0,
+    "evidenced": 33,
+    "evidenced_pct_of_answered": 100.0,
     "verdicts": {
       "no-retained-text": 62,
-      "valid": 38
+      "valid": 33,
+      "not-a-description": 3,
+      "unnamed-subject": 2
     }
   },
   "auth_methods": {
-    "answered": 89,
-    "coverage_pct": 89.0,
+    "answered": 86,
+    "coverage_pct": 86.0,
     "evidenced": 67,
-    "evidenced_pct_of_answered": 75.3,
+    "evidenced_pct_of_answered": 77.9,
     "verdicts": {
-      "valid": 69,
+      "valid": 66,
       "truncated-evidence": 13,
       "QUOTE_NOT_FOUND": 7,
       "near-miss": 5,
+      "unnamed-subject": 3,
       "no-retained-text": 3,
       "wrong-url": 3
     }
   },
   "signup_self_serve": {
-    "answered": 45,
-    "coverage_pct": 45.0,
+    "answered": 42,
+    "coverage_pct": 42.0,
     "evidenced": 35,
-    "evidenced_pct_of_answered": 77.8,
+    "evidenced_pct_of_answered": 83.3,
     "verdicts": {
       "no-retained-text": 53,
-      "valid": 37,
+      "valid": 34,
       "truncated-evidence": 6,
+      "unnamed-subject": 3,
       "near-miss": 2,
       "QUOTE_NOT_FOUND": 2
     }
   },
   "api_access_tier": {
-    "answered": 28,
-    "coverage_pct": 28.0,
+    "answered": 24,
+    "coverage_pct": 24.0,
     "evidenced": 18,
-    "evidenced_pct_of_answered": 64.3,
+    "evidenced_pct_of_answered": 75.0,
     "verdicts": {
       "no-retained-text": 71,
-      "valid": 21,
+      "valid": 17,
+      "unnamed-subject": 4,
       "truncated-evidence": 4,
       "near-miss": 2,
       "wrong-url": 1,
@@ -51,70 +56,75 @@
     }
   },
   "credential_self_issue": {
-    "answered": 81,
-    "coverage_pct": 81.0,
+    "answered": 76,
+    "coverage_pct": 76.0,
     "evidenced": 57,
-    "evidenced_pct_of_answered": 70.4,
+    "evidenced_pct_of_answered": 75.0,
     "verdicts": {
-      "valid": 50,
-      "truncated-evidence": 18,
-      "near-miss": 13,
+      "valid": 47,
+      "truncated-evidence": 17,
+      "near-miss": 12,
       "no-retained-text": 11,
-      "QUOTE_NOT_FOUND": 8
+      "QUOTE_NOT_FOUND": 8,
+      "unnamed-subject": 5
     }
   },
   "approval_gate": {
-    "answered": 32,
-    "coverage_pct": 32.0,
+    "answered": 29,
+    "coverage_pct": 29.0,
     "evidenced": 18,
-    "evidenced_pct_of_answered": 56.2,
+    "evidenced_pct_of_answered": 62.1,
     "verdicts": {
       "no-retained-text": 63,
-      "valid": 20,
+      "valid": 17,
       "truncated-evidence": 8,
       "QUOTE_NOT_FOUND": 6,
+      "unnamed-subject": 3,
       "wrong-url": 2,
       "near-miss": 1
     }
   },
   "protocol": {
-    "answered": 76,
-    "coverage_pct": 76.0,
+    "answered": 74,
+    "coverage_pct": 74.0,
     "evidenced": 61,
-    "evidenced_pct_of_answered": 80.3,
+    "evidenced_pct_of_answered": 82.4,
     "verdicts": {
-      "valid": 58,
+      "valid": 56,
       "no-retained-text": 23,
       "truncated-evidence": 9,
       "near-miss": 6,
       "QUOTE_NOT_FOUND": 2,
+      "unnamed-subject": 2,
       "wrong-url": 1,
       "unverifiable-url": 1
     }
   },
   "rate_limits_documented": {
-    "answered": 31,
-    "coverage_pct": 31.0,
+    "answered": 30,
+    "coverage_pct": 30.0,
     "evidenced": 20,
-    "evidenced_pct_of_answered": 64.5,
+    "evidenced_pct_of_answered": 66.7,
     "verdicts": {
       "no-retained-text": 67,
-      "valid": 16,
+      "valid": 15,
       "truncated-evidence": 11,
       "near-miss": 5,
+      "unnamed-subject": 1,
       "QUOTE_NOT_FOUND": 1
     }
   },
   "existing_mcp": {
-    "answered": 24,
-    "coverage_pct": 24.0,
-    "evidenced": 14,
-    "evidenced_pct_of_answered": 58.3,
+    "answered": 11,
+    "coverage_pct": 11.0,
+    "evidenced": 5,
+    "evidenced_pct_of_answered": 45.5,
     "verdicts": {
       "no-retained-text": 76,
-      "valid": 12,
-      "truncated-evidence": 6,
-      "near-miss": 4,
+      "off-topic-evidence": 13,
+      "valid": 4,
+      "truncated-evidence": 3,
+      "near-miss": 2,
       "QUOTE_NOT_FOUND": 1,
       "wrong-url": 1
     }
@@ -129,13 +139,14 @@
     }
   },
   "primary_blocker": {
-    "answered": 98,
-    "coverage_pct": 98.0,
+    "answered": 97,
+    "coverage_pct": 97.0,
     "evidenced": 7,
-    "evidenced_pct_of_answered": 7.1,
+    "evidenced_pct_of_answered": 7.2,
     "verdicts": {
       "not-asked-pass1": 92,
-      "valid": 8
+      "valid": 7,
+      "unnamed-subject": 1
     }
   }
 }

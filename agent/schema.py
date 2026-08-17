@@ -88,6 +88,7 @@ UNKNOWN_REASONS = [
     "contradictory-sources", # sources disagree
     "not-applicable",        # the question does not apply to this product
     "quote-failed-validation",  # quarantined by the validator
+    "evidence-about-another-product",  # real quote, wrong subject
     # Deliberately the default. Deciding between "the vendor does not publish this"
     # and "we failed to find it" requires knowing what was searched, and pass 1 never
     # recorded a reason at all. Defaulting to not-stated-publicly would have produced a

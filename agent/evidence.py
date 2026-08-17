@@ -172,6 +172,13 @@ def grade_record(extracted: dict, page_texts: dict[str, str], app_hint: str,
         if not field.quoted and verdict in ("near-miss", "QUOTE_NOT_FOUND", "no-quote"):
             verdict = "unquoted-ok" if url else "no-source"
 
+        # Fidelity and authority both pass on a real quote about the wrong product, so
+        # the subject check overrides them when it fires.
+        problem = subject_check(field.name, app_name, value, quote, tier,
+                                cell.get("source", ""))
+        if problem:
+            verdict = problem
+
         checks[field.name] = {
             "verdict": verdict,
             "tier": tier,
@@ -181,7 +188,89 @@ def grade_record(extracted: dict, page_texts: dict[str, str], app_hint: str,
     return checks
 
 
-QUARANTINE_VERDICTS = {"QUOTE_NOT_FOUND", "no-quote", "unverifiable-url", "no-source"}
+# --------------------------------------------------- is the claim even about this app?
+
+# The failure that keeps recurring on this project is not a fabricated sentence -- it is
+# a real sentence about the wrong product. Plaid matched a toolkit slugged `placid`;
+# Sherlock's "official MCP server" describes the Covertlabs infostealer platform; iPayX's
+# description welcomes you to iPaymu. Quote validation cannot catch any of these, because
+# the quote is genuinely present on the page it cites. The page is just about something
+# else.
+#
+# So: a cheap semantic check to sit beside the fidelity and authority ones.
+
+_AUTH_INSTRUCTION = re.compile(
+    r"^(authenticat|the api|to authenticat|use an? |include|pass |set the|add the|"
+    r"send the|you can authenticat)|"
+    r"(api key|access token|bearer token|oauth2?) (is|are|in the|to authenticate)", re.I)
+_MCP_MENTION = re.compile(r"(mcp|model[- ]context[- ]protocol)", re.I)
+
+
+def name_tokens(app: str) -> list[str]:
+    parts = [w for w in re.split(r"[^a-z0-9]+", app.lower()) if len(w) > 2]
+    return parts or [app.lower()]
+
+
+def subject_check(field: str, app: str, value, quote: str, tier: int,
+                  source: str = "") -> str | None:
+    """Is this evidence even about this app? Returns a problem tag, or None.
+
+    Three iterations to get the severity right, and the middle one is the interesting
+    part. A first version flagged 79 claims and most were fine, because it fired on:
+
+      * blank values -- "unknown" contains no app name, so every abstention looked like
+        a wrong-product error;
+      * Composio's own registry descriptions -- keyed by toolkit slug, so the subject is
+        guaranteed by the lookup and the prose has no need to repeat the brand
+        ("Collaborative workspace platform that transforms documents..." is Coda);
+      * a vendor's own documentation, which routinely describes a product without naming
+        it. That is normal writing, not evidence of contamination.
+
+    So severity now depends on where the claim came from:
+
+      QUARANTINE when the source is NOT the vendor's own domain (tier >= 3) and the text
+      never names the app -- iPayX's description of iPaymu, Sherlock's MCP server for the
+      Covertlabs platform, GoHighLevel's entire access story lifted from n8n's docs.
+
+      QUARANTINE regardless of tier for two unambiguous shapes: a one-liner that is an
+      authentication instruction, and MCP evidence that never mentions MCP.
+
+    And one rule deliberately NOT here. A first attempt also flagged tier 1-2 claims whose
+    text omits the app name, and that fired on 211 of them -- roughly two in five evidenced
+    claims -- because a vendor's own documentation describes its own product without
+    repeating the brand in every sentence. That is normal writing. More to the point the
+    rule is redundant: at tier 1-2 the DOMAIN establishes the subject, so a sentence on
+    docs.stripe.com is about Stripe whether or not it says so.
+
+    The cost of dropping it is real and worth naming. Paygent Connect's description --
+    "real-time cost visibility for your AI product" -- is not about a Japanese payment
+    gateway, and it sits on a lookalike domain that passes every authority test in this
+    project. No validator here catches it. It was caught by looking at the rendered table,
+    which is the argument for presenting data where a person can see it rather than only
+    scoring it.
+    """
+    if schema.is_blank(field, value):
+        return None
+    if source == "composio-registry":
+        return None                        # subject guaranteed by the slug lookup
+
+    text = f"{value if field == 'one_liner' else ''} {quote or ''}".strip()
+    if not text:
+        return None
+    named = any(tok in text.lower() for tok in name_tokens(app))
+
+    if field == "one_liner" and _AUTH_INSTRUCTION.search(str(value or "")):
+        return "not-a-description"
+    if field == "existing_mcp" and value not in ("none", "unknown", "") \
+            and not _MCP_MENTION.search(text):
+        return "off-topic-evidence"
+    if not named and tier >= 3:
+        return "unnamed-subject"
+    return None
+
+
+QUARANTINE_VERDICTS = {"QUOTE_NOT_FOUND", "no-quote", "unverifiable-url", "no-source",
+                       "unnamed-subject", "not-a-description", "off-topic-evidence"}
 
 
 def quarantine(extracted: dict, checks: dict, unknown_reason: dict) -> tuple[dict, list[dict]]:
@@ -199,8 +288,40 @@ def quarantine(extracted: dict, checks: dict, unknown_reason: dict) -> tuple[dic
                         "url": cell.get("url", "")})
         cell["value"] = [] if schema.BY_NAME[name].kind == "list" else "unknown"
         cell["quarantined"] = True
-        unknown_reason[name] = "quote-failed-validation"
+        unknown_reason[name] = "evidence-about-another-product" if check["verdict"] in (
+            "unnamed-subject", "not-a-description", "off-topic-evidence"
+        ) else "quote-failed-validation"
     return extracted, removed
+
+
+def enforce_subject_checks(records: list[dict]) -> dict:
+    """Run the subject check LAST, after every recorded verdict has been applied.
+
+    Order matters and got this wrong once: the strict-grade and pass-2 patches overwrite
+    verdicts wholesale, so a subject problem detected during grading was silently
+    replaced by "valid" a few lines later. Fidelity and authority verdicts come from
+    recorded runs; "is this even about the right product" is computable from the record
+    itself, so it is re-derived here and allowed to override them.
+    """
+    import collections
+    tally: collections.Counter = collections.Counter()
+    for r in records:
+        reasons = r.setdefault("unknown_reason", {})
+        for field, check in r["quote_checks"].items():
+            cell = r["extracted"].get(field) or {}
+            problem = subject_check(field, r["app"], cell.get("value"),
+                                    cell.get("quote", ""), check.get("tier", 5),
+                                    cell.get("source", ""))
+            if not problem:
+                continue
+            check["verdict"] = problem
+            check["evidenced"] = False
+            tally[problem] += 1
+        r["extracted"], removed = quarantine(r["extracted"], r["quote_checks"], reasons)
+        for item in removed:
+            if item not in r.setdefault("quarantined", []):
+                r["quarantined"].append(item)
+    return dict(tally.most_common())
 
 
 def summarise(checks: dict) -> dict:

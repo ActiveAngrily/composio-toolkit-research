@@ -16,18 +16,22 @@
       "brd": "broad",
       "brdN": 184,
       "brdSrc": "composio-registry",
+      "brdReg": 184,
+      "brdSpec": null,
+      "gateFinal": "https://www.salesforce.com/pricing/?bc=OTH",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "salesforce",
       "tools": 184,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Salesforce is a leading CRM platform integrating sales, service, marketing, and analytics to build customer relationships and drive business growth",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/salesforce",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "OAUTH2",
@@ -138,18 +142,22 @@
       "brd": "broad",
       "brdN": 244,
       "brdSrc": "composio-registry",
+      "brdReg": 244,
+      "brdSpec": null,
+      "gateFinal": "https://www.hubspot.com/pricing",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "hubspot",
       "tools": 244,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "HubSpot is an inbound marketing, sales, and customer service platform integrating CRM, email automation, and analytics to facilitate lead nurturing and seamless customer experiences",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/hubspot",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "OAUTH2",
@@ -262,18 +270,22 @@
       "brd": "very-broad",
       "brdN": 399,
       "brdSrc": "composio-registry",
+      "brdReg": 399,
+      "brdSpec": null,
+      "gateFinal": "https://www.pipedrive.com/en/pricing",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "pipedrive",
       "tools": 399,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Pipedrive is a sales management tool built around pipeline visualization, lead tracking, activity reminders, and automation to keep deals progressing",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/pipedrive",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "OAUTH2",
@@ -339,13 +351,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "official",
+          "v": "unknown",
           "q": "Using OAuth 2.0 is necessary for developing apps that are available in the Pipedrive Marketplace.",
           "u": "https://developers.pipedrive.com/docs/api/v1/Oauth",
-          "g": "valid",
+          "g": "off-topic-evidence",
           "t": 1,
-          "e": true,
-          "r": ""
+          "e": false,
+          "r": "evidence-about-another-product"
         },
         "primary_blocker": {
           "v": "unclear",
@@ -367,7 +379,7 @@
         }
       },
       "dis": [],
-      "qn": 0,
+      "qn": 1,
       "gate": false
     },
     {
@@ -384,18 +396,22 @@
       "brd": "medium",
       "brdN": 99,
       "brdSrc": "composio-registry",
+      "brdReg": 99,
+      "brdSpec": 79,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "attio",
       "tools": 99,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Attio is a fully customizable workspace for your team's relationships and workflows.",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/attio",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "API_KEY, BASIC, BEARER, OAUTH2",
@@ -506,6 +522,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -628,6 +648,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://podio.com/login?provider=podio&return_to=https%3A%2F%2Fpodio.com%2Fpricing",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -696,13 +720,13 @@
           "r": ""
         },
         "rate_limits_documented": {
-          "v": "yes",
+          "v": "unknown",
           "q": "Rate limits are adjustable upon request.",
           "u": "https://apis.io/apis/podio/rest-api/",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 3,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "existing_mcp": {
           "v": "unknown",
@@ -735,7 +759,7 @@
       "dis": [
         "model said primary_blocker=none but access derives to partner-or-sales-gate (page signal: enterprise/invite only)"
       ],
-      "qn": 0,
+      "qn": 1,
       "gate": false
     },
     {
@@ -752,6 +776,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://www.zoho.com/pricing/",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -876,18 +904,22 @@
       "brd": "narrow",
       "brdN": 6,
       "brdSrc": "composio-registry",
+      "brdReg": 6,
+      "brdSpec": 300,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "close",
       "tools": 6,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Close is a CRM platform designed to help businesses manage and streamline their sales processes, including calling, email automation, and predictive dialers.",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/close",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "API_KEY, BASIC, BEARER, OAUTH2",
@@ -998,6 +1030,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://www.copper.com:443/pricing",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -1122,6 +1158,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -1244,18 +1284,22 @@
       "brd": "very-broad",
       "brdN": 451,
       "brdSrc": "composio-registry",
+      "brdReg": 451,
+      "brdSpec": null,
+      "gateFinal": "https://www.zendesk.com/pricing/",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "zendesk",
       "tools": 451,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Zendesk provides customer support software with ticketing, live chat, and knowledge base features, enabling efficient helpdesk operations and customer engagement",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/zendesk",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BASIC, BEARER, OAUTH2",
@@ -1366,18 +1410,22 @@
       "brd": "broad",
       "brdN": 133,
       "brdSrc": "composio-registry",
+      "brdReg": 133,
+      "brdSpec": null,
+      "gateFinal": "https://www.intercom.com/pricing",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "intercom",
       "tools": 133,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Intercom provides live chat, messaging, and customer engagement tools, enabling businesses to drive conversions, handle support, and personalize communication at scale",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/intercom",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BEARER, OAUTH2",
@@ -1479,36 +1527,40 @@
       "app": "Freshdesk",
       "cat": "Support and Helpdesk",
       "hint": "freshdesk.com",
-      "fam": "static-secret",
+      "fam": "unknown",
       "acc": "paid-tier-required",
-      "accWhy": "api_access_tier=paid",
+      "accWhy": "page signal: paid plan required",
       "bld": "already-built",
       "blk": "paid-plan",
       "bldWhy": "already in Composio's catalog as freshdesk; new integrators still face paid-tier-required",
       "brd": "broad",
       "brdN": 178,
       "brdSrc": "composio-registry",
+      "brdReg": 178,
+      "brdSpec": null,
+      "gateFinal": "https://www.freshworks.com/freshdesk/pricing/",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "freshdesk",
       "tools": 178,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Freshdesk provides customer support software with ticketing, knowledge base, and automation features for efficient helpdesk operations and better customer experiences",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/freshdesk",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
-          "v": "BASIC",
+          "v": "",
           "q": "basicAuth - Type: HTTP basic authentication",
           "u": "https://developers.freshworks.com/freshdesk-sdk/",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "signup_self_serve": {
           "v": "unknown",
@@ -1520,13 +1572,13 @@
           "r": "unclassified"
         },
         "api_access_tier": {
-          "v": "paid",
+          "v": "unknown",
           "q": "API rate limits scale with the paid plan.",
           "u": "https://apis.io/plans/freshdesk/freshdesk-plans-pricing/",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 3,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "credential_self_issue": {
           "v": "unknown",
@@ -1593,7 +1645,7 @@
         }
       },
       "dis": [],
-      "qn": 0,
+      "qn": 2,
       "gate": false
     },
     {
@@ -1610,6 +1662,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -1728,13 +1784,17 @@
       "hint": "usepylon.com",
       "fam": "static-secret",
       "acc": "partner-or-sales-gate",
-      "accWhy": "page signal: sales/demo gate, no free-tier signal",
+      "accWhy": "pricing page redirects to a sales flow",
       "bld": "needs-outreach",
       "blk": "partner-gate",
       "bldWhy": "access=partner-or-sales-gate",
-      "brd": "unknown",
-      "brdN": null,
-      "brdSrc": "none",
+      "brd": "broad",
+      "brdN": 138,
+      "brdSrc": "openapi-spec",
+      "brdReg": 0,
+      "brdSpec": 138,
+      "gateFinal": "https://www.usepylon.com/schedule-demo",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -1840,11 +1900,11 @@
         }
       },
       "dis": [
-        "model said primary_blocker=none but access derives to partner-or-sales-gate (page signal: sales/demo gate, no free-tier signal)",
+        "model said primary_blocker=none but access derives to partner-or-sales-gate (pricing page redirects to a sales flow)",
         "product_class=api but no protocol found"
       ],
       "qn": 0,
-      "gate": false
+      "gate": true
     },
     {
       "id": 16,
@@ -1860,6 +1920,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://www.liveagent.com/pricing/",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -1975,25 +2039,29 @@
       "hint": "plain.com",
       "fam": "static-secret",
       "acc": "free",
-      "accWhy": "api_access_tier=free + credential_self_issue=yes",
+      "accWhy": "page signal: free tier + credential_self_issue=yes",
       "bld": "already-built",
       "blk": "none",
       "bldWhy": "already in Composio's catalog as plain",
       "brd": "narrow",
       "brdN": 22,
       "brdSrc": "composio-registry",
+      "brdReg": 22,
+      "brdSpec": null,
+      "gateFinal": "https://www.plain.com/pricing",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "plain",
       "tools": 22,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Plain is a collaborative support platform for B2B support teams, offering a modern, AI-powered interface to consolidate support channels and assist customers efficiently.",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/plain",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BEARER",
@@ -2014,13 +2082,13 @@
           "r": "unclassified"
         },
         "api_access_tier": {
-          "v": "free",
+          "v": "unknown",
           "q": "GraphQL API Access",
           "u": "https://apis.io/plans/plain-support/plain-support-plans-pricing/",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 3,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "credential_self_issue": {
           "v": "yes",
@@ -2087,7 +2155,7 @@
         }
       },
       "dis": [],
-      "qn": 0,
+      "qn": 1,
       "gate": false
     },
     {
@@ -2104,6 +2172,10 @@
       "brd": "broad",
       "brdN": 129,
       "brdSrc": "composio-registry",
+      "brdReg": 129,
+      "brdSpec": null,
+      "gateFinal": "https://www.helpscout.com/pricing/",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "help_scout",
       "tools": 129,
@@ -2181,11 +2253,11 @@
           "r": ""
         },
         "existing_mcp": {
-          "v": "official",
-          "q": "Help Scout Developers - API Documentation | Help Scout Developers",
-          "u": "https://developer.helpscout.com/",
-          "g": "valid",
-          "t": 1,
+          "v": "community",
+          "q": "An MCP server that gives AI assistants direct access to your Help Scout inboxes, conversations, customers, organizations, threads, and Docs knowledge base.",
+          "u": "https://github.com/drewburchfield/help-scout-mcp-server",
+          "g": "near-miss",
+          "t": 2,
           "e": true,
           "r": ""
         },
@@ -2211,7 +2283,7 @@
       "dis": [
         "model said primary_blocker=none but access derives to paid-tier-required (page signal: paid plan required)"
       ],
-      "qn": 0,
+      "qn": 1,
       "gate": false
     },
     {
@@ -2228,18 +2300,22 @@
       "brd": "medium",
       "brdN": 32,
       "brdSrc": "composio-registry",
+      "brdReg": 32,
+      "brdSpec": null,
+      "gateFinal": "https://www.gorgias.com/pricing",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "gorgias",
       "tools": 32,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Gorgias is a helpdesk and live chat platform specializing in e-commerce, offering automated support, order management, and unified customer communication",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/gorgias",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "API_KEY, OAUTH2",
@@ -2342,14 +2418,18 @@
       "cat": "Support and Helpdesk",
       "hint": "gladly.com",
       "fam": "static-secret",
-      "acc": "paid-tier-required",
-      "accWhy": "api_access_tier=paid",
-      "bld": "build-with-caveats",
-      "blk": "paid-plan",
-      "bldWhy": "buildable, but testing needs a paid seat",
+      "acc": "unknown",
+      "accWhy": "no sufficient signal",
+      "bld": "unknown",
+      "blk": "unclear",
+      "bldWhy": "access=unknown",
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://www.gladly.ai/",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -2382,13 +2462,13 @@
           "r": "unclassified"
         },
         "api_access_tier": {
-          "v": "paid",
+          "v": "unknown",
           "q": "APIs",
           "u": "https://www.topadvisor.com/products/gladly/pricing",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "credential_self_issue": {
           "v": "yes",
@@ -2455,7 +2535,7 @@
         }
       },
       "dis": [],
-      "qn": 0,
+      "qn": 1,
       "gate": false
     },
     {
@@ -2472,6 +2552,10 @@
       "brd": "broad",
       "brdN": 158,
       "brdSrc": "composio-registry",
+      "brdReg": 158,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "slack",
       "tools": 158,
@@ -2594,6 +2678,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://www.twilio.com/en-us/pricing",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -2718,6 +2806,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://www.zoho.com/pricing/",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -2840,6 +2932,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -2954,14 +3050,18 @@
       "cat": "Communications and Messaging",
       "hint": "pumble.com",
       "fam": "both",
-      "acc": "app-review",
-      "accWhy": "approval_gate=app-review",
-      "bld": "build-with-caveats",
-      "blk": "app-review",
-      "bldWhy": "buildable after the vendor's review process",
+      "acc": "free-trial",
+      "accWhy": "api_access_tier=free, self-issue unconfirmed",
+      "bld": "build-now",
+      "blk": "none",
+      "bldWhy": "self-serve access, documented REST",
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -2985,13 +3085,13 @@
           "r": ""
         },
         "signup_self_serve": {
-          "v": "yes",
+          "v": "unknown",
           "q": "Go to the CAKE.com developer page\n2. Click Sign up and enter your email address",
           "u": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 3,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "api_access_tier": {
           "v": "free",
@@ -3012,13 +3112,13 @@
           "r": "quote-failed-validation"
         },
         "approval_gate": {
-          "v": "app-review",
+          "v": "unknown",
           "q": "Once completed, submit for review. The review process typically takes up to two weeks.",
           "u": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 3,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "protocol": {
           "v": "REST",
@@ -3040,11 +3140,11 @@
         },
         "existing_mcp": {
           "v": "official",
-          "q": "Start building add-ons for the Pumble app, the team communication tool that helps businesses stay connected and organized.",
-          "u": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+          "q": "With the Pumble Model Context Protocol (MCP) server, you can connect third-party AI agents (e.g., Claude, Gemini, Codex) to Pumble and let them access content so they can search messages, find information, and take actio",
+          "u": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/",
           "g": "valid",
-          "t": 3,
-          "e": false,
+          "t": 1,
+          "e": true,
           "r": ""
         },
         "primary_blocker": {
@@ -3067,7 +3167,7 @@
         }
       },
       "dis": [],
-      "qn": 1,
+      "qn": 4,
       "gate": false
     },
     {
@@ -3084,6 +3184,10 @@
       "brd": "narrow",
       "brdN": 23,
       "brdSrc": "composio-registry",
+      "brdReg": 23,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "discord",
       "tools": 23,
@@ -3206,6 +3310,10 @@
       "brd": "narrow",
       "brdN": 18,
       "brdSrc": "composio-registry",
+      "brdReg": 18,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "telegram",
       "tools": 18,
@@ -3330,6 +3438,10 @@
       "brd": "medium",
       "brdN": 57,
       "brdSrc": "composio-registry",
+      "brdReg": 57,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "whatsapp",
       "tools": 57,
@@ -3452,6 +3564,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -3574,6 +3690,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://developer.vonage.com/en/communications-apis/video/pricing",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -3698,18 +3818,22 @@
       "brd": "narrow",
       "brdN": 22,
       "brdSrc": "composio-registry",
+      "brdReg": 22,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "googleads",
       "tools": 22,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Google Ads, is an online advertising platform developed by Google, where advertisers bid to display brief advertisements, service offerings, product listings, and videos to web users.",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/googleads",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BEARER, JWT, OAUTH2",
@@ -3822,18 +3946,22 @@
       "brd": "medium",
       "brdN": 51,
       "brdSrc": "composio-registry",
+      "brdReg": 51,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "metaads",
       "tools": 51,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Create, edit and get insights from ads across Meta technologies, including Facebook, Instagram, Messenger, WhatsApp and more.",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/metaads",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BEARER, OAUTH2",
@@ -3899,12 +4027,12 @@
           "r": ""
         },
         "existing_mcp": {
-          "v": "community",
-          "q": "Facebook Marketing Developer Community group",
-          "u": "https://developers.facebook.com/docs/marketing-api/best-practices/",
+          "v": "official",
+          "q": "Meta shipped an official MCP (Model Context Protocol) server for advertising at`mcp.facebook.com/ads`",
+          "u": "https://soku.ai/blog/meta-ads-mcp-guide",
           "g": "valid",
-          "t": 1,
-          "e": true,
+          "t": 4,
+          "e": false,
           "r": ""
         },
         "primary_blocker": {
@@ -3929,7 +4057,7 @@
       "dis": [
         "model said primary_blocker=none but access derives to app-review (approval_gate=app-review)"
       ],
-      "qn": 0,
+      "qn": 1,
       "gate": false
     },
     {
@@ -3946,18 +4074,22 @@
       "brd": "medium",
       "brdN": 28,
       "brdSrc": "composio-registry",
+      "brdReg": 28,
+      "brdSpec": null,
+      "gateFinal": "https://learn.microsoft.com/en-us/pricing",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "linkedin_ads",
       "tools": 28,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "LinkedIn Marketing and Advertising API for managing ad campaigns, analytics, and organization social content",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/linkedin_ads",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "",
@@ -4023,11 +4155,11 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "official",
-          "q": "More information of LinkedIn Marketing Partners [here](https://business.linkedin.com/marketing-solutions/marketing-partners).",
-          "u": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+          "v": "community",
+          "q": "There's no official LinkedIn MCP. This fills the gap with a thin, correctness-first wrapper that handles LinkedIn's quirky restli encoding rules so you don't have to.",
+          "u": "https://github.com/Nuraveda-Labs/linkedin-ads-mcp",
           "g": "valid",
-          "t": 1,
+          "t": 2,
           "e": true,
           "r": ""
         },
@@ -4053,7 +4185,7 @@
       "dis": [
         "product_class=api but no protocol found"
       ],
-      "qn": 1,
+      "qn": 2,
       "gate": false
     },
     {
@@ -4061,7 +4193,7 @@
       "app": "GoHighLevel",
       "cat": "Marketing, Ads, Email and Social",
       "hint": "highlevel.stoplight.io",
-      "fam": "both",
+      "fam": "unknown",
       "acc": "paid-tier-required",
       "accWhy": "api_access_tier=paid",
       "bld": "already-built",
@@ -4070,27 +4202,31 @@
       "brd": "broad",
       "brdN": 218,
       "brdSrc": "composio-registry",
+      "brdReg": 218,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "highlevel",
       "tools": 218,
       "f": {
         "one_liner": {
-          "v": "HighLevel supports API key (v1) and OAuth2 (v2) authentication.",
+          "v": "unknown",
           "q": "Supported authentication methods * API key: Use with API v1 * OAuth2: Use with API v2",
           "u": "https://docs.n8n.io/integrations/builtin/credentials/highlevel/",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 3,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "auth_methods": {
-          "v": "API_KEY, OAUTH2",
+          "v": "",
           "q": "Supported authentication methods * API key: Use with API v1 * OAuth2: Use with API v2",
           "u": "https://docs.n8n.io/integrations/builtin/credentials/highlevel/",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 3,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "signup_self_serve": {
           "v": "yes",
@@ -4111,13 +4247,13 @@
           "r": ""
         },
         "credential_self_issue": {
-          "v": "yes",
+          "v": "unknown",
           "q": "To generate both, create an app in My Apps > Create App.",
           "u": "https://docs.n8n.io/integrations/builtin/credentials/highlevel/",
-          "g": "near-miss",
+          "g": "unnamed-subject",
           "t": 3,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "approval_gate": {
           "v": "unknown",
@@ -4148,8 +4284,8 @@
         },
         "existing_mcp": {
           "v": "official",
-          "q": "Login To Developer Marketplace",
-          "u": "https://developers.gohighlevel.com/",
+          "q": "The HighLevel MCP Server uses the Model Context Protocol, or MCP, to let AI agents securely interact with HighLevel services.",
+          "u": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
           "g": "valid",
           "t": 1,
           "e": true,
@@ -4177,7 +4313,7 @@
       "dis": [
         "product_class=api but no protocol found"
       ],
-      "qn": 1,
+      "qn": 5,
       "gate": false
     },
     {
@@ -4194,6 +4330,10 @@
       "brd": "broad",
       "brdN": 272,
       "brdSrc": "composio-registry",
+      "brdReg": 272,
+      "brdSpec": null,
+      "gateFinal": "https://mailchimp.com/pricing/marketing/",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "mailchimp",
       "tools": 272,
@@ -4316,18 +4456,22 @@
       "brd": "broad",
       "brdN": 225,
       "brdSrc": "composio-registry",
+      "brdReg": 225,
+      "brdSpec": null,
+      "gateFinal": "https://developers.klaviyo.com/en",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "klaviyo",
       "tools": 225,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Klaviyo is a data-driven email and SMS marketing platform that allows e-commerce brands to deliver targeted messages, track conversions, and scale customer relationships",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/klaviyo",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "API_KEY, OAUTH2",
@@ -4440,6 +4584,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -4562,18 +4710,22 @@
       "brd": "narrow",
       "brdN": 24,
       "brdSrc": "composio-registry",
+      "brdReg": 24,
+      "brdSpec": null,
+      "gateFinal": "https://developers.pinterest.com/",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "pinterest",
       "tools": 24,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Pinterest is a visual discovery platform for finding ideas like recipes, home and style inspiration, and more.",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/pinterest",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "OAUTH2",
@@ -4686,6 +4838,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -4808,18 +4964,22 @@
       "brd": "very-broad",
       "brdN": 359,
       "brdSrc": "composio-registry",
+      "brdReg": 359,
+      "brdSpec": null,
+      "gateFinal": "https://www.twilio.com/en-us/sendgrid",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "sendgrid",
       "tools": 359,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "SendGrid is a cloud-based email delivery platform providing transactional and marketing email services, with APIs for integration, analytics, and scalability",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/sendgrid",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "API_KEY, BEARER",
@@ -4885,13 +5045,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "community",
-          "q": "Built and maintained by a SendGrid engineer, as an independent project \u2014 not an official SendGrid product.",
-          "u": "https://www.npmjs.com/package/sendgrid-mcp",
-          "g": "valid",
-          "t": 2,
-          "e": true,
-          "r": ""
+          "v": "unknown",
+          "q": "",
+          "u": "",
+          "g": "no-retained-text",
+          "t": 5,
+          "e": false,
+          "r": "evidence-about-another-product"
         },
         "primary_blocker": {
           "v": "none",
@@ -4930,18 +5090,22 @@
       "brd": "very-broad",
       "brdN": 315,
       "brdSrc": "composio-registry",
+      "brdReg": 315,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "shopify",
       "tools": 315,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Shopify is an e-commerce platform. This toolkit is GraphQL-first for new Admin API automations while retaining legacy REST compatibility actions for older workflows and numeric-ID interoperability",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/shopify",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BEARER",
@@ -5052,6 +5216,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -5174,6 +5342,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -5298,6 +5470,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -5422,6 +5598,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -5544,6 +5724,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -5666,6 +5850,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://docs.ecwid.com",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -5788,18 +5976,22 @@
       "brd": "narrow",
       "brdN": 7,
       "brdSrc": "composio-registry",
+      "brdReg": 7,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "gumroad",
       "tools": 7,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Gumroad simplifies selling digital goods, physical products, and memberships by offering a streamlined checkout, marketing tools, and direct payout options",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/gumroad",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "OAUTH2",
@@ -5908,10 +6100,14 @@
       "accWhy": "no sufficient signal",
       "bld": "unknown",
       "blk": "unclear",
-      "bldWhy": "access=unknown",
+      "bldWhy": "no documented public interface found",
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://developer-docs.amazon/sp-api/page/404",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -5953,13 +6149,13 @@
           "r": "unclassified"
         },
         "credential_self_issue": {
-          "v": "yes",
+          "v": "unknown",
           "q": "Get this value when you register your application.",
           "u": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api",
           "g": "valid",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "approval_gate": {
           "v": "unknown",
@@ -5971,13 +6167,13 @@
           "r": "unclassified"
         },
         "protocol": {
-          "v": "REST",
+          "v": "",
           "q": "You can make direct HTTPS requests when you want complete control over API calls.",
           "u": "https://developer-docs.amazon/sp-api/docs/onboarding-step-8-call-the-sp-api-in-production",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "rate_limits_documented": {
           "v": "unknown",
@@ -6016,8 +6212,10 @@
           "r": ""
         }
       },
-      "dis": [],
-      "qn": 0,
+      "dis": [
+        "product_class=api but no protocol found"
+      ],
+      "qn": 2,
       "gate": false
     },
     {
@@ -6034,6 +6232,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://commas.com/",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -6111,13 +6313,13 @@
           "r": "unclassified"
         },
         "existing_mcp": {
-          "v": "official",
+          "v": "unknown",
           "q": "Base URL\n\n```\nhttps://www.fanbasis.com\n```",
           "u": "https://raw.githubusercontent.com/otniel-bit/fbnewapi/main/api-docs.md",
-          "g": "valid",
+          "g": "off-topic-evidence",
           "t": 2,
-          "e": true,
-          "r": ""
+          "e": false,
+          "r": "evidence-about-another-product"
         },
         "primary_blocker": {
           "v": "none",
@@ -6139,7 +6341,7 @@
         }
       },
       "dis": [],
-      "qn": 0,
+      "qn": 1,
       "gate": false
     },
     {
@@ -6156,18 +6358,22 @@
       "brd": "very-broad",
       "brdN": 312,
       "brdSrc": "composio-registry",
+      "brdReg": 312,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "dataforseo",
       "tools": 312,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "SEO data and analytics platform providing SERP data, backlinks, keywords, and competitive intelligence",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/dataforseo",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BASIC",
@@ -6280,6 +6486,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://seranking.com/subscription.html",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -6404,6 +6614,10 @@
       "brd": "medium",
       "brdN": 40,
       "brdSrc": "composio-registry",
+      "brdReg": 40,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "ahrefs",
       "tools": 40,
@@ -6482,11 +6696,11 @@
         },
         "existing_mcp": {
           "v": "official",
-          "q": "Connect your Ahrefs data to AI assistants and agents to enhance their answers with real marketing insights.",
-          "u": "https://docs.ahrefs.com/",
+          "q": "Yes \u2014 Ahrefs has an official MCP server.",
+          "u": "https://www.usecarly.com/blog/ahrefs-mcp/",
           "g": "valid",
-          "t": 1,
-          "e": true,
+          "t": 4,
+          "e": false,
           "r": ""
         },
         "primary_blocker": {
@@ -6509,7 +6723,7 @@
         }
       },
       "dis": [],
-      "qn": 1,
+      "qn": 2,
       "gate": false
     },
     {
@@ -6526,18 +6740,22 @@
       "brd": "narrow",
       "brdN": 11,
       "brdSrc": "composio-registry",
+      "brdReg": 11,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "mrscraper",
       "tools": 11,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "MrScraper provides web scraping APIs for structured extraction, search results, marketplace data, travel data, and web unblocking.",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/mrscraper",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "API_KEY",
@@ -6648,18 +6866,22 @@
       "brd": "broad",
       "brdN": 112,
       "brdSrc": "composio-registry",
+      "brdReg": 112,
+      "brdSpec": 229,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "apify",
       "tools": 112,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Apify is a platform for building, deploying, and managing web scraping and automation tools, known as Actors.",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/apify",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "API_KEY, BEARER",
@@ -6772,18 +6994,22 @@
       "brd": "medium",
       "brdN": 29,
       "brdSrc": "composio-registry",
+      "brdReg": 29,
+      "brdSpec": null,
+      "gateFinal": "https://www.firecrawl.dev/pricing",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "firecrawl",
       "tools": 29,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Firecrawl automates web crawling and data extraction, enabling organizations to gather content, index sites, and gain insights from online sources at scale",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/firecrawl",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BEARER",
@@ -6894,18 +7120,22 @@
       "brd": "narrow",
       "brdN": 10,
       "brdSrc": "composio-registry",
+      "brdReg": 10,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "brightdata",
       "tools": 10,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Bright Data provides the world's #1 web data platform with Web Unlocker for bypassing anti-bot systems, SERP API for search engine data, and pre-made scrapers for popular websites. Collect any web data at scale.",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/brightdata",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "API_KEY, BASIC",
@@ -7016,6 +7246,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -7093,13 +7327,13 @@
           "r": "not-applicable"
         },
         "existing_mcp": {
-          "v": "official",
+          "v": "unknown",
           "q": "An official Model Context Protocol (MCP) server for the Covertlabs infostealer intelligence platform.",
           "u": "https://conare.ai/marketplace/mcp/sherlock-mcp",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "primary_blocker": {
           "v": "unclear",
@@ -7121,7 +7355,7 @@
         }
       },
       "dis": [],
-      "qn": 0,
+      "qn": 1,
       "gate": false
     },
     {
@@ -7138,6 +7372,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://www.waterfall.io/pricing",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -7260,6 +7498,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://www.clay.com/pricing",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -7382,18 +7624,22 @@
       "brd": "very-broad",
       "brdN": 871,
       "brdSrc": "composio-registry",
+      "brdReg": 871,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "github",
       "tools": 871,
       "f": {
         "one_liner": {
-          "v": "You can authenticate to the REST API to access more endpoints and have a higher rate limit.",
+          "v": "unknown",
           "q": "You can authenticate to the REST API to access more endpoints and have a higher rate limit.",
           "u": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
-          "g": "valid",
+          "g": "not-a-description",
           "t": 1,
-          "e": true,
-          "r": ""
+          "e": false,
+          "r": "evidence-about-another-product"
         },
         "auth_methods": {
           "v": "API_KEY, BEARER, JWT",
@@ -7487,7 +7733,7 @@
         }
       },
       "dis": [],
-      "qn": 0,
+      "qn": 1,
       "gate": false
     },
     {
@@ -7504,18 +7750,22 @@
       "brd": "broad",
       "brdN": 131,
       "brdSrc": "composio-registry",
+      "brdReg": 131,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "vercel",
       "tools": 131,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Vercel is a platform for frontend frameworks and static sites, enabling developers to host websites and web services that deploy instantly, scale automatically, and require minimal configuration.",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/vercel",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "",
@@ -7582,10 +7832,10 @@
         },
         "existing_mcp": {
           "v": "official",
-          "q": "Author: Vercel",
-          "u": "https://www.npmjs.com/package/mcp-handler",
+          "q": "Deploy your Model Context Protocol (MCP) servers on Vercel",
+          "u": "https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel",
           "g": "valid",
-          "t": 2,
+          "t": 1,
           "e": true,
           "r": ""
         },
@@ -7626,6 +7876,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-legacy-plans/billing-faq-for-legacy-plans/",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -7748,18 +8002,22 @@
       "brd": "narrow",
       "brdN": 20,
       "brdSrc": "composio-registry",
+      "brdReg": 20,
+      "brdSpec": 3319,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "cloudflare",
       "tools": 20,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Cloudflare is a global network designed to make everything you connect to the Internet secure, private, fast, and reliable.",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/cloudflare",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "API_KEY, BEARER",
@@ -7872,6 +8130,10 @@
       "brd": "broad",
       "brdN": 124,
       "brdSrc": "composio-registry",
+      "brdReg": 124,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "supabase",
       "tools": 124,
@@ -7950,11 +8212,11 @@
         },
         "existing_mcp": {
           "v": "official",
-          "q": "Management API",
-          "u": "https://supabase.com/docs/reference/api/introduction",
+          "q": "The @supabase/mcp-server-supabase is the official MCP server from Supabase.",
+          "u": "https://www.rapidevelopers.com/mcp-tutorial/how-to-use-supabase-mcp-server",
           "g": "valid",
-          "t": 1,
-          "e": true,
+          "t": 4,
+          "e": false,
           "r": ""
         },
         "primary_blocker": {
@@ -7977,7 +8239,7 @@
         }
       },
       "dis": [],
-      "qn": 1,
+      "qn": 2,
       "gate": false
     },
     {
@@ -7994,6 +8256,10 @@
       "brd": "narrow",
       "brdN": 21,
       "brdSrc": "composio-registry",
+      "brdReg": 21,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "neo4j",
       "tools": 21,
@@ -8017,13 +8283,13 @@
           "r": ""
         },
         "signup_self_serve": {
-          "v": "yes",
+          "v": "unknown",
           "q": "Free managed AuraDB instance for learning and exploration. No credit card required",
           "u": "https://apis.io/plans/neo4j/neo4j-plans-pricing/",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 3,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "api_access_tier": {
           "v": "free",
@@ -8099,7 +8365,7 @@
         }
       },
       "dis": [],
-      "qn": 0,
+      "qn": 1,
       "gate": false
     },
     {
@@ -8116,6 +8382,10 @@
       "brd": "narrow",
       "brdN": 16,
       "brdSrc": "composio-registry",
+      "brdReg": 16,
+      "brdSpec": null,
+      "gateFinal": "https://docs.snowflake.com/en/pricing",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "snowflake",
       "tools": 16,
@@ -8238,6 +8508,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://www.mongodb.com/pricing",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -8360,18 +8634,22 @@
       "brd": "medium",
       "brdN": 64,
       "brdSrc": "composio-registry",
+      "brdReg": 64,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "datadog",
       "tools": 64,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Datadog offers monitoring, observability, and security for cloud-scale applications, unifying metrics, logs, and traces to help teams detect issues and optimize performance",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/datadog",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "API_KEY",
@@ -8482,6 +8760,10 @@
       "brd": "broad",
       "brdN": 209,
       "brdSrc": "composio-registry",
+      "brdReg": 209,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "sentry",
       "tools": 209,
@@ -8606,18 +8888,22 @@
       "brd": "medium",
       "brdN": 53,
       "brdSrc": "composio-registry",
+      "brdReg": 53,
+      "brdSpec": 49,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "notion",
       "tools": 53,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Notion centralizes notes, docs, wikis, and tasks in a unified workspace, letting teams build custom workflows for collaboration and knowledge management",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/notion",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BEARER, OAUTH2",
@@ -8728,18 +9014,22 @@
       "brd": "narrow",
       "brdN": 24,
       "brdSrc": "composio-registry",
+      "brdReg": 24,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "airtable",
       "tools": 24,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Airtable merges spreadsheet functionality with database power, enabling teams to organize projects, track tasks, and collaborate through customizable views, automation, and integrations for data management",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/airtable",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BEARER, OAUTH2",
@@ -8850,6 +9140,10 @@
       "brd": "medium",
       "brdN": 46,
       "brdSrc": "composio-registry",
+      "brdReg": 46,
+      "brdSpec": null,
+      "gateFinal": "https://linear.app/developers",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "linear",
       "tools": 46,
@@ -8972,6 +9266,10 @@
       "brd": "medium",
       "brdN": 97,
       "brdSrc": "composio-registry",
+      "brdReg": 97,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "jira",
       "tools": 97,
@@ -9094,18 +9392,22 @@
       "brd": "broad",
       "brdN": 153,
       "brdSrc": "composio-registry",
+      "brdReg": 153,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "asana",
       "tools": 153,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Tool to help teams organize, track, and manage their work.",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/asana",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BEARER, OAUTH2",
@@ -9172,9 +9474,9 @@
         },
         "existing_mcp": {
           "v": "official",
-          "q": "If you are building an integration with a 3rd party tool and intend for any Asana user to discover it, apps can be published to the Asana App Directory.",
-          "u": "https://developers.asana.com/docs/overview",
-          "g": "near-miss",
+          "q": "Asana offers a Model Context Protocol (MCP) server",
+          "u": "https://developers.asana.com/docs/using-asanas-mcp-server",
+          "g": "valid",
           "t": 1,
           "e": true,
           "r": ""
@@ -9199,7 +9501,7 @@
         }
       },
       "dis": [],
-      "qn": 0,
+      "qn": 1,
       "gate": false
     },
     {
@@ -9216,18 +9518,22 @@
       "brd": "broad",
       "brdN": 121,
       "brdSrc": "composio-registry",
+      "brdReg": 121,
+      "brdSpec": null,
+      "gateFinal": "https://developer.monday.com/",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "monday",
       "tools": 121,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "monday.com is a customizable work management platform for project planning, collaboration, and automation, supporting agile, sales, marketing, and more",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/monday",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "API_KEY, BEARER, JWT, OAUTH2",
@@ -9338,18 +9644,22 @@
       "brd": "broad",
       "brdN": 162,
       "brdSrc": "composio-registry",
+      "brdReg": 162,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "clickup",
       "tools": 162,
       "f": {
         "one_liner": {
-          "v": "Authenticate to the ClickUp API using a personal token or OAuth.",
+          "v": "unknown",
           "q": "Authenticate to the ClickUp API using a personal token or OAuth.",
           "u": "https://developer.clickup.com/docs/authentication",
-          "g": "valid",
+          "g": "not-a-description",
           "t": 1,
-          "e": true,
-          "r": ""
+          "e": false,
+          "r": "evidence-about-another-product"
         },
         "auth_methods": {
           "v": "API_KEY, OAUTH2",
@@ -9445,7 +9755,7 @@
       "dis": [
         "product_class=api but no protocol found"
       ],
-      "qn": 1,
+      "qn": 2,
       "gate": false
     },
     {
@@ -9454,26 +9764,30 @@
       "cat": "Productivity and Project Management",
       "hint": "coda.io/developers",
       "fam": "static-secret",
-      "acc": "free",
-      "accWhy": "api_access_tier=free + credential_self_issue=yes",
+      "acc": "free-trial",
+      "accWhy": "page signal: free tier, self-issue unconfirmed",
       "bld": "already-built",
       "blk": "none",
       "bldWhy": "already in Composio's catalog as coda",
       "brd": "broad",
       "brdN": 109,
       "brdSrc": "composio-registry",
+      "brdReg": 109,
+      "brdSpec": null,
+      "gateFinal": "https://superhuman.com/plans/docs",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "coda",
       "tools": 109,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Collaborative workspace platform that transforms documents into powerful tools for team productivity and project management",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/coda",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BEARER",
@@ -9494,22 +9808,22 @@
           "r": ""
         },
         "api_access_tier": {
-          "v": "free",
+          "v": "unknown",
           "q": "API is included on every tier including Free",
           "u": "https://apis.io/plans/coda/coda-plans-pricing/",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 3,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "credential_self_issue": {
-          "v": "yes",
+          "v": "unknown",
           "q": "Generate API Token",
           "u": "https://docs.nexla.com/user-guides/connectors/coda_api/coda_api_auth",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 3,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "approval_gate": {
           "v": "unknown",
@@ -9569,7 +9883,7 @@
       "dis": [
         "product_class=api but no protocol found"
       ],
-      "qn": 0,
+      "qn": 2,
       "gate": false
     },
     {
@@ -9586,18 +9900,22 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "https://www.smartsheet.com/pricing",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
       "f": {
         "one_liner": {
-          "v": "The API authenticates using access tokens (API keys).",
+          "v": "unknown",
           "q": "The API authenticates using access tokens (API keys).",
           "u": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
-          "g": "valid",
+          "g": "not-a-description",
           "t": 1,
-          "e": true,
-          "r": ""
+          "e": false,
+          "r": "evidence-about-another-product"
         },
         "auth_methods": {
           "v": "",
@@ -9691,7 +10009,7 @@
         }
       },
       "dis": [],
-      "qn": 1,
+      "qn": 2,
       "gate": false
     },
     {
@@ -9708,18 +10026,22 @@
       "brd": "medium",
       "brdN": 57,
       "brdSrc": "composio-registry",
+      "brdReg": 57,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "harvest",
       "tools": 57,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Harvest is a time-tracking and invoicing tool designed for teams and freelancers, helping them log billable hours, manage projects, and streamline payments",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/harvest",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BEARER, OAUTH2",
@@ -9830,18 +10152,22 @@
       "brd": "very-broad",
       "brdN": 425,
       "brdSrc": "composio-registry",
+      "brdReg": 425,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "stripe",
       "tools": 425,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Stripe offers online payment infrastructure, fraud prevention, and APIs enabling businesses to accept and manage payments globally",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/stripe",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "API_KEY, BASIC, BEARER",
@@ -9952,6 +10278,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -10066,14 +10396,18 @@
       "cat": "Finance and Fintech",
       "hint": "binance-docs.github.io",
       "fam": "static-secret",
-      "acc": "app-review",
-      "accWhy": "approval_gate=app-review",
-      "bld": "build-with-caveats",
-      "blk": "app-review",
-      "bldWhy": "buildable after the vendor's review process",
+      "acc": "unknown",
+      "accWhy": "no sufficient signal",
+      "bld": "unknown",
+      "blk": "unclear",
+      "bldWhy": "access=unknown",
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -10115,22 +10449,22 @@
           "r": "unclassified"
         },
         "credential_self_issue": {
-          "v": "yes",
+          "v": "unknown",
           "q": "You will not be able to create an API if KYC is not completed.",
           "u": "https://docs.binance.us/developer-guides/rest-api",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "approval_gate": {
-          "v": "app-review",
+          "v": "unknown",
           "q": "You will not be able to create an API if KYC is not completed.",
           "u": "https://docs.binance.us/developer-guides/rest-api",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "protocol": {
           "v": "REST",
@@ -10160,13 +10494,13 @@
           "r": ""
         },
         "primary_blocker": {
-          "v": "app-review",
+          "v": "unknown",
           "q": "You will not be able to create an API if KYC is not completed.",
           "u": "https://docs.binance.us/developer-guides/rest-api",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "product_class": {
           "v": "api",
@@ -10179,7 +10513,7 @@
         }
       },
       "dis": [],
-      "qn": 0,
+      "qn": 3,
       "gate": false
     },
     {
@@ -10196,6 +10530,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -10312,26 +10650,30 @@
       "cat": "Finance and Fintech",
       "hint": "ipayx.ai/docs",
       "fam": "unknown",
-      "acc": "app-review",
-      "accWhy": "approval_gate=business-verification",
-      "bld": "build-with-caveats",
-      "blk": "app-review",
-      "bldWhy": "buildable after the vendor's review process",
-      "brd": "unknown",
-      "brdN": null,
-      "brdSrc": "none",
+      "acc": "free-trial",
+      "accWhy": "page signal: free tier, self-issue unconfirmed",
+      "bld": "unknown",
+      "blk": "unclear",
+      "bldWhy": "no documented public interface found",
+      "brd": "narrow",
+      "brdN": 3,
+      "brdSrc": "openapi-spec",
+      "brdReg": 0,
+      "brdSpec": 3,
+      "gateFinal": "https://www.ipayx.ai/pricing",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
       "f": {
         "one_liner": {
-          "v": "Welcome to iPaymu! Follow these steps to start integrating iPaymu payment gateway into your application.",
+          "v": "unknown",
           "q": "Welcome to iPaymu! Follow these steps to start integrating iPaymu payment gateway into your application.",
           "u": "https://docs.ipaymu.com/en/docs/getting-started",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "auth_methods": {
           "v": "",
@@ -10343,13 +10685,13 @@
           "r": "unclassified"
         },
         "signup_self_serve": {
-          "v": "yes",
+          "v": "unknown",
           "q": "First, you need to create an account on iPaymu.",
           "u": "https://docs.ipaymu.com/en/docs/getting-started",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "api_access_tier": {
           "v": "unknown",
@@ -10361,31 +10703,31 @@
           "r": "unclassified"
         },
         "credential_self_issue": {
-          "v": "yes",
+          "v": "unknown",
           "q": "Here you will find your VA Number and API Key.",
           "u": "https://docs.ipaymu.com/en/docs/getting-started",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "approval_gate": {
-          "v": "business-verification",
+          "v": "unknown",
           "q": "Verify your email address.",
           "u": "https://docs.ipaymu.com/en/docs/getting-started",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "protocol": {
-          "v": "REST",
+          "v": "",
           "q": "Generate a REST API URL: Create payment links for customer transactions.",
           "u": "https://docs.i-pay.io/",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "rate_limits_documented": {
           "v": "unknown",
@@ -10425,9 +10767,9 @@
         }
       },
       "dis": [
-        "model said primary_blocker=none but access derives to app-review (approval_gate=business-verification)"
+        "product_class=api but no protocol found"
       ],
-      "qn": 0,
+      "qn": 5,
       "gate": false
     },
     {
@@ -10444,18 +10786,22 @@
       "brd": "broad",
       "brdN": 114,
       "brdSrc": "composio-registry",
+      "brdReg": 114,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "quickbooks",
       "tools": 114,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Quickbooks is a cloud-based accounting software that helps you manage your finances, track your income and expenses, and get insights into your business",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/quickbooks",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "OAUTH2",
@@ -10568,18 +10914,22 @@
       "brd": "medium",
       "brdN": 53,
       "brdSrc": "composio-registry",
+      "brdReg": 53,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "xero",
       "tools": 53,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Xero is a cloud-based accounting software for small businesses, providing invoicing, bank reconciliation, bookkeeping, and financial reporting in real time",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/xero",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "OAUTH2",
@@ -10692,18 +11042,22 @@
       "brd": "medium",
       "brdN": 84,
       "brdSrc": "composio-registry",
+      "brdReg": 84,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "brex",
       "tools": 84,
       "f": {
         "one_liner": {
-          "v": "unknown",
+          "v": "Brex provides corporate credit cards, spend management, and financial tools tailored for startups and tech businesses to optimize cash flow, accounting, and growth",
           "q": "",
-          "u": "",
-          "g": "no-retained-text",
-          "t": 5,
-          "e": false,
-          "r": "unclassified"
+          "u": "https://platform.composio.dev/toolkits/brex",
+          "g": "registry-fact",
+          "t": 1,
+          "e": true,
+          "r": ""
         },
         "auth_methods": {
           "v": "BEARER",
@@ -10814,6 +11168,10 @@
       "brd": "medium",
       "brdN": 88,
       "brdSrc": "composio-registry",
+      "brdReg": 88,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "ramp",
       "tools": 88,
@@ -10927,7 +11285,7 @@
       "app": "PitchBook",
       "cat": "Finance and Fintech",
       "hint": "pitchbook.com",
-      "fam": "static-secret",
+      "fam": "unknown",
       "acc": "free-trial",
       "accWhy": "page signal: free tier, self-issue unconfirmed",
       "bld": "unknown",
@@ -10936,6 +11294,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -10950,13 +11312,13 @@
           "r": "unclassified"
         },
         "auth_methods": {
-          "v": "API_KEY",
+          "v": "",
           "q": "API key or access token",
           "u": "https://docs.matia.io/docs/connectors/etl/pitchbook",
-          "g": "valid",
+          "g": "unnamed-subject",
           "t": 4,
           "e": false,
-          "r": ""
+          "r": "evidence-about-another-product"
         },
         "signup_self_serve": {
           "v": "unknown",
@@ -11043,7 +11405,7 @@
       "dis": [
         "product_class=api but no protocol found"
       ],
-      "qn": 0,
+      "qn": 1,
       "gate": false
     },
     {
@@ -11060,6 +11422,10 @@
       "brd": "narrow",
       "brdN": 11,
       "brdSrc": "composio-registry",
+      "brdReg": 11,
+      "brdSpec": null,
+      "gateFinal": "https://accounts.google.com/v3/signin/identifier?continue=https://notebook.google.com/login?continue%3Dhttps://notebook.",
+      "pubPricing": false,
       "cat_in": true,
       "slug": "notebook_lm",
       "tools": 11,
@@ -11184,6 +11550,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -11262,8 +11632,8 @@
         },
         "existing_mcp": {
           "v": "official",
-          "q": "Webhooks are the recommended way to build export integrations with Otter.",
-          "u": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+          "q": "Otter's MCP Server connects your meeting data directly to AI tools like Claude and ChatGPT",
+          "u": "https://otter.ai/blog/otter-for-enterprise-connect-ai-to-ai-with-otters-mcp",
           "g": "valid",
           "t": 1,
           "e": true,
@@ -11289,7 +11659,7 @@
         }
       },
       "dis": [],
-      "qn": 0,
+      "qn": 1,
       "gate": false
     },
     {
@@ -11306,6 +11676,10 @@
       "brd": "narrow",
       "brdN": 7,
       "brdSrc": "composio-registry",
+      "brdReg": 7,
+      "brdSpec": null,
+      "gateFinal": "https://www.fathom.ai/pricing",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "fathom",
       "tools": 7,
@@ -11430,6 +11804,10 @@
       "brd": "narrow",
       "brdN": 1,
       "brdSrc": "composio-registry",
+      "brdReg": 1,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": true,
       "slug": "consensus",
       "tools": 1,
@@ -11552,6 +11930,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -11671,9 +12053,13 @@
       "bld": "unknown",
       "blk": "unclear",
       "bldWhy": "access=unknown",
-      "brd": "unknown",
-      "brdN": null,
-      "brdSrc": "none",
+      "brd": "narrow",
+      "brdN": 23,
+      "brdSrc": "openapi-spec",
+      "brdReg": 0,
+      "brdSpec": 23,
+      "gateFinal": "",
+      "pubPricing": false,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -11796,6 +12182,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -11874,11 +12264,11 @@
         },
         "existing_mcp": {
           "v": "official",
-          "q": "We provide official Python and Node.js/TypeScript SDKs.",
-          "u": "https://docs.higgsfield.ai/docs/help/faq",
+          "q": "Higgsfield shipped its official MCP server on April 30, 2026, exposing 30+ image and video generation models through a single hosted endpoint.",
+          "u": "https://claudefa.st/blog/tools/mcp-extensions/higgsfield-mcp",
           "g": "valid",
-          "t": 1,
-          "e": true,
+          "t": 4,
+          "e": false,
           "r": ""
         },
         "primary_blocker": {
@@ -11901,7 +12291,7 @@
         }
       },
       "dis": [],
-      "qn": 1,
+      "qn": 2,
       "gate": false
     },
     {
@@ -11918,6 +12308,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -11996,8 +12390,8 @@
         },
         "existing_mcp": {
           "v": "official",
-          "q": "This is a command-line interface (CLI) for mermaid.",
-          "u": "https://github.com/mermaid-js/mermaid-cli/blob/f87dcd0c/README.md",
+          "q": "Available Transport Types:\n\n- HTTP:`https://mcp.mermaid.ai/mcp` with\"type\": \"http\"",
+          "u": "https://mermaid.ai/docs/ai/mcp-server",
           "g": "near-miss",
           "t": 1,
           "e": true,
@@ -12023,7 +12417,7 @@
         }
       },
       "dis": [],
-      "qn": 1,
+      "qn": 2,
       "gate": false
     },
     {
@@ -12037,9 +12431,13 @@
       "bld": "unknown",
       "blk": "unclear",
       "bldWhy": "access=unknown",
-      "brd": "unknown",
-      "brdN": null,
-      "brdSrc": "none",
+      "brd": "narrow",
+      "brdN": 8,
+      "brdSrc": "openapi-spec",
+      "brdReg": 0,
+      "brdSpec": 8,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -12162,6 +12560,10 @@
       "brd": "unknown",
       "brdN": null,
       "brdSrc": "none",
+      "brdReg": 0,
+      "brdSpec": null,
+      "gateFinal": "",
+      "pubPricing": true,
       "cat_in": false,
       "slug": "",
       "tools": 0,
@@ -12274,21 +12676,21 @@
   "patterns": {
     "auth": {
       "families": {
-        "both": 40,
-        "static-secret": 36,
+        "both": 39,
+        "static-secret": 34,
+        "unknown": 14,
         "oauth-dance": 12,
-        "unknown": 11,
         "none": 1
       },
       "raw_methods": {
-        "OAUTH2": 52,
-        "API_KEY": 41,
+        "OAUTH2": 51,
         "BEARER": 40,
-        "BASIC": 14,
+        "API_KEY": 39,
+        "BASIC": 13,
         "JWT": 7,
         "NONE": 1
       },
-      "headline_static_secret_path": 76
+      "headline_static_secret_path": 73
     },
     "access_by_category": {
       "AI, Research and Media-native": {
@@ -12308,7 +12710,8 @@
         "unknown": 5,
         "free": 2,
         "paid-tier-required": 1,
-        "app-review": 2
+        "free-trial": 1,
+        "app-review": 1
       },
       "Data, SEO and Scraping": {
         "paid-tier-required": 3,
@@ -12331,10 +12734,10 @@
         "free": 1
       },
       "Finance and Fintech": {
-        "unknown": 4,
+        "unknown": 5,
         "paid-tier-required": 2,
-        "app-review": 3,
-        "free-trial": 1
+        "free-trial": 2,
+        "app-review": 1
       },
       "Marketing, Ads, Email and Social": {
         "app-review": 4,
@@ -12345,38 +12748,39 @@
       },
       "Productivity and Project Management": {
         "unknown": 7,
-        "free": 3
+        "free": 2,
+        "free-trial": 1
       },
       "Support and Helpdesk": {
-        "unknown": 2,
-        "paid-tier-required": 4,
+        "unknown": 3,
+        "paid-tier-required": 3,
         "partner-or-sales-gate": 1,
         "free": 2,
         "app-review": 1
       }
     },
     "access_overall": {
-      "unknown": 40,
-      "free": 20,
-      "paid-tier-required": 14,
-      "app-review": 11,
+      "unknown": 42,
+      "free": 19,
+      "paid-tier-required": 13,
       "partner-or-sales-gate": 8,
-      "free-trial": 5,
+      "free-trial": 8,
+      "app-review": 8,
       "no-public-api": 2
     },
     "blockers": {
-      "none": 49,
-      "unclear": 16,
-      "paid-plan": 14,
-      "app-review": 11,
+      "none": 50,
+      "unclear": 19,
+      "paid-plan": 13,
       "partner-gate": 8,
+      "app-review": 8,
       "no-public-api": 2
     },
     "buildability": {
       "already-built": 56,
-      "unknown": 16,
-      "build-with-caveats": 14,
-      "build-now": 9,
+      "unknown": 19,
+      "build-now": 10,
+      "build-with-caveats": 10,
       "needs-outreach": 5
     },
     "catalog": {
@@ -12394,10 +12798,11 @@
         "Productivity and Project Management": 9,
         "Support and Helpdesk": 6
       },
-      "missing_with_official_mcp": 27,
+      "missing_with_official_mcp": 25,
       "missing_build_now": [
         "Twenty",
         "LiveAgent",
+        "Pumble",
         "systeme.io",
         "WooCommerce",
         "Ecwid",
@@ -12415,127 +12820,139 @@
       ]
     },
     "mcp": {
-      "official": 68,
-      "community": 18,
-      "unknown": 14
+      "official": 64,
+      "unknown": 18,
+      "community": 18
     },
     "breadth": {
-      "unknown": 44,
-      "broad": 18,
-      "narrow": 16,
+      "unknown": 40,
+      "broad": 19,
+      "narrow": 19,
       "medium": 15,
       "very-broad": 7
     }
   },
   "coverage": {
     "one_liner": {
-      "answered": 38,
-      "coverage_pct": 38.0,
-      "evidenced": 36,
-      "evidenced_pct_of_answered": 94.7,
+      "answered": 69,
+      "coverage_pct": 69.0,
+      "evidenced": 69,
+      "evidenced_pct_of_answered": 100.0,
       "verdicts": {
-        "no-retained-text": 62,
-        "valid": 38
+        "registry-fact": 36,
+        "valid": 33,
+        "no-retained-text": 26,
+        "not-a-description": 3,
+        "unnamed-subject": 2
       }
     },
     "auth_methods": {
-      "answered": 89,
-      "coverage_pct": 89.0,
+      "answered": 86,
+      "coverage_pct": 86.0,
       "evidenced": 79,
-      "evidenced_pct_of_answered": 88.8,
+      "evidenced_pct_of_answered": 91.9,
       "verdicts": {
-        "valid": 78,
+        "valid": 75,
         "near-miss": 9,
         "QUOTE_NOT_FOUND": 7,
+        "unnamed-subject": 3,
         "no-retained-text": 3,
         "wrong-url": 3
       }
     },
     "signup_self_serve": {
-      "answered": 45,
-      "coverage_pct": 45.0,
+      "answered": 42,
+      "coverage_pct": 42.0,
       "evidenced": 41,
-      "evidenced_pct_of_answered": 91.1,
+      "evidenced_pct_of_answered": 97.6,
       "verdicts": {
         "no-retained-text": 53,
-        "valid": 41,
+        "valid": 38,
         "near-miss": 4,
+        "unnamed-subject": 3,
         "QUOTE_NOT_FOUND": 2
       }
     },
     "api_access_tier": {
-      "answered": 28,
-      "coverage_pct": 28.0,
+      "answered": 24,
+      "coverage_pct": 24.0,
       "evidenced": 22,
-      "evidenced_pct_of_answered": 78.6,
+      "evidenced_pct_of_answered": 91.7,
       "verdicts": {
         "no-retained-text": 71,
-        "valid": 24,
+        "valid": 20,
+        "unnamed-subject": 4,
         "near-miss": 3,
         "wrong-url": 1,
         "QUOTE_NOT_FOUND": 1
       }
     },
     "credential_self_issue": {
-      "answered": 80,
-      "coverage_pct": 80.0,
+      "answered": 75,
+      "coverage_pct": 75.0,
       "evidenced": 73,
-      "evidenced_pct_of_answered": 91.2,
+      "evidenced_pct_of_answered": 97.3,
       "verdicts": {
-        "valid": 61,
-        "near-miss": 19,
+        "valid": 58,
+        "near-miss": 18,
         "no-retained-text": 11,
-        "QUOTE_NOT_FOUND": 9
+        "QUOTE_NOT_FOUND": 9,
+        "unnamed-subject": 4
       }
     },
     "approval_gate": {
-      "answered": 32,
-      "coverage_pct": 32.0,
+      "answered": 29,
+      "coverage_pct": 29.0,
       "evidenced": 25,
-      "evidenced_pct_of_answered": 78.1,
+      "evidenced_pct_of_answered": 86.2,
       "verdicts": {
         "no-retained-text": 63,
-        "valid": 26,
+        "valid": 23,
         "QUOTE_NOT_FOUND": 6,
         "near-miss": 3,
+        "unnamed-subject": 3,
         "wrong-url": 2
       }
     },
     "protocol": {
-      "answered": 76,
-      "coverage_pct": 76.0,
+      "answered": 74,
+      "coverage_pct": 74.0,
       "evidenced": 70,
-      "evidenced_pct_of_answered": 92.1,
+      "evidenced_pct_of_answered": 94.6,
       "verdicts": {
-        "valid": 65,
+        "valid": 63,
         "no-retained-text": 23,
         "near-miss": 8,
         "QUOTE_NOT_FOUND": 2,
+        "unnamed-subject": 2,
         "wrong-url": 1,
         "unverifiable-url": 1
       }
     },
     "rate_limits_documented": {
-      "answered": 31,
-      "coverage_pct": 31.0,
+      "answered": 30,
+      "coverage_pct": 30.0,
       "evidenced": 30,
-      "evidenced_pct_of_answered": 96.8,
+      "evidenced_pct_of_answered": 100.0,
       "verdicts": {
         "no-retained-text": 67,
-        "valid": 24,
+        "valid": 23,
         "near-miss": 8,
+        "unnamed-subject": 1,
         "QUOTE_NOT_FOUND": 1
       }
     },
     "existing_mcp": {
-      "answered": 86,
-      "coverage_pct": 86.0,
-      "evidenced": 71,
-      "evidenced_pct_of_answered": 82.6,
+      "answered": 82,
+      "coverage_pct": 82.0,
+      "evidenced": 65,
+      "evidenced_pct_of_answered": 79.3,
       "verdicts": {
-        "valid": 73,
-        "no-retained-text": 14,
+        "valid": 69,
+        "no-retained-text": 15,
         "near-miss": 12,
+        "off-topic-evidence": 2,
+        "unnamed-subject": 1,
         "wrong-url": 1
       }
     },
@@ -12549,13 +12966,14 @@
       }
     },
     "primary_blocker": {
-      "answered": 98,
-      "coverage_pct": 98.0,
+      "answered": 97,
+      "coverage_pct": 97.0,
       "evidenced": 7,
-      "evidenced_pct_of_answered": 7.1,
+      "evidenced_pct_of_answered": 7.2,
       "verdicts": {
         "not-asked-pass1": 92,
-        "valid": 8
+        "valid": 7,
+        "unnamed-subject": 1
       }
     }
   },
@@ -12568,39 +12986,41 @@
       "no-quote": 8
     },
     "pass2_verdicts": {
-      "valid": 438,
-      "no-retained-text": 367,
+      "valid": 409,
+      "no-retained-text": 332,
       "not-asked-pass1": 192,
-      "near-miss": 66,
+      "near-miss": 65,
+      "registry-fact": 36,
       "QUOTE_NOT_FOUND": 28,
+      "unnamed-subject": 24,
       "wrong-url": 8,
+      "not-a-description": 3,
+      "off-topic-evidence": 2,
       "unverifiable-url": 1
     },
     "pass1_ungraded_slots": 188,
-    "quarantined_claims": 30,
-    "citations_total": 545,
-    "citations_below_tier2": 54,
+    "quarantined_claims": 71,
+    "citations_total": 580,
+    "citations_below_tier2": 57,
     "needing_refetch": 0,
     "contradictions_pass1": 7,
-    "contradictions_now": 35
+    "contradictions_now": 36
   },
   "auth_cross_check": {
     "sample": 56,
-    "token_level_agree": 43,
-    "family_level_agree": 49,
-    "token_pct": 76.8,
-    "family_pct": 87.5,
+    "token_level_agree": 42,
+    "family_level_agree": 47,
+    "token_pct": 75.0,
+    "family_pct": 83.9,
     "disagreements": [
       {
         "app": "Freshdesk",
         "registry": [
           "API_KEY"
         ],
-        "agent": [
-          "BASIC"
-        ],
-        "family_agrees": true,
-        "cause": "transport-vs-credential"
+        "agent": [],
+        "family_agrees": false,
+        "cause": "recall-miss"
       },
       {
         "app": "Plain",
@@ -12633,6 +13053,15 @@
       },
       {
         "app": "LinkedIn Ads",
+        "registry": [
+          "OAUTH2"
+        ],
+        "agent": [],
+        "family_agrees": false,
+        "cause": "recall-miss"
+      },
+      {
+        "app": "GoHighLevel",
         "registry": [
           "OAUTH2"
         ],
@@ -12733,51 +13162,62 @@
   },
   "unknown_audit": {
     "overall": {
-      "unclassified": 347,
+      "unclassified": 311,
       "quote-failed-validation": 43,
+      "evidence-about-another-product": 31,
       "not-applicable": 7
     },
     "per_field": {
       "api_access_tier": {
         "unclassified": 69,
+        "evidence-about-another-product": 4,
         "not-applicable": 2,
         "quote-failed-validation": 1
       },
       "approval_gate": {
         "unclassified": 61,
         "quote-failed-validation": 6,
+        "evidence-about-another-product": 3,
         "not-applicable": 1
       },
       "auth_methods": {
         "quote-failed-validation": 7,
+        "evidence-about-another-product": 3,
         "unclassified": 3,
         "not-applicable": 1
       },
       "credential_self_issue": {
         "unclassified": 10,
         "quote-failed-validation": 9,
+        "evidence-about-another-product": 5,
         "not-applicable": 1
       },
       "existing_mcp": {
-        "quote-failed-validation": 14
+        "quote-failed-validation": 14,
+        "evidence-about-another-product": 4
       },
       "one_liner": {
-        "unclassified": 62
+        "unclassified": 26,
+        "evidence-about-another-product": 5
       },
       "primary_blocker": {
-        "unclassified": 2
+        "unclassified": 2,
+        "evidence-about-another-product": 1
       },
       "protocol": {
         "unclassified": 21,
-        "quote-failed-validation": 3
+        "quote-failed-validation": 3,
+        "evidence-about-another-product": 2
       },
       "rate_limits_documented": {
         "unclassified": 66,
         "not-applicable": 2,
+        "evidence-about-another-product": 1,
         "quote-failed-validation": 1
       },
       "signup_self_serve": {
         "unclassified": 53,
+        "evidence-about-another-product": 3,
         "quote-failed-validation": 2
       }
     }

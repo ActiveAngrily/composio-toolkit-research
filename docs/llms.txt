@@ -12,19 +12,19 @@ quarantined to unknown rather than reported.
 
 ## Headline
 - Composio already covers 56 of the 100. 44 are not in the catalog.
-- 76 of 100 accept a static secret, so most need no OAuth app registered.
-- 27 of the 44 missing apps already have an official MCP server built by someone else.
-- Auth cross-check against Composio's own registry on 56 apps: 76.8% token-level, 87.5% family-level.
+- 73 of 100 accept a static secret, so most need no OAuth app registered.
+- 25 of the 44 missing apps already have an official MCP server built by someone else.
+- Auth cross-check against Composio's own registry on 56 apps: 75.0% token-level, 83.9% family-level.
 
 ## Patterns
-- auth families: {"both": 40, "static-secret": 36, "oauth-dance": 12, "unknown": 11, "none": 1}
-- access: {"unknown": 40, "free": 20, "paid-tier-required": 14, "app-review": 11, "partner-or-sales-gate": 8, "free-trial": 5, "no-public-api": 2}
-- blockers: {"none": 49, "unclear": 16, "paid-plan": 14, "app-review": 11, "partner-gate": 8, "no-public-api": 2}
-- buildability: {"already-built": 56, "unknown": 16, "build-with-caveats": 14, "build-now": 9, "needs-outreach": 5}
+- auth families: {"both": 39, "static-secret": 34, "unknown": 14, "oauth-dance": 12, "none": 1}
+- access: {"unknown": 42, "free": 19, "paid-tier-required": 13, "partner-or-sales-gate": 8, "free-trial": 8, "app-review": 8, "no-public-api": 2}
+- blockers: {"none": 50, "unclear": 19, "paid-plan": 13, "partner-gate": 8, "app-review": 8, "no-public-api": 2}
+- buildability: {"already-built": 56, "unknown": 19, "build-now": 10, "build-with-caveats": 10, "needs-outreach": 5}
 
 ## Honest limits
 - 0 claims cannot be verified offline because only half of each page's text was retained. They are labelled, not counted as errors.
-- 347 abstentions are unclassified: pass 1 never recorded WHY it abstained, so 'the vendor does not publish this' cannot be separated from 'we did not find it'.
+- 311 abstentions are unclassified: pass 1 never recorded WHY it abstained, so 'the vendor does not publish this' cannot be separated from 'we did not find it'.
 - 0 abstentions are provably our own gap.
 
 ## Per-app data
@@ -41,19 +41,19 @@ Copper | CRM and Sales | both | unknown | unknown | unclear | no
 DealCloud | CRM and Sales | both | unknown | unknown | unclear | no
 Zendesk | Support and Helpdesk | both | unknown | already-built | none | yes
 Intercom | Support and Helpdesk | both | unknown | already-built | none | yes
-Freshdesk | Support and Helpdesk | static-secret | paid-tier-required | already-built | paid-plan | yes
+Freshdesk | Support and Helpdesk | unknown | paid-tier-required | already-built | paid-plan | yes
 Front | Support and Helpdesk | both | paid-tier-required | build-with-caveats | paid-plan | no
 Pylon | Support and Helpdesk | static-secret | partner-or-sales-gate | needs-outreach | partner-gate | no
 LiveAgent | Support and Helpdesk | static-secret | free | build-now | none | no
 Plain | Support and Helpdesk | static-secret | free | already-built | none | yes
 Help Scout | Support and Helpdesk | oauth-dance | paid-tier-required | already-built | paid-plan | yes
 Gorgias | Support and Helpdesk | both | app-review | already-built | app-review | yes
-Gladly | Support and Helpdesk | static-secret | paid-tier-required | build-with-caveats | paid-plan | no
+Gladly | Support and Helpdesk | static-secret | unknown | unknown | unclear | no
 Slack | Communications and Messaging | unknown | unknown | already-built | none | yes
 Twilio | Communications and Messaging | static-secret | free | unknown | unclear | no
 Zoho Cliq | Communications and Messaging | unknown | paid-tier-required | build-with-caveats | paid-plan | no
 Lark | Communications and Messaging | static-secret | unknown | unknown | unclear | no
-Pumble | Communications and Messaging | both | app-review | build-with-caveats | app-review | no
+Pumble | Communications and Messaging | both | free-trial | build-now | none | no
 Discord | Communications and Messaging | unknown | unknown | already-built | none | yes
 Telegram | Communications and Messaging | static-secret | free | already-built | none | yes
 WhatsApp Business | Communications and Messaging | both | app-review | already-built | app-review | yes
@@ -62,7 +62,7 @@ Vonage | Communications and Messaging | static-secret | unknown | unknown | uncl
 Google Ads | Marketing, Ads, Email and Social | both | app-review | already-built | app-review | yes
 Meta Ads | Marketing, Ads, Email and Social | both | app-review | already-built | app-review | yes
 LinkedIn Ads | Marketing, Ads, Email and Social | unknown | partner-or-sales-gate | already-built | partner-gate | yes
-GoHighLevel | Marketing, Ads, Email and Social | both | paid-tier-required | already-built | paid-plan | yes
+GoHighLevel | Marketing, Ads, Email and Social | unknown | paid-tier-required | already-built | paid-plan | yes
 Mailchimp | Marketing, Ads, Email and Social | both | free | already-built | none | yes
 Klaviyo | Marketing, Ads, Email and Social | both | unknown | already-built | none | yes
 systeme.io | Marketing, Ads, Email and Social | static-secret | free | build-now | none | no
@@ -106,19 +106,19 @@ Jira | Productivity and Project Management | both | unknown | already-built | no
 Asana | Productivity and Project Management | both | free | already-built | none | yes
 Monday.com | Productivity and Project Management | both | unknown | already-built | none | yes
 ClickUp | Productivity and Project Management | both | unknown | already-built | none | yes
-Coda | Productivity and Project Management | static-secret | free | already-built | none | yes
+Coda | Productivity and Project Management | static-secret | free-trial | already-built | none | yes
 Smartsheet | Productivity and Project Management | unknown | unknown | unknown | unclear | no
 Harvest | Productivity and Project Management | both | unknown | already-built | none | yes
 Stripe | Finance and Fintech | static-secret | unknown | already-built | none | yes
 Plaid | Finance and Fintech | both | paid-tier-required | build-with-caveats | paid-plan | no
-Binance | Finance and Fintech | static-secret | app-review | build-with-caveats | app-review | no
+Binance | Finance and Fintech | static-secret | unknown | unknown | unclear | no
 Paygent Connect | Finance and Fintech | static-secret | paid-tier-required | build-with-caveats | paid-plan | no
-iPayX | Finance and Fintech | unknown | app-review | build-with-caveats | app-review | no
+iPayX | Finance and Fintech | unknown | free-trial | unknown | unclear | no
 QuickBooks | Finance and Fintech | oauth-dance | unknown | already-built | none | yes
 Xero | Finance and Fintech | oauth-dance | unknown | already-built | none | yes
 Brex | Finance and Fintech | static-secret | unknown | already-built | none | yes
 Ramp | Finance and Fintech | both | app-review | already-built | app-review | yes
-PitchBook | Finance and Fintech | static-secret | free-trial | unknown | unclear | no
+PitchBook | Finance and Fintech | unknown | free-trial | unknown | unclear | no
 NotebookLM | AI, Research and Media-native | none | unknown | already-built | none | yes
 Otter AI | AI, Research and Media-native | static-secret | partner-or-sales-gate | needs-outreach | partner-gate | no
 Fathom | AI, Research and Media-native | both | unknown | already-built | none | yes

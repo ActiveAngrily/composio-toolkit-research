@@ -30,7 +30,7 @@ import pathlib
 import re
 import time
 
-from . import config, derive, evidence, prompts, registry, schema, upgrade
+from . import config, derive, evidence, probe, prompts, registry, schema, upgrade
 from . import providers as providers_mod
 
 
@@ -256,6 +256,58 @@ def apply_patch(records: list[dict], patch: dict) -> dict:
     return dict(tally.most_common())
 
 
+# ------------------------------------------------------- probes and registry facts
+
+def apply_probes(records: list[dict], patch: dict) -> dict:
+    """Fold in the behavioural probes and Composio's own product descriptions.
+
+    The `/pricing` redirect probe is the generalisation of the one case documents could
+    not settle: usepylon.com/pricing lands on /schedule-demo, so there is no public
+    pricing and no self-serve tier. Running it on all 100 produced a NEGATIVE result --
+    exactly one sales gate, the one it was designed from. Publishing that matters more
+    than the gate it found: a technique built from a single vivid example generalised to
+    nothing, and the honest conclusion is that hidden pricing is rarer on this list than
+    that example suggests. What it did establish positively is 50 apps with public
+    pricing at a predictable URL, which is a real self-serve signal.
+
+    `one_liner` comes from Composio's registry description where the app is in the
+    catalog. Non-LLM and authoritative, so it is marked `registry-fact` rather than
+    dressed up as a vendor quote -- it is Composio describing the app, which is exactly
+    what the field needs and nothing more.
+    """
+    tally: collections.Counter = collections.Counter()
+    by_id = {r["id"]: r for r in records}
+
+    for app_id, pr in (patch.get("probe") or {}).items():
+        rec = by_id.get(int(app_id))
+        if not rec:
+            continue
+        rec["pricing_probe"] = {"sales_gate": bool(pr.get("gate")),
+                                "public_pricing": bool(pr.get("pub")),
+                                "status": pr.get("st", 200),
+                                "final_url": pr.get("fin", ""),
+                                "redirected": bool(pr.get("fin"))}
+        if pr.get("ops"):
+            rec["spec_probe"] = {"operation_count": pr["ops"], "spec_url": pr.get("spec", "")}
+            tally["spec_found"] += 1
+        tally["sales_gate" if pr.get("gate") else
+              "public_pricing" if pr.get("pub") else "pricing_inconclusive"] += 1
+
+    for app_id, one in (patch.get("oneliner") or {}).items():
+        rec = by_id.get(int(app_id))
+        if not rec or not schema.is_blank("one_liner", rec["extracted"]["one_liner"]["value"]):
+            continue
+        rec["extracted"]["one_liner"] = {
+            "value": one["v"],
+            "quote": "", "url": f"https://platform.composio.dev/toolkits/{one['slug']}",
+            "source": "composio-registry"}
+        rec["quote_checks"]["one_liner"] = {"verdict": "registry-fact", "tier": 1,
+                                           "evidenced": True, "resolved_by": "composio-registry"}
+        (rec.setdefault("unknown_reason", {})).pop("one_liner", None)
+        tally["one_liner_from_registry"] += 1
+    return dict(tally.most_common())
+
+
 # ----------------------------------------------------------------------- rederive
 
 def rederive(records: list[dict], matches: dict) -> list[dict]:
@@ -267,6 +319,14 @@ def rederive(records: list[dict], matches: dict) -> list[dict]:
         buildability = derive.derive_buildability(ex, access["value"], r.get("registry") or {})
         r["self_serve"], r["buildability"] = access, buildability
         r["auth_family"] = derive.auth_family(ex["auth_methods"]["value"])
+        reg_tools = (r.get("registry") or {}).get("composio_tools_count")
+        spec_ops = (r.get("spec_probe") or {}).get("operation_count")
+        count = reg_tools or spec_ops
+        r["breadth"] = {"count": count, "bucket": probe.breadth_bucket(count),
+                        "source": "composio-registry" if reg_tools
+                                  else ("openapi-spec" if spec_ops else "none"),
+                        # Where both exist they are a free cross-check on each other.
+                        "registry_tools": reg_tools, "spec_operations": spec_ops}
         r["contradictions"] = derive.reconcile(ex, access, buildability)
         r["quote_summary"] = evidence.summarise(r["quote_checks"])
         r["unknown_reason"] = derive.fill_unknown_reasons(
@@ -292,6 +352,9 @@ def main(argv=None) -> int:
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--all-apps", action="store_true",
                    help="query MCP for all 100, not only the blanks")
+    p.add_argument("--probe-patch", default="data/probe_patch.json",
+                   help="recorded pricing-redirect / OpenAPI-spec probes and registry "
+                        "descriptions")
     p.add_argument("--patch", default="data/pass2_patch.json",
                    help="replay the recorded pass-2 result instead of re-running it "
                         "(default when neither --refetch nor --mcp is given)")
@@ -312,6 +375,10 @@ def main(argv=None) -> int:
         print(f"replaying {patch_path} (no network) -- pass --refetch --mcp to re-run live")
         report["replayed"] = apply_patch(records, json.loads(patch_path.read_text()))
         print(f"  {report['replayed']}")
+        probe_path = pathlib.Path(args.probe_patch)
+        if probe_path.exists():
+            report["probes"] = apply_probes(records, json.loads(probe_path.read_text()))
+            print(f"  probes: {report['probes']}")
 
     provs = providers_mod.build(args.backend) if live else None
     if live:
@@ -326,6 +393,8 @@ def main(argv=None) -> int:
                                 only_blank=not args.all_apps)
         print(f"  mcp results: {report['mcp']}")
 
+    report["subject_check"] = evidence.enforce_subject_checks(records)
+    print(f"  subject check: {report['subject_check'] or 'nothing flagged'}")
     records = rederive(records, matches)
     payload["dataset"] = config.redact(records)
     payload["patterns"] = upgrade.patterns(records, matches)

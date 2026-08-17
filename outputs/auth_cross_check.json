@@ -1,20 +1,18 @@
 {
   "sample": 56,
-  "token_level_agree": 43,
-  "family_level_agree": 49,
-  "token_pct": 76.8,
-  "family_pct": 87.5,
+  "token_level_agree": 42,
+  "family_level_agree": 47,
+  "token_pct": 75.0,
+  "family_pct": 83.9,
   "disagreements": [
     {
       "app": "Freshdesk",
       "registry": [
         "API_KEY"
       ],
-      "agent": [
-        "BASIC"
-      ],
-      "family_agrees": true,
-      "cause": "transport-vs-credential"
+      "agent": [],
+      "family_agrees": false,
+      "cause": "recall-miss"
     },
     {
       "app": "Plain",
@@ -47,6 +45,15 @@
     },
     {
       "app": "LinkedIn Ads",
+      "registry": [
+        "OAUTH2"
+      ],
+      "agent": [],
+      "family_agrees": false,
+      "cause": "recall-miss"
+    },
+    {
+      "app": "GoHighLevel",
       "registry": [
         "OAUTH2"
       ],

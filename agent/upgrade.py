@@ -430,6 +430,8 @@ def main(argv=None) -> int:
     print(f"strict grades: {len(strict)} recorded exceptions"
           f"{' (none found -- run with --batches in the workbench)' if not strict else ''}")
     records2 = [upgrade_record(r, matches, strict) for r in records1]
+    subject = evidence.enforce_subject_checks(records2)
+    print(f"subject check (is the evidence about this app?): {subject or 'nothing flagged'}")
 
     out = pathlib.Path(args.out or config.OUTPUTS / "dataset_v2.json")
     payload = {

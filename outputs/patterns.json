@@ -8,10 +8,10 @@
       "none": 1
     },
     "raw_methods": {
-      "OAUTH2": 52,
-      "API_KEY": 41,
+      "OAUTH2": 51,
       "BEARER": 40,
-      "BASIC": 14,
+      "API_KEY": 39,
+      "BASIC": 13,
       "JWT": 7,
       "NONE": 1
     },
@@ -121,7 +121,7 @@
       "Productivity and Project Management": 9,
       "Support and Helpdesk": 6
     },
-    "missing_with_official_mcp": 11,
+    "missing_with_official_mcp": 6,
     "missing_build_now": [
       "Twenty",
       "LiveAgent",
@@ -142,9 +142,9 @@
     ]
   },
   "mcp": {
-    "unknown": 76,
-    "official": 22,
-    "community": 2
+    "unknown": 89,
+    "official": 10,
+    "community": 1
   },
   "breadth": {
     "unknown": 44,

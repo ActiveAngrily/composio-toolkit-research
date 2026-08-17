@@ -520,9 +520,10 @@
           "url": ""
         },
         "existing_mcp": {
-          "value": "official",
+          "value": "unknown",
           "quote": "Using OAuth 2.0 is necessary for developing apps that are available in the Pipedrive Marketplace.",
-          "url": "https://developers.pipedrive.com/docs/api/v1/Oauth"
+          "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+          "quarantined": true
         },
         "primary_blocker": {
           "value": "unclear",
@@ -613,9 +614,9 @@
           "evidenced": false
         },
         "existing_mcp": {
-          "verdict": "valid",
+          "verdict": "off-topic-evidence",
           "tier": 1,
-          "evidenced": true,
+          "evidenced": false,
           "needs_refetch": false
         },
         "product_class": {
@@ -648,12 +649,21 @@
         "not-asked-pass1": 2,
         "evidenced": 5
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "existing_mcp",
+          "verdict": "off-topic-evidence",
+          "value": "official",
+          "quote": "Using OAuth 2.0 is necessary for developing apps that are available in the Pipedrive Marketplace.",
+          "url": "https://developers.pipedrive.com/docs/api/v1/Oauth"
+        }
+      ],
       "unknown_reason": {
         "one_liner": "unclassified",
         "api_access_tier": "unclassified",
         "approval_gate": "unclassified",
-        "rate_limits_documented": "unclassified"
+        "rate_limits_documented": "unclassified",
+        "existing_mcp": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -1231,9 +1241,10 @@
           "url": "https://apis.io/apis/podio/rest-api/"
         },
         "rate_limits_documented": {
-          "value": "yes",
+          "value": "unknown",
           "quote": "Rate limits are adjustable upon request.",
-          "url": "https://apis.io/apis/podio/rest-api/"
+          "url": "https://apis.io/apis/podio/rest-api/",
+          "quarantined": true
         },
         "existing_mcp": {
           "value": "unknown",
@@ -1318,7 +1329,7 @@
           "needs_refetch": false
         },
         "rate_limits_documented": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 3,
           "evidenced": false,
           "needs_refetch": false
@@ -1360,12 +1371,21 @@
         "not-asked-pass1": 2,
         "evidenced": 3
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "rate_limits_documented",
+          "verdict": "unnamed-subject",
+          "value": "yes",
+          "quote": "Rate limits are adjustable upon request.",
+          "url": "https://apis.io/apis/podio/rest-api/"
+        }
+      ],
       "unknown_reason": {
         "signup_self_serve": "unclassified",
         "api_access_tier": "unclassified",
         "approval_gate": "unclassified",
-        "existing_mcp": "retrieval-failed"
+        "existing_mcp": "retrieval-failed",
+        "rate_limits_documented": "evidence-about-another-product"
       },
       "contradictions": [
         "model said primary_blocker=none but access derives to partner-or-sales-gate (page signal: enterprise/invite only)"
@@ -2818,11 +2838,10 @@
           "url": ""
         },
         "auth_methods": {
-          "value": [
-            "BASIC"
-          ],
+          "value": [],
           "quote": "basicAuth - Type: HTTP basic authentication",
-          "url": "https://developers.freshworks.com/freshdesk-sdk/"
+          "url": "https://developers.freshworks.com/freshdesk-sdk/",
+          "quarantined": true
         },
         "signup_self_serve": {
           "value": "unknown",
@@ -2830,9 +2849,10 @@
           "url": ""
         },
         "api_access_tier": {
-          "value": "paid",
+          "value": "unknown",
           "quote": "API rate limits scale with the paid plan.",
-          "url": "https://apis.io/plans/freshdesk/freshdesk-plans-pricing/"
+          "url": "https://apis.io/plans/freshdesk/freshdesk-plans-pricing/",
+          "quarantined": true
         },
         "credential_self_issue": {
           "value": "unknown",
@@ -2910,7 +2930,7 @@
           "evidenced": false
         },
         "auth_methods": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 4,
           "evidenced": false,
           "needs_refetch": false
@@ -2921,7 +2941,7 @@
           "evidenced": false
         },
         "api_access_tier": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 3,
           "evidenced": false,
           "needs_refetch": false
@@ -2985,13 +3005,32 @@
         "not-asked-pass1": 2,
         "evidenced": 2
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "auth_methods",
+          "verdict": "unnamed-subject",
+          "value": [
+            "BASIC"
+          ],
+          "quote": "basicAuth - Type: HTTP basic authentication",
+          "url": "https://developers.freshworks.com/freshdesk-sdk/"
+        },
+        {
+          "field": "api_access_tier",
+          "verdict": "unnamed-subject",
+          "value": "paid",
+          "quote": "API rate limits scale with the paid plan.",
+          "url": "https://apis.io/plans/freshdesk/freshdesk-plans-pricing/"
+        }
+      ],
       "unknown_reason": {
         "one_liner": "unclassified",
         "signup_self_serve": "unclassified",
         "credential_self_issue": "unclassified",
         "approval_gate": "unclassified",
-        "existing_mcp": "retrieval-failed"
+        "existing_mcp": "retrieval-failed",
+        "auth_methods": "evidence-about-another-product",
+        "api_access_tier": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -3787,9 +3826,10 @@
           "url": ""
         },
         "api_access_tier": {
-          "value": "free",
+          "value": "unknown",
           "quote": "GraphQL API Access",
-          "url": "https://apis.io/plans/plain-support/plain-support-plans-pricing/"
+          "url": "https://apis.io/plans/plain-support/plain-support-plans-pricing/",
+          "quarantined": true
         },
         "credential_self_issue": {
           "value": "yes",
@@ -3877,7 +3917,7 @@
           "evidenced": false
         },
         "api_access_tier": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 3,
           "evidenced": false,
           "needs_refetch": false
@@ -3942,12 +3982,21 @@
         "not-asked-pass1": 2,
         "evidenced": 4
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "api_access_tier",
+          "verdict": "unnamed-subject",
+          "value": "free",
+          "quote": "GraphQL API Access",
+          "url": "https://apis.io/plans/plain-support/plain-support-plans-pricing/"
+        }
+      ],
       "unknown_reason": {
         "one_liner": "unclassified",
         "signup_self_serve": "unclassified",
         "approval_gate": "unclassified",
-        "rate_limits_documented": "unclassified"
+        "rate_limits_documented": "unclassified",
+        "api_access_tier": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -4050,9 +4099,10 @@
           "url": "https://developer.helpscout.com/llms.txt"
         },
         "existing_mcp": {
-          "value": "official",
+          "value": "unknown",
           "quote": "Help Scout Developers - API Documentation | Help Scout Developers",
-          "url": "https://developer.helpscout.com/"
+          "url": "https://developer.helpscout.com/",
+          "quarantined": true
         },
         "primary_blocker": {
           "value": "none",
@@ -4144,9 +4194,9 @@
           "needs_refetch": false
         },
         "existing_mcp": {
-          "verdict": "valid",
+          "verdict": "off-topic-evidence",
           "tier": 1,
-          "evidenced": true,
+          "evidenced": false,
           "needs_refetch": false
         },
         "product_class": {
@@ -4180,10 +4230,19 @@
         "not-asked-pass1": 2,
         "evidenced": 7
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "existing_mcp",
+          "verdict": "off-topic-evidence",
+          "value": "official",
+          "quote": "Help Scout Developers - API Documentation | Help Scout Developers",
+          "url": "https://developer.helpscout.com/"
+        }
+      ],
       "unknown_reason": {
         "api_access_tier": "unclassified",
-        "approval_gate": "unclassified"
+        "approval_gate": "unclassified",
+        "existing_mcp": "evidence-about-another-product"
       },
       "contradictions": [
         "model said primary_blocker=none but access derives to paid-tier-required (page signal: paid plan required)"
@@ -4487,9 +4546,10 @@
           "url": ""
         },
         "api_access_tier": {
-          "value": "paid",
+          "value": "unknown",
           "quote": "APIs",
-          "url": "https://www.topadvisor.com/products/gladly/pricing"
+          "url": "https://www.topadvisor.com/products/gladly/pricing",
+          "quarantined": true
         },
         "credential_self_issue": {
           "value": "yes",
@@ -4574,7 +4634,7 @@
           "evidenced": false
         },
         "api_access_tier": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 4,
           "evidenced": false,
           "needs_refetch": false
@@ -4639,11 +4699,20 @@
         "not-asked-pass1": 2,
         "evidenced": 2
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "api_access_tier",
+          "verdict": "unnamed-subject",
+          "value": "paid",
+          "quote": "APIs",
+          "url": "https://www.topadvisor.com/products/gladly/pricing"
+        }
+      ],
       "unknown_reason": {
         "signup_self_serve": "unclassified",
         "rate_limits_documented": "unclassified",
-        "existing_mcp": "retrieval-failed"
+        "existing_mcp": "retrieval-failed",
+        "api_access_tier": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -5694,9 +5763,10 @@
           "url": "https://docs.pumble.com/#description/api-endpoints-usage"
         },
         "signup_self_serve": {
-          "value": "yes",
+          "value": "unknown",
           "quote": "Go to the CAKE.com developer page\n2. Click Sign up and enter your email address",
-          "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html"
+          "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+          "quarantined": true
         },
         "api_access_tier": {
           "value": "free",
@@ -5710,9 +5780,10 @@
           "quarantined": true
         },
         "approval_gate": {
-          "value": "app-review",
+          "value": "unknown",
           "quote": "Once completed, submit for review. The review process typically takes up to two weeks.",
-          "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html"
+          "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+          "quarantined": true
         },
         "protocol": {
           "value": [
@@ -5727,9 +5798,10 @@
           "url": "https://docs.pumble.com/#description/api-endpoints-usage"
         },
         "existing_mcp": {
-          "value": "official",
+          "value": "unknown",
           "quote": "Start building add-ons for the Pumble app, the team communication tool that helps businesses stay connected and organized.",
-          "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html"
+          "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+          "quarantined": true
         },
         "primary_blocker": {
           "value": "app-review",
@@ -5782,7 +5854,7 @@
           "needs_refetch": false
         },
         "signup_self_serve": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 3,
           "evidenced": false,
           "needs_refetch": false
@@ -5800,7 +5872,7 @@
           "needs_refetch": false
         },
         "approval_gate": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 3,
           "evidenced": false,
           "needs_refetch": false
@@ -5818,7 +5890,7 @@
           "needs_refetch": false
         },
         "existing_mcp": {
-          "verdict": "valid",
+          "verdict": "off-topic-evidence",
           "tier": 3,
           "evidenced": false,
           "needs_refetch": false
@@ -5861,10 +5933,34 @@
           "value": "yes",
           "quote": "Using this code and your clientSecret you will be able to generate an access token.",
           "url": "https://dev-docs.marketplace.cake.com/pumble/build/advanced-concepts.html"
+        },
+        {
+          "field": "signup_self_serve",
+          "verdict": "unnamed-subject",
+          "value": "yes",
+          "quote": "Go to the CAKE.com developer page\n2. Click Sign up and enter your email address",
+          "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html"
+        },
+        {
+          "field": "approval_gate",
+          "verdict": "unnamed-subject",
+          "value": "app-review",
+          "quote": "Once completed, submit for review. The review process typically takes up to two weeks.",
+          "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html"
+        },
+        {
+          "field": "existing_mcp",
+          "verdict": "off-topic-evidence",
+          "value": "official",
+          "quote": "Start building add-ons for the Pumble app, the team communication tool that helps businesses stay connected and organized.",
+          "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html"
         }
       ],
       "unknown_reason": {
-        "credential_self_issue": "quote-failed-validation"
+        "credential_self_issue": "quote-failed-validation",
+        "signup_self_serve": "evidence-about-another-product",
+        "approval_gate": "evidence-about-another-product",
+        "existing_mcp": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -7398,9 +7494,10 @@
           "url": "https://developers.facebook.com/docs/marketing-api/get-started/authorization/"
         },
         "existing_mcp": {
-          "value": "community",
+          "value": "unknown",
           "quote": "Facebook Marketing Developer Community group",
-          "url": "https://developers.facebook.com/docs/marketing-api/best-practices/"
+          "url": "https://developers.facebook.com/docs/marketing-api/best-practices/",
+          "quarantined": true
         },
         "primary_blocker": {
           "value": "none",
@@ -7493,7 +7590,7 @@
           "needs_refetch": false
         },
         "existing_mcp": {
-          "verdict": "truncated-evidence",
+          "verdict": "off-topic-evidence",
           "tier": 1,
           "evidenced": false,
           "needs_refetch": true
@@ -7530,10 +7627,19 @@
         "not-asked-pass1": 2,
         "evidenced": 5
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "existing_mcp",
+          "verdict": "off-topic-evidence",
+          "value": "community",
+          "quote": "Facebook Marketing Developer Community group",
+          "url": "https://developers.facebook.com/docs/marketing-api/best-practices/"
+        }
+      ],
       "unknown_reason": {
         "one_liner": "unclassified",
-        "signup_self_serve": "unclassified"
+        "signup_self_serve": "unclassified",
+        "existing_mcp": "evidence-about-another-product"
       },
       "contradictions": [
         "model said primary_blocker=none but access derives to app-review (approval_gate=app-review)"
@@ -7637,9 +7743,10 @@
           "url": ""
         },
         "existing_mcp": {
-          "value": "official",
+          "value": "unknown",
           "quote": "More information of LinkedIn Marketing Partners [here](https://business.linkedin.com/marketing-solutions/marketing-partners).",
-          "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access"
+          "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+          "quarantined": true
         },
         "primary_blocker": {
           "value": "partner-gate",
@@ -7729,7 +7836,7 @@
           "evidenced": false
         },
         "existing_mcp": {
-          "verdict": "truncated-evidence",
+          "verdict": "off-topic-evidence",
           "tier": 1,
           "evidenced": false,
           "needs_refetch": true
@@ -7774,6 +7881,13 @@
           ],
           "quote": "The LinkedIn API uses OAuth 2.0 for member (user) authorization and API authentication.",
           "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication"
+        },
+        {
+          "field": "existing_mcp",
+          "verdict": "off-topic-evidence",
+          "value": "official",
+          "quote": "More information of LinkedIn Marketing Partners [here](https://business.linkedin.com/marketing-solutions/marketing-partners).",
+          "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access"
         }
       ],
       "unknown_reason": {
@@ -7781,7 +7895,8 @@
         "one_liner": "unclassified",
         "api_access_tier": "unclassified",
         "protocol": "unclassified",
-        "rate_limits_documented": "unclassified"
+        "rate_limits_documented": "unclassified",
+        "existing_mcp": "evidence-about-another-product"
       },
       "contradictions": [
         "product_class=api but no protocol found"
@@ -7839,17 +7954,16 @@
       "hint": "highlevel.stoplight.io",
       "extracted": {
         "one_liner": {
-          "value": "HighLevel supports API key (v1) and OAuth2 (v2) authentication.",
+          "value": "unknown",
           "quote": "Supported authentication methods * API key: Use with API v1 * OAuth2: Use with API v2",
-          "url": "https://docs.n8n.io/integrations/builtin/credentials/highlevel/"
+          "url": "https://docs.n8n.io/integrations/builtin/credentials/highlevel/",
+          "quarantined": true
         },
         "auth_methods": {
-          "value": [
-            "API_KEY",
-            "OAUTH2"
-          ],
+          "value": [],
           "quote": "Supported authentication methods * API key: Use with API v1 * OAuth2: Use with API v2",
-          "url": "https://docs.n8n.io/integrations/builtin/credentials/highlevel/"
+          "url": "https://docs.n8n.io/integrations/builtin/credentials/highlevel/",
+          "quarantined": true
         },
         "signup_self_serve": {
           "value": "yes",
@@ -7862,9 +7976,10 @@
           "url": "https://www.gohighlevel.com/pricing/"
         },
         "credential_self_issue": {
-          "value": "yes",
+          "value": "unknown",
           "quote": "To generate both, create an app in My Apps > Create App.",
-          "url": "https://docs.n8n.io/integrations/builtin/credentials/highlevel/"
+          "url": "https://docs.n8n.io/integrations/builtin/credentials/highlevel/",
+          "quarantined": true
         },
         "approval_gate": {
           "value": "unknown",
@@ -7883,9 +7998,10 @@
           "url": ""
         },
         "existing_mcp": {
-          "value": "official",
+          "value": "unknown",
           "quote": "Login To Developer Marketplace",
-          "url": "https://developers.gohighlevel.com/"
+          "url": "https://developers.gohighlevel.com/",
+          "quarantined": true
         },
         "primary_blocker": {
           "value": "paid-plan",
@@ -7931,13 +8047,13 @@
       },
       "quote_checks": {
         "one_liner": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 3,
           "evidenced": false,
           "needs_refetch": false
         },
         "auth_methods": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 3,
           "evidenced": false,
           "needs_refetch": false
@@ -7955,7 +8071,7 @@
           "needs_refetch": false
         },
         "credential_self_issue": {
-          "verdict": "near-miss",
+          "verdict": "unnamed-subject",
           "tier": 3,
           "evidenced": false,
           "needs_refetch": false
@@ -7977,9 +8093,9 @@
           "evidenced": false
         },
         "existing_mcp": {
-          "verdict": "valid",
+          "verdict": "off-topic-evidence",
           "tier": 1,
-          "evidenced": true,
+          "evidenced": false,
           "needs_refetch": false
         },
         "product_class": {
@@ -8022,12 +8138,47 @@
           "value": "none",
           "quote": "Create a HighLevel developer account.",
           "url": "https://docs.n8n.io/integrations/builtin/credentials/highlevel/"
+        },
+        {
+          "field": "one_liner",
+          "verdict": "unnamed-subject",
+          "value": "HighLevel supports API key (v1) and OAuth2 (v2) authentication.",
+          "quote": "Supported authentication methods * API key: Use with API v1 * OAuth2: Use with API v2",
+          "url": "https://docs.n8n.io/integrations/builtin/credentials/highlevel/"
+        },
+        {
+          "field": "auth_methods",
+          "verdict": "unnamed-subject",
+          "value": [
+            "API_KEY",
+            "OAUTH2"
+          ],
+          "quote": "Supported authentication methods * API key: Use with API v1 * OAuth2: Use with API v2",
+          "url": "https://docs.n8n.io/integrations/builtin/credentials/highlevel/"
+        },
+        {
+          "field": "credential_self_issue",
+          "verdict": "unnamed-subject",
+          "value": "yes",
+          "quote": "To generate both, create an app in My Apps > Create App.",
+          "url": "https://docs.n8n.io/integrations/builtin/credentials/highlevel/"
+        },
+        {
+          "field": "existing_mcp",
+          "verdict": "off-topic-evidence",
+          "value": "official",
+          "quote": "Login To Developer Marketplace",
+          "url": "https://developers.gohighlevel.com/"
         }
       ],
       "unknown_reason": {
         "approval_gate": "quote-failed-validation",
         "protocol": "unclassified",
-        "rate_limits_documented": "unclassified"
+        "rate_limits_documented": "unclassified",
+        "one_liner": "evidence-about-another-product",
+        "auth_methods": "evidence-about-another-product",
+        "credential_self_issue": "evidence-about-another-product",
+        "existing_mcp": "evidence-about-another-product"
       },
       "contradictions": [
         "product_class=api but no protocol found"
@@ -11451,9 +11602,10 @@
           "url": ""
         },
         "credential_self_issue": {
-          "value": "yes",
+          "value": "unknown",
           "quote": "Get this value when you register your application.",
-          "url": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api"
+          "url": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api",
+          "quarantined": true
         },
         "approval_gate": {
           "value": "unknown",
@@ -11461,11 +11613,10 @@
           "url": ""
         },
         "protocol": {
-          "value": [
-            "REST"
-          ],
+          "value": [],
           "quote": "You can make direct HTTPS requests when you want complete control over API calls.",
-          "url": "https://developer-docs.amazon/sp-api/docs/onboarding-step-8-call-the-sp-api-in-production"
+          "url": "https://developer-docs.amazon/sp-api/docs/onboarding-step-8-call-the-sp-api-in-production",
+          "quarantined": true
         },
         "rate_limits_documented": {
           "value": "unknown",
@@ -11537,7 +11688,7 @@
           "evidenced": false
         },
         "credential_self_issue": {
-          "verdict": "truncated-evidence",
+          "verdict": "unnamed-subject",
           "tier": 4,
           "evidenced": false,
           "needs_refetch": true
@@ -11548,7 +11699,7 @@
           "evidenced": false
         },
         "protocol": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 4,
           "evidenced": false,
           "needs_refetch": false
@@ -11594,7 +11745,24 @@
         "not-asked-pass1": 2,
         "evidenced": 0
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "credential_self_issue",
+          "verdict": "unnamed-subject",
+          "value": "yes",
+          "quote": "Get this value when you register your application.",
+          "url": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api"
+        },
+        {
+          "field": "protocol",
+          "verdict": "unnamed-subject",
+          "value": [
+            "REST"
+          ],
+          "quote": "You can make direct HTTPS requests when you want complete control over API calls.",
+          "url": "https://developer-docs.amazon/sp-api/docs/onboarding-step-8-call-the-sp-api-in-production"
+        }
+      ],
       "unknown_reason": {
         "one_liner": "unclassified",
         "signup_self_serve": "unclassified",
@@ -11602,7 +11770,9 @@
         "approval_gate": "unclassified",
         "rate_limits_documented": "unclassified",
         "existing_mcp": "retrieval-failed",
-        "primary_blocker": "unclassified"
+        "primary_blocker": "unclassified",
+        "credential_self_issue": "evidence-about-another-product",
+        "protocol": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -11691,9 +11861,10 @@
           "url": ""
         },
         "existing_mcp": {
-          "value": "official",
+          "value": "unknown",
           "quote": "Base URL\n\n```\nhttps://www.fanbasis.com\n```",
-          "url": "https://raw.githubusercontent.com/otniel-bit/fbnewapi/main/api-docs.md"
+          "url": "https://raw.githubusercontent.com/otniel-bit/fbnewapi/main/api-docs.md",
+          "quarantined": true
         },
         "primary_blocker": {
           "value": "none",
@@ -11777,9 +11948,9 @@
           "evidenced": false
         },
         "existing_mcp": {
-          "verdict": "valid",
+          "verdict": "off-topic-evidence",
           "tier": 2,
-          "evidenced": true,
+          "evidenced": false,
           "needs_refetch": false
         },
         "product_class": {
@@ -11812,13 +11983,22 @@
         "not-asked-pass1": 2,
         "evidenced": 4
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "existing_mcp",
+          "verdict": "off-topic-evidence",
+          "value": "official",
+          "quote": "Base URL\n\n```\nhttps://www.fanbasis.com\n```",
+          "url": "https://raw.githubusercontent.com/otniel-bit/fbnewapi/main/api-docs.md"
+        }
+      ],
       "unknown_reason": {
         "one_liner": "unclassified",
         "signup_self_serve": "unclassified",
         "api_access_tier": "unclassified",
         "approval_gate": "unclassified",
-        "rate_limits_documented": "unclassified"
+        "rate_limits_documented": "unclassified",
+        "existing_mcp": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -12494,9 +12674,10 @@
           "url": "https://docs.ahrefs.com/"
         },
         "existing_mcp": {
-          "value": "official",
+          "value": "unknown",
           "quote": "Connect your Ahrefs data to AI assistants and agents to enhance their answers with real marketing insights.",
-          "url": "https://docs.ahrefs.com/"
+          "url": "https://docs.ahrefs.com/",
+          "quarantined": true
         },
         "primary_blocker": {
           "value": "paid-plan",
@@ -12590,9 +12771,9 @@
           "needs_refetch": false
         },
         "existing_mcp": {
-          "verdict": "valid",
+          "verdict": "off-topic-evidence",
           "tier": 1,
-          "evidenced": true,
+          "evidenced": false,
           "needs_refetch": false
         },
         "product_class": {
@@ -12634,10 +12815,18 @@
           "value": "yes",
           "quote": "Lite ... $129 /mo",
           "url": "https://ahrefs.com/pricing"
+        },
+        {
+          "field": "existing_mcp",
+          "verdict": "off-topic-evidence",
+          "value": "official",
+          "quote": "Connect your Ahrefs data to AI assistants and agents to enhance their answers with real marketing insights.",
+          "url": "https://docs.ahrefs.com/"
         }
       ],
       "unknown_reason": {
-        "signup_self_serve": "quote-failed-validation"
+        "signup_self_serve": "quote-failed-validation",
+        "existing_mcp": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -14372,9 +14561,10 @@
       "hint": "docs.github.com/rest",
       "extracted": {
         "one_liner": {
-          "value": "You can authenticate to the REST API to access more endpoints and have a higher rate limit.",
+          "value": "unknown",
           "quote": "You can authenticate to the REST API to access more endpoints and have a higher rate limit.",
-          "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api"
+          "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+          "quarantined": true
         },
         "auth_methods": {
           "value": [
@@ -14465,9 +14655,9 @@
       },
       "quote_checks": {
         "one_liner": {
-          "verdict": "valid",
+          "verdict": "not-a-description",
           "tier": 1,
-          "evidenced": true,
+          "evidenced": false,
           "needs_refetch": false
         },
         "auth_methods": {
@@ -14548,9 +14738,18 @@
         "not-asked-pass1": 2,
         "evidenced": 8
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "one_liner",
+          "verdict": "not-a-description",
+          "value": "You can authenticate to the REST API to access more endpoints and have a higher rate limit.",
+          "quote": "You can authenticate to the REST API to access more endpoints and have a higher rate limit.",
+          "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api"
+        }
+      ],
       "unknown_reason": {
-        "existing_mcp": "retrieval-failed"
+        "existing_mcp": "retrieval-failed",
+        "one_liner": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -15361,9 +15560,10 @@
           "url": "https://supabase.com/docs/reference/api/introduction"
         },
         "existing_mcp": {
-          "value": "official",
+          "value": "unknown",
           "quote": "Management API",
-          "url": "https://supabase.com/docs/reference/api/introduction"
+          "url": "https://supabase.com/docs/reference/api/introduction",
+          "quarantined": true
         },
         "primary_blocker": {
           "value": "none",
@@ -15457,9 +15657,9 @@
           "needs_refetch": false
         },
         "existing_mcp": {
-          "verdict": "valid",
+          "verdict": "off-topic-evidence",
           "tier": 1,
-          "evidenced": true,
+          "evidenced": false,
           "needs_refetch": false
         },
         "product_class": {
@@ -15503,11 +15703,19 @@
           ],
           "quote": "All API requests require an access token to be included in the Authorization header:`Authorization Bearer <access_token>`. There are two ways to generate an access token: Personal access token (PAT): ... OAuth2: OAuth2 allows your application to generate tokens on behalf of a Supabase user...",
           "url": "https://supabase.com/docs/reference/api/introduction"
+        },
+        {
+          "field": "existing_mcp",
+          "verdict": "off-topic-evidence",
+          "value": "official",
+          "quote": "Management API",
+          "url": "https://supabase.com/docs/reference/api/introduction"
         }
       ],
       "unknown_reason": {
         "auth_methods": "quote-failed-validation",
-        "approval_gate": "unclassified"
+        "approval_gate": "unclassified",
+        "existing_mcp": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -15581,9 +15789,10 @@
           "url": "https://neo4j.com/docs/query-api/current/authentication-authorization/"
         },
         "signup_self_serve": {
-          "value": "yes",
+          "value": "unknown",
           "quote": "Free managed AuraDB instance for learning and exploration. No credit card required",
-          "url": "https://apis.io/plans/neo4j/neo4j-plans-pricing/"
+          "url": "https://apis.io/plans/neo4j/neo4j-plans-pricing/",
+          "quarantined": true
         },
         "api_access_tier": {
           "value": "free",
@@ -15675,7 +15884,7 @@
           "needs_refetch": false
         },
         "signup_self_serve": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 3,
           "evidenced": false,
           "needs_refetch": false
@@ -15747,10 +15956,19 @@
         "not-asked-pass1": 1,
         "evidenced": 7
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "signup_self_serve",
+          "verdict": "unnamed-subject",
+          "value": "yes",
+          "quote": "Free managed AuraDB instance for learning and exploration. No credit card required",
+          "url": "https://apis.io/plans/neo4j/neo4j-plans-pricing/"
+        }
+      ],
       "unknown_reason": {
         "rate_limits_documented": "unclassified",
-        "existing_mcp": "retrieval-failed"
+        "existing_mcp": "retrieval-failed",
+        "signup_self_serve": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -17761,9 +17979,10 @@
           "url": ""
         },
         "existing_mcp": {
-          "value": "official",
+          "value": "unknown",
           "quote": "If you are building an integration with a 3rd party tool and intend for any Asana user to discover it, apps can be published to the Asana App Directory.",
-          "url": "https://developers.asana.com/docs/overview"
+          "url": "https://developers.asana.com/docs/overview",
+          "quarantined": true
         },
         "primary_blocker": {
           "value": "none",
@@ -17853,9 +18072,9 @@
           "evidenced": false
         },
         "existing_mcp": {
-          "verdict": "near-miss",
+          "verdict": "off-topic-evidence",
           "tier": 1,
-          "evidenced": true,
+          "evidenced": false,
           "needs_refetch": false
         },
         "product_class": {
@@ -17889,12 +18108,21 @@
         "not-asked-pass1": 2,
         "evidenced": 4
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "existing_mcp",
+          "verdict": "off-topic-evidence",
+          "value": "official",
+          "quote": "If you are building an integration with a 3rd party tool and intend for any Asana user to discover it, apps can be published to the Asana App Directory.",
+          "url": "https://developers.asana.com/docs/overview"
+        }
+      ],
       "unknown_reason": {
         "one_liner": "unclassified",
         "api_access_tier": "unclassified",
         "approval_gate": "unclassified",
-        "rate_limits_documented": "unclassified"
+        "rate_limits_documented": "unclassified",
+        "existing_mcp": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -18184,9 +18412,10 @@
       "hint": "clickup.com/api",
       "extracted": {
         "one_liner": {
-          "value": "Authenticate to the ClickUp API using a personal token or OAuth.",
+          "value": "unknown",
           "quote": "Authenticate to the ClickUp API using a personal token or OAuth.",
-          "url": "https://developer.clickup.com/docs/authentication"
+          "url": "https://developer.clickup.com/docs/authentication",
+          "quarantined": true
         },
         "auth_methods": {
           "value": [
@@ -18278,9 +18507,9 @@
       },
       "quote_checks": {
         "one_liner": {
-          "verdict": "valid",
+          "verdict": "not-a-description",
           "tier": 1,
-          "evidenced": true,
+          "evidenced": false,
           "needs_refetch": false
         },
         "auth_methods": {
@@ -18365,6 +18594,13 @@
           "value": "yes",
           "quote": "The ClickUp API enforces request rate limits per token.",
           "url": "https://developer.clickup.com/docs/Getting%20Started"
+        },
+        {
+          "field": "one_liner",
+          "verdict": "not-a-description",
+          "value": "Authenticate to the ClickUp API using a personal token or OAuth.",
+          "quote": "Authenticate to the ClickUp API using a personal token or OAuth.",
+          "url": "https://developer.clickup.com/docs/authentication"
         }
       ],
       "unknown_reason": {
@@ -18372,7 +18608,8 @@
         "signup_self_serve": "unclassified",
         "api_access_tier": "unclassified",
         "protocol": "unclassified",
-        "existing_mcp": "retrieval-failed"
+        "existing_mcp": "retrieval-failed",
+        "one_liner": "evidence-about-another-product"
       },
       "contradictions": [
         "product_class=api but no protocol found"
@@ -18444,14 +18681,16 @@
           "url": "https://docs.n8n.io/integrations/builtin/credentials/coda/"
         },
         "api_access_tier": {
-          "value": "free",
+          "value": "unknown",
           "quote": "API is included on every tier including Free",
-          "url": "https://apis.io/plans/coda/coda-plans-pricing/"
+          "url": "https://apis.io/plans/coda/coda-plans-pricing/",
+          "quarantined": true
         },
         "credential_self_issue": {
-          "value": "yes",
+          "value": "unknown",
           "quote": "Generate API Token",
-          "url": "https://docs.nexla.com/user-guides/connectors/coda_api/coda_api_auth"
+          "url": "https://docs.nexla.com/user-guides/connectors/coda_api/coda_api_auth",
+          "quarantined": true
         },
         "approval_gate": {
           "value": "unknown",
@@ -18534,13 +18773,13 @@
           "needs_refetch": false
         },
         "api_access_tier": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 3,
           "evidenced": false,
           "needs_refetch": false
         },
         "credential_self_issue": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 3,
           "evidenced": false,
           "needs_refetch": false
@@ -18595,13 +18834,30 @@
         "not-asked-pass1": 2,
         "evidenced": 0
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "api_access_tier",
+          "verdict": "unnamed-subject",
+          "value": "free",
+          "quote": "API is included on every tier including Free",
+          "url": "https://apis.io/plans/coda/coda-plans-pricing/"
+        },
+        {
+          "field": "credential_self_issue",
+          "verdict": "unnamed-subject",
+          "value": "yes",
+          "quote": "Generate API Token",
+          "url": "https://docs.nexla.com/user-guides/connectors/coda_api/coda_api_auth"
+        }
+      ],
       "unknown_reason": {
         "one_liner": "unclassified",
         "approval_gate": "unclassified",
         "protocol": "unclassified",
         "rate_limits_documented": "unclassified",
-        "existing_mcp": "retrieval-failed"
+        "existing_mcp": "retrieval-failed",
+        "api_access_tier": "evidence-about-another-product",
+        "credential_self_issue": "evidence-about-another-product"
       },
       "contradictions": [
         "product_class=api but no protocol found"
@@ -18659,9 +18915,10 @@
       "hint": "smartsheet.com/developers",
       "extracted": {
         "one_liner": {
-          "value": "The API authenticates using access tokens (API keys).",
+          "value": "unknown",
           "quote": "The API authenticates using access tokens (API keys).",
-          "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication"
+          "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+          "quarantined": true
         },
         "auth_methods": {
           "value": [],
@@ -18745,9 +19002,9 @@
       },
       "quote_checks": {
         "one_liner": {
-          "verdict": "valid",
+          "verdict": "not-a-description",
           "tier": 1,
-          "evidenced": true,
+          "evidenced": false,
           "needs_refetch": false
         },
         "auth_methods": {
@@ -18834,6 +19091,13 @@
           ],
           "quote": "If your scenario involves user consent and interaction, it's typically best to use OAuth with Smartsheet. The API authenticates using access tokens (API keys).",
           "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication"
+        },
+        {
+          "field": "one_liner",
+          "verdict": "not-a-description",
+          "value": "The API authenticates using access tokens (API keys).",
+          "quote": "The API authenticates using access tokens (API keys).",
+          "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication"
         }
       ],
       "unknown_reason": {
@@ -18842,7 +19106,8 @@
         "api_access_tier": "unclassified",
         "approval_gate": "unclassified",
         "rate_limits_documented": "unclassified",
-        "existing_mcp": "retrieval-failed"
+        "existing_mcp": "retrieval-failed",
+        "one_liner": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -19609,14 +19874,16 @@
           "url": ""
         },
         "credential_self_issue": {
-          "value": "yes",
+          "value": "unknown",
           "quote": "You will not be able to create an API if KYC is not completed.",
-          "url": "https://docs.binance.us/developer-guides/rest-api"
+          "url": "https://docs.binance.us/developer-guides/rest-api",
+          "quarantined": true
         },
         "approval_gate": {
-          "value": "app-review",
+          "value": "unknown",
           "quote": "You will not be able to create an API if KYC is not completed.",
-          "url": "https://docs.binance.us/developer-guides/rest-api"
+          "url": "https://docs.binance.us/developer-guides/rest-api",
+          "quarantined": true
         },
         "protocol": {
           "value": [
@@ -19636,9 +19903,10 @@
           "url": ""
         },
         "primary_blocker": {
-          "value": "app-review",
+          "value": "unknown",
           "quote": "You will not be able to create an API if KYC is not completed.",
-          "url": "https://docs.binance.us/developer-guides/rest-api"
+          "url": "https://docs.binance.us/developer-guides/rest-api",
+          "quarantined": true
         },
         "product_class": {
           "value": "api",
@@ -19694,13 +19962,13 @@
           "evidenced": false
         },
         "credential_self_issue": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 4,
           "evidenced": false,
           "needs_refetch": false
         },
         "approval_gate": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 4,
           "evidenced": false,
           "needs_refetch": false
@@ -19727,7 +19995,7 @@
           "evidenced": false
         },
         "primary_blocker": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 4,
           "evidenced": false,
           "needs_refetch": false
@@ -19754,11 +20022,36 @@
         "not-asked-pass1": 1,
         "evidenced": 2
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "credential_self_issue",
+          "verdict": "unnamed-subject",
+          "value": "yes",
+          "quote": "You will not be able to create an API if KYC is not completed.",
+          "url": "https://docs.binance.us/developer-guides/rest-api"
+        },
+        {
+          "field": "approval_gate",
+          "verdict": "unnamed-subject",
+          "value": "app-review",
+          "quote": "You will not be able to create an API if KYC is not completed.",
+          "url": "https://docs.binance.us/developer-guides/rest-api"
+        },
+        {
+          "field": "primary_blocker",
+          "verdict": "unnamed-subject",
+          "value": "app-review",
+          "quote": "You will not be able to create an API if KYC is not completed.",
+          "url": "https://docs.binance.us/developer-guides/rest-api"
+        }
+      ],
       "unknown_reason": {
         "one_liner": "unclassified",
         "signup_self_serve": "unclassified",
-        "api_access_tier": "unclassified"
+        "api_access_tier": "unclassified",
+        "credential_self_issue": "evidence-about-another-product",
+        "approval_gate": "evidence-about-another-product",
+        "primary_blocker": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -20077,9 +20370,10 @@
       "hint": "ipayx.ai/docs",
       "extracted": {
         "one_liner": {
-          "value": "Welcome to iPaymu! Follow these steps to start integrating iPaymu payment gateway into your application.",
+          "value": "unknown",
           "quote": "Welcome to iPaymu! Follow these steps to start integrating iPaymu payment gateway into your application.",
-          "url": "https://docs.ipaymu.com/en/docs/getting-started"
+          "url": "https://docs.ipaymu.com/en/docs/getting-started",
+          "quarantined": true
         },
         "auth_methods": {
           "value": [],
@@ -20087,9 +20381,10 @@
           "url": "https://docs.ipaymu.com/en/docs"
         },
         "signup_self_serve": {
-          "value": "yes",
+          "value": "unknown",
           "quote": "First, you need to create an account on iPaymu.",
-          "url": "https://docs.ipaymu.com/en/docs/getting-started"
+          "url": "https://docs.ipaymu.com/en/docs/getting-started",
+          "quarantined": true
         },
         "api_access_tier": {
           "value": "unknown",
@@ -20097,21 +20392,22 @@
           "url": ""
         },
         "credential_self_issue": {
-          "value": "yes",
+          "value": "unknown",
           "quote": "Here you will find your VA Number and API Key.",
-          "url": "https://docs.ipaymu.com/en/docs/getting-started"
+          "url": "https://docs.ipaymu.com/en/docs/getting-started",
+          "quarantined": true
         },
         "approval_gate": {
-          "value": "business-verification",
+          "value": "unknown",
           "quote": "Verify your email address.",
-          "url": "https://docs.ipaymu.com/en/docs/getting-started"
+          "url": "https://docs.ipaymu.com/en/docs/getting-started",
+          "quarantined": true
         },
         "protocol": {
-          "value": [
-            "REST"
-          ],
+          "value": [],
           "quote": "Generate a REST API URL: Create payment links for customer transactions.",
-          "url": "https://docs.i-pay.io/"
+          "url": "https://docs.i-pay.io/",
+          "quarantined": true
         },
         "rate_limits_documented": {
           "value": "unknown",
@@ -20162,7 +20458,7 @@
       },
       "quote_checks": {
         "one_liner": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 4,
           "evidenced": false,
           "needs_refetch": false
@@ -20174,7 +20470,7 @@
           "needs_refetch": false
         },
         "signup_self_serve": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 4,
           "evidenced": false,
           "needs_refetch": false
@@ -20185,19 +20481,19 @@
           "evidenced": false
         },
         "credential_self_issue": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 4,
           "evidenced": false,
           "needs_refetch": false
         },
         "approval_gate": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 4,
           "evidenced": false,
           "needs_refetch": false
         },
         "protocol": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 4,
           "evidenced": false,
           "needs_refetch": false
@@ -20242,12 +20538,55 @@
         "not-asked-pass1": 2,
         "evidenced": 0
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "one_liner",
+          "verdict": "unnamed-subject",
+          "value": "Welcome to iPaymu! Follow these steps to start integrating iPaymu payment gateway into your application.",
+          "quote": "Welcome to iPaymu! Follow these steps to start integrating iPaymu payment gateway into your application.",
+          "url": "https://docs.ipaymu.com/en/docs/getting-started"
+        },
+        {
+          "field": "signup_self_serve",
+          "verdict": "unnamed-subject",
+          "value": "yes",
+          "quote": "First, you need to create an account on iPaymu.",
+          "url": "https://docs.ipaymu.com/en/docs/getting-started"
+        },
+        {
+          "field": "credential_self_issue",
+          "verdict": "unnamed-subject",
+          "value": "yes",
+          "quote": "Here you will find your VA Number and API Key.",
+          "url": "https://docs.ipaymu.com/en/docs/getting-started"
+        },
+        {
+          "field": "approval_gate",
+          "verdict": "unnamed-subject",
+          "value": "business-verification",
+          "quote": "Verify your email address.",
+          "url": "https://docs.ipaymu.com/en/docs/getting-started"
+        },
+        {
+          "field": "protocol",
+          "verdict": "unnamed-subject",
+          "value": [
+            "REST"
+          ],
+          "quote": "Generate a REST API URL: Create payment links for customer transactions.",
+          "url": "https://docs.i-pay.io/"
+        }
+      ],
       "unknown_reason": {
         "auth_methods": "unclassified",
         "api_access_tier": "unclassified",
         "rate_limits_documented": "unclassified",
-        "existing_mcp": "retrieval-failed"
+        "existing_mcp": "retrieval-failed",
+        "one_liner": "evidence-about-another-product",
+        "signup_self_serve": "evidence-about-another-product",
+        "credential_self_issue": "evidence-about-another-product",
+        "approval_gate": "evidence-about-another-product",
+        "protocol": "evidence-about-another-product"
       },
       "contradictions": [
         "model said primary_blocker=none but access derives to app-review (approval_gate=business-verification)"
@@ -21217,11 +21556,10 @@
           "url": ""
         },
         "auth_methods": {
-          "value": [
-            "API_KEY"
-          ],
+          "value": [],
           "quote": "API key or access token",
-          "url": "https://docs.matia.io/docs/connectors/etl/pitchbook"
+          "url": "https://docs.matia.io/docs/connectors/etl/pitchbook",
+          "quarantined": true
         },
         "signup_self_serve": {
           "value": "unknown",
@@ -21302,7 +21640,7 @@
           "evidenced": false
         },
         "auth_methods": {
-          "verdict": "valid",
+          "verdict": "unnamed-subject",
           "tier": 4,
           "evidenced": false,
           "needs_refetch": false
@@ -21375,7 +21713,17 @@
         "tier1": 1,
         "evidenced": 1
       },
-      "quarantined": [],
+      "quarantined": [
+        {
+          "field": "auth_methods",
+          "verdict": "unnamed-subject",
+          "value": [
+            "API_KEY"
+          ],
+          "quote": "API key or access token",
+          "url": "https://docs.matia.io/docs/connectors/etl/pitchbook"
+        }
+      ],
       "unknown_reason": {
         "one_liner": "unclassified",
         "signup_self_serve": "unclassified",
@@ -21384,7 +21732,8 @@
         "approval_gate": "unclassified",
         "protocol": "unclassified",
         "rate_limits_documented": "unclassified",
-        "existing_mcp": "retrieval-failed"
+        "existing_mcp": "retrieval-failed",
+        "auth_methods": "evidence-about-another-product"
       },
       "contradictions": [
         "product_class=api but no protocol found"
@@ -21721,9 +22070,10 @@
           "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API"
         },
         "existing_mcp": {
-          "value": "official",
+          "value": "unknown",
           "quote": "Webhooks are the recommended way to build export integrations with Otter.",
-          "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API"
+          "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+          "quarantined": true
         },
         "primary_blocker": {
           "value": "paid-plan",
@@ -21812,7 +22162,7 @@
           "needs_refetch": false
         },
         "existing_mcp": {
-          "verdict": "truncated-evidence",
+          "verdict": "off-topic-evidence",
           "tier": 1,
           "evidenced": false,
           "needs_refetch": true
@@ -21848,8 +22198,18 @@
         "tier5": 2,
         "evidenced": 7
       },
-      "quarantined": [],
-      "unknown_reason": {},
+      "quarantined": [
+        {
+          "field": "existing_mcp",
+          "verdict": "off-topic-evidence",
+          "value": "official",
+          "quote": "Webhooks are the recommended way to build export integrations with Otter.",
+          "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API"
+        }
+      ],
+      "unknown_reason": {
+        "existing_mcp": "evidence-about-another-product"
+      },
       "contradictions": [],
       "contradictions_pass1": [],
       "sources_used": [
@@ -22965,9 +23325,10 @@
           "url": "https://docs.higgsfield.ai/docs/help/faq"
         },
         "existing_mcp": {
-          "value": "official",
+          "value": "unknown",
           "quote": "We provide official Python and Node.js/TypeScript SDKs.",
-          "url": "https://docs.higgsfield.ai/docs/help/faq"
+          "url": "https://docs.higgsfield.ai/docs/help/faq",
+          "quarantined": true
         },
         "primary_blocker": {
           "value": "none",
@@ -23055,9 +23416,9 @@
           "needs_refetch": false
         },
         "existing_mcp": {
-          "verdict": "valid",
+          "verdict": "off-topic-evidence",
           "tier": 1,
-          "evidenced": true,
+          "evidenced": false,
           "needs_refetch": false
         },
         "product_class": {
@@ -23100,11 +23461,19 @@
           "value": "none",
           "quote": "Create an account at cloud.higgsfield.ai and generate your API credentials from the dashboard",
           "url": "https://docs.higgsfield.ai/docs/help/faq"
+        },
+        {
+          "field": "existing_mcp",
+          "verdict": "off-topic-evidence",
+          "value": "official",
+          "quote": "We provide official Python and Node.js/TypeScript SDKs.",
+          "url": "https://docs.higgsfield.ai/docs/help/faq"
         }
       ],
       "unknown_reason": {
         "approval_gate": "quote-failed-validation",
-        "one_liner": "unclassified"
+        "one_liner": "unclassified",
+        "existing_mcp": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -23219,9 +23588,10 @@
           "url": "https://github.com/data-mermaid/mermaid-api/blob/master/docs/source/authentication.rst"
         },
         "existing_mcp": {
-          "value": "official",
+          "value": "unknown",
           "quote": "This is a command-line interface (CLI) for mermaid.",
-          "url": "https://github.com/mermaid-js/mermaid-cli/blob/f87dcd0c/README.md"
+          "url": "https://github.com/mermaid-js/mermaid-cli/blob/f87dcd0c/README.md",
+          "quarantined": true
         },
         "primary_blocker": {
           "value": "unclear",
@@ -23309,9 +23679,9 @@
           "evidenced": false
         },
         "existing_mcp": {
-          "verdict": "near-miss",
+          "verdict": "off-topic-evidence",
           "tier": 1,
-          "evidenced": true,
+          "evidenced": false,
           "needs_refetch": false
         },
         "product_class": {
@@ -23358,12 +23728,20 @@
           ],
           "quote": "MERMAID uses OAuth2 authentication for securing and accessing the MERMAID API's secure endpoints.\n`OAuth2 Implicit grant type`_ is used to fetch a valid token that can be used to securely access MERMAID API.\n--header 'Authorization: Bearer '",
           "url": "https://github.com/data-mermaid/mermaid-api/blob/master/docs/source/authentication.rst"
+        },
+        {
+          "field": "existing_mcp",
+          "verdict": "off-topic-evidence",
+          "value": "official",
+          "quote": "This is a command-line interface (CLI) for mermaid.",
+          "url": "https://github.com/mermaid-js/mermaid-cli/blob/f87dcd0c/README.md"
         }
       ],
       "unknown_reason": {
         "auth_methods": "quote-failed-validation",
         "api_access_tier": "not-applicable",
-        "rate_limits_documented": "not-applicable"
+        "rate_limits_documented": "not-applicable",
+        "existing_mcp": "evidence-about-another-product"
       },
       "contradictions": [],
       "contradictions_pass1": [],
@@ -23866,10 +24244,10 @@
         "none": 1
       },
       "raw_methods": {
-        "OAUTH2": 52,
-        "API_KEY": 41,
+        "OAUTH2": 51,
         "BEARER": 40,
-        "BASIC": 14,
+        "API_KEY": 39,
+        "BASIC": 13,
         "JWT": 7,
         "NONE": 1
       },
@@ -23979,7 +24357,7 @@
         "Productivity and Project Management": 9,
         "Support and Helpdesk": 6
       },
-      "missing_with_official_mcp": 11,
+      "missing_with_official_mcp": 6,
       "missing_build_now": [
         "Twenty",
         "LiveAgent",
@@ -24000,9 +24378,9 @@
       ]
     },
     "mcp": {
-      "unknown": 76,
-      "official": 22,
-      "community": 2
+      "unknown": 89,
+      "official": 10,
+      "community": 1
     },
     "breadth": {
       "unknown": 44,
@@ -24014,50 +24392,55 @@
   },
   "coverage": {
     "one_liner": {
-      "answered": 38,
-      "coverage_pct": 38.0,
-      "evidenced": 36,
-      "evidenced_pct_of_answered": 94.7,
+      "answered": 33,
+      "coverage_pct": 33.0,
+      "evidenced": 33,
+      "evidenced_pct_of_answered": 100.0,
       "verdicts": {
         "no-retained-text": 62,
-        "valid": 38
+        "valid": 33,
+        "not-a-description": 3,
+        "unnamed-subject": 2
       }
     },
     "auth_methods": {
-      "answered": 89,
-      "coverage_pct": 89.0,
+      "answered": 86,
+      "coverage_pct": 86.0,
       "evidenced": 67,
-      "evidenced_pct_of_answered": 75.3,
+      "evidenced_pct_of_answered": 77.9,
       "verdicts": {
-        "valid": 69,
+        "valid": 66,
         "truncated-evidence": 13,
         "QUOTE_NOT_FOUND": 7,
         "near-miss": 5,
+        "unnamed-subject": 3,
         "no-retained-text": 3,
         "wrong-url": 3
       }
     },
     "signup_self_serve": {
-      "answered": 45,
-      "coverage_pct": 45.0,
+      "answered": 42,
+      "coverage_pct": 42.0,
       "evidenced": 35,
-      "evidenced_pct_of_answered": 77.8,
+      "evidenced_pct_of_answered": 83.3,
       "verdicts": {
         "no-retained-text": 53,
-        "valid": 37,
+        "valid": 34,
         "truncated-evidence": 6,
+        "unnamed-subject": 3,
         "near-miss": 2,
         "QUOTE_NOT_FOUND": 2
       }
     },
     "api_access_tier": {
-      "answered": 28,
-      "coverage_pct": 28.0,
+      "answered": 24,
+      "coverage_pct": 24.0,
       "evidenced": 18,
-      "evidenced_pct_of_answered": 64.3,
+      "evidenced_pct_of_answered": 75.0,
       "verdicts": {
         "no-retained-text": 71,
-        "valid": 21,
+        "valid": 17,
+        "unnamed-subject": 4,
         "truncated-evidence": 4,
         "near-miss": 2,
         "wrong-url": 1,
@@ -24065,70 +24448,75 @@
       }
     },
     "credential_self_issue": {
-      "answered": 81,
-      "coverage_pct": 81.0,
+      "answered": 76,
+      "coverage_pct": 76.0,
       "evidenced": 57,
-      "evidenced_pct_of_answered": 70.4,
+      "evidenced_pct_of_answered": 75.0,
       "verdicts": {
-        "valid": 50,
-        "truncated-evidence": 18,
-        "near-miss": 13,
+        "valid": 47,
+        "truncated-evidence": 17,
+        "near-miss": 12,
         "no-retained-text": 11,
-        "QUOTE_NOT_FOUND": 8
+        "QUOTE_NOT_FOUND": 8,
+        "unnamed-subject": 5
       }
     },
     "approval_gate": {
-      "answered": 32,
-      "coverage_pct": 32.0,
+      "answered": 29,
+      "coverage_pct": 29.0,
       "evidenced": 18,
-      "evidenced_pct_of_answered": 56.2,
+      "evidenced_pct_of_answered": 62.1,
       "verdicts": {
         "no-retained-text": 63,
-        "valid": 20,
+        "valid": 17,
         "truncated-evidence": 8,
         "QUOTE_NOT_FOUND": 6,
+        "unnamed-subject": 3,
         "wrong-url": 2,
         "near-miss": 1
       }
     },
     "protocol": {
-      "answered": 76,
-      "coverage_pct": 76.0,
+      "answered": 74,
+      "coverage_pct": 74.0,
       "evidenced": 61,
-      "evidenced_pct_of_answered": 80.3,
+      "evidenced_pct_of_answered": 82.4,
       "verdicts": {
-        "valid": 58,
+        "valid": 56,
         "no-retained-text": 23,
         "truncated-evidence": 9,
         "near-miss": 6,
         "QUOTE_NOT_FOUND": 2,
+        "unnamed-subject": 2,
         "wrong-url": 1,
         "unverifiable-url": 1
       }
     },
     "rate_limits_documented": {
-      "answered": 31,
-      "coverage_pct": 31.0,
+      "answered": 30,
+      "coverage_pct": 30.0,
       "evidenced": 20,
-      "evidenced_pct_of_answered": 64.5,
+      "evidenced_pct_of_answered": 66.7,
       "verdicts": {
         "no-retained-text": 67,
-        "valid": 16,
+        "valid": 15,
         "truncated-evidence": 11,
         "near-miss": 5,
+        "unnamed-subject": 1,
         "QUOTE_NOT_FOUND": 1
       }
     },
     "existing_mcp": {
-      "answered": 24,
-      "coverage_pct": 24.0,
-      "evidenced": 14,
-      "evidenced_pct_of_answered": 58.3,
+      "answered": 11,
+      "coverage_pct": 11.0,
+      "evidenced": 5,
+      "evidenced_pct_of_answered": 45.5,
       "verdicts": {
         "no-retained-text": 76,
-        "valid": 12,
-        "truncated-evidence": 6,
-        "near-miss": 4,
+        "off-topic-evidence": 13,
+        "valid": 4,
+        "truncated-evidence": 3,
+        "near-miss": 2,
         "QUOTE_NOT_FOUND": 1,
         "wrong-url": 1
       }
@@ -24143,13 +24531,14 @@
       }
     },
     "primary_blocker": {
-      "answered": 98,
-      "coverage_pct": 98.0,
+      "answered": 97,
+      "coverage_pct": 97.0,
       "evidenced": 7,
-      "evidenced_pct_of_answered": 7.1,
+      "evidenced_pct_of_answered": 7.2,
       "verdicts": {
         "not-asked-pass1": 92,
-        "valid": 8
+        "valid": 7,
+        "unnamed-subject": 1
       }
     }
   },
@@ -24163,16 +24552,19 @@
     },
     "pass2_verdicts": {
       "no-retained-text": 429,
-      "valid": 329,
+      "valid": 296,
       "not-asked-pass1": 192,
-      "truncated-evidence": 75,
-      "near-miss": 38,
+      "truncated-evidence": 71,
+      "near-miss": 35,
       "QUOTE_NOT_FOUND": 28,
+      "unnamed-subject": 24,
+      "off-topic-evidence": 13,
       "wrong-url": 8,
+      "not-a-description": 3,
       "unverifiable-url": 1
     },
     "pass1_ungraded_slots": 188,
-    "quarantined_claims": 29,
+    "quarantined_claims": 69,
     "citations_total": 483,
     "citations_below_tier2": 42,
     "needing_refetch": 75,
@@ -24181,21 +24573,19 @@
   },
   "auth_cross_check": {
     "sample": 56,
-    "token_level_agree": 43,
-    "family_level_agree": 49,
-    "token_pct": 76.8,
-    "family_pct": 87.5,
+    "token_level_agree": 42,
+    "family_level_agree": 47,
+    "token_pct": 75.0,
+    "family_pct": 83.9,
     "disagreements": [
       {
         "app": "Freshdesk",
         "registry": [
           "API_KEY"
         ],
-        "agent": [
-          "BASIC"
-        ],
-        "family_agrees": true,
-        "cause": "transport-vs-credential"
+        "agent": [],
+        "family_agrees": false,
+        "cause": "recall-miss"
       },
       {
         "app": "Plain",
@@ -24228,6 +24618,15 @@
       },
       {
         "app": "LinkedIn Ads",
+        "registry": [
+          "OAUTH2"
+        ],
+        "agent": [],
+        "family_agrees": false,
+        "cause": "recall-miss"
+      },
+      {
+        "app": "GoHighLevel",
         "registry": [
           "OAUTH2"
         ],
@@ -24330,51 +24729,62 @@
     "overall": {
       "unclassified": 347,
       "retrieval-failed": 75,
+      "evidence-about-another-product": 40,
       "quote-failed-validation": 29,
       "not-applicable": 7
     },
     "per_field": {
       "api_access_tier": {
         "unclassified": 69,
+        "evidence-about-another-product": 4,
         "not-applicable": 2,
         "quote-failed-validation": 1
       },
       "approval_gate": {
         "unclassified": 61,
         "quote-failed-validation": 6,
+        "evidence-about-another-product": 3,
         "not-applicable": 1
       },
       "auth_methods": {
         "quote-failed-validation": 7,
+        "evidence-about-another-product": 3,
         "unclassified": 3,
         "not-applicable": 1
       },
       "credential_self_issue": {
         "unclassified": 10,
         "quote-failed-validation": 8,
+        "evidence-about-another-product": 5,
         "not-applicable": 1
       },
       "existing_mcp": {
         "retrieval-failed": 75,
+        "evidence-about-another-product": 13,
         "quote-failed-validation": 1
       },
       "one_liner": {
-        "unclassified": 62
+        "unclassified": 62,
+        "evidence-about-another-product": 5
       },
       "primary_blocker": {
-        "unclassified": 2
+        "unclassified": 2,
+        "evidence-about-another-product": 1
       },
       "protocol": {
         "unclassified": 21,
-        "quote-failed-validation": 3
+        "quote-failed-validation": 3,
+        "evidence-about-another-product": 2
       },
       "rate_limits_documented": {
         "unclassified": 66,
         "not-applicable": 2,
+        "evidence-about-another-product": 1,
         "quote-failed-validation": 1
       },
       "signup_self_serve": {
         "unclassified": 53,
+        "evidence-about-another-product": 3,
         "quote-failed-validation": 2
       }
     }

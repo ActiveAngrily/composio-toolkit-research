@@ -66,7 +66,8 @@ agent/
   derive.py         auth family, access, buildability — by rule, never by model
   registry.py       Composio's registry: ground truth + a 56-app accuracy check
   upgrade.py        re-derive the dataset offline
-  pass2.py          refetch truncated evidence, MCP discovery query
+  pass2.py          refetch truncated evidence, MCP discovery query, probes
+  audit.py          the human-audit sheet and its scorer
   build_site.py     the deliverable page
 data/               the 100 apps, the registry dump, the strict grades
 outputs/            datasets, coverage, patterns, the pass-1 → pass-2 delta
@@ -82,7 +83,7 @@ docs/               GitHub Pages source AND the written record
 
 ## Honest limits
 
-- **Coverage, not correctness, is the weak spot.** Of the claims made, 78–97% carry a quote
+- **Coverage, not correctness, is the weak spot.** Of the claims made, 79–100% carry a quote
   verified on a vendor-owned page. But the access fields — which tier includes API access —
   are answered for only 28–45% of apps, and that is the column the build queue most needs. The
   re-query for it was designed and cut for time.
@@ -94,6 +95,13 @@ docs/               GitHub Pages source AND the written record
 - **`existing_mcp` went from 24% to 86% answered** once a query was written for it
   (`agent.pass2 --mcp`). Nobody asked in the first pass. 14 answers arrived and were *rejected*
   for failing quote validation rather than shipped.
+- **A real sentence about the wrong product is the error that matters.** Quote validation
+  cannot catch it — the quote is genuinely on the page it cites; the page is about something
+  else. A name-mention check (`evidence.subject_check`) quarantines 30 such claims: iPayX's
+  description of iPaymu, Sherlock's MCP server for the Covertlabs platform, three one-liners
+  that were authentication instructions. It has a known blind spot: **Paygent Connect** and
+  **Mermaid CLI** both share a brand with the right answer, so lookalike domains pass every
+  test here. Both were caught by reading the rendered table.
 - **347 abstentions are `unclassified`.** Pass 1 never recorded *why* it abstained, so
   "the vendor does not publish this" cannot be separated from "we did not find it".
 - **The human audit was cut for time**, along with the no-retrieval pass-0 baseline. The
