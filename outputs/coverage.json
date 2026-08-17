@@ -1,0 +1,102 @@
+{
+  "one_liner": {
+    "answered": 38,
+    "coverage_pct": 38.0,
+    "evidenced": 0,
+    "evidenced_pct_of_answered": 0.0,
+    "verdicts": {
+      "no-retained-text": 100
+    }
+  },
+  "auth_methods": {
+    "answered": 96,
+    "coverage_pct": 96.0,
+    "evidenced": 0,
+    "evidenced_pct_of_answered": 0.0,
+    "verdicts": {
+      "no-retained-text": 100
+    }
+  },
+  "signup_self_serve": {
+    "answered": 47,
+    "coverage_pct": 47.0,
+    "evidenced": 0,
+    "evidenced_pct_of_answered": 0.0,
+    "verdicts": {
+      "no-retained-text": 100
+    }
+  },
+  "api_access_tier": {
+    "answered": 29,
+    "coverage_pct": 29.0,
+    "evidenced": 0,
+    "evidenced_pct_of_answered": 0.0,
+    "verdicts": {
+      "no-retained-text": 100
+    }
+  },
+  "credential_self_issue": {
+    "answered": 89,
+    "coverage_pct": 89.0,
+    "evidenced": 0,
+    "evidenced_pct_of_answered": 0.0,
+    "verdicts": {
+      "no-retained-text": 100
+    }
+  },
+  "approval_gate": {
+    "answered": 38,
+    "coverage_pct": 38.0,
+    "evidenced": 0,
+    "evidenced_pct_of_answered": 0.0,
+    "verdicts": {
+      "no-retained-text": 100
+    }
+  },
+  "protocol": {
+    "answered": 79,
+    "coverage_pct": 79.0,
+    "evidenced": 0,
+    "evidenced_pct_of_answered": 0.0,
+    "verdicts": {
+      "no-retained-text": 100
+    }
+  },
+  "rate_limits_documented": {
+    "answered": 32,
+    "coverage_pct": 32.0,
+    "evidenced": 0,
+    "evidenced_pct_of_answered": 0.0,
+    "verdicts": {
+      "no-retained-text": 100
+    }
+  },
+  "existing_mcp": {
+    "answered": 25,
+    "coverage_pct": 25.0,
+    "evidenced": 0,
+    "evidenced_pct_of_answered": 0.0,
+    "verdicts": {
+      "no-retained-text": 100
+    }
+  },
+  "product_class": {
+    "answered": 100,
+    "coverage_pct": 100.0,
+    "evidenced": 0,
+    "evidenced_pct_of_answered": 0.0,
+    "verdicts": {
+      "not-asked-pass1": 100
+    }
+  },
+  "primary_blocker": {
+    "answered": 98,
+    "coverage_pct": 98.0,
+    "evidenced": 0,
+    "evidenced_pct_of_answered": 0.0,
+    "verdicts": {
+      "not-asked-pass1": 92,
+      "no-retained-text": 8
+    }
+  }
+}

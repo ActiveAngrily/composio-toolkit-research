@@ -1,0 +1,20 @@
+{
+  "pass1_verdicts": {
+    "abstained": 425,
+    "valid": 385,
+    "near-miss": 60,
+    "QUOTE_NOT_FOUND": 34,
+    "no-quote": 8
+  },
+  "pass2_verdicts": {
+    "no-retained-text": 908,
+    "not-asked-pass1": 192
+  },
+  "pass1_ungraded_slots": 188,
+  "quarantined_claims": 0,
+  "citations_total": 483,
+  "citations_below_tier2": 42,
+  "needing_refetch": 0,
+  "contradictions_pass1": 7,
+  "contradictions_now": 33
+}

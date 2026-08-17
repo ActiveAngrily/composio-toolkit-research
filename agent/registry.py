@@ -157,7 +157,19 @@ def cross_check_auth(records: list[dict], matches: dict[int, dict]) -> dict:
     gap between the two numbers is the measurement of how much of the apparent
     error was our own schema rather than the model's retrieval.
     """
-    from .derive import auth_family
+    from .derive import STATIC_SECRETS
+
+    def families(methods: set[str]) -> set[str]:
+        """A method set can belong to more than one family, so compatibility is a set
+        intersection. Equality would call {API_KEY, OAUTH2} and {API_KEY} a mismatch."""
+        out = set()
+        if "OAUTH2" in methods:
+            out.add("oauth-dance")
+        if methods & STATIC_SECRETS:
+            out.add("static-secret")
+        if methods == {"NONE"}:
+            out.add("none")
+        return out
 
     strict_hit, family_hit, rows = 0, 0, []
     for rec in records:
@@ -168,15 +180,16 @@ def cross_check_auth(records: list[dict], matches: dict[int, dict]) -> dict:
         ours = set((rec.get("extracted", {}).get("auth_methods") or {}).get("value") or [])
 
         strict = bool(registry_auth & ours) or (registry_auth == {"NONE"} and not ours)
-        family = auth_family(sorted(registry_auth)) == auth_family(sorted(ours)) or \
-                 auth_family(sorted(ours)) == "both" and auth_family(sorted(registry_auth)) in \
-                 ("oauth-dance", "static-secret")
+        family = bool(families(registry_auth) & families(ours))
         strict_hit += strict
         family_hit += family
         if not strict:
             rows.append({"app": rec["app"], "registry": sorted(registry_auth),
                          "agent": sorted(ours),
                          "family_agrees": family,
+                         # Family agrees but tokens do not => we named the envelope
+                         # (Bearer/Basic) where Composio named the credential kind.
+                         # That is our taxonomy, not the model's retrieval.
                          "cause": "transport-vs-credential" if family else "recall-miss"})
 
     total = sum(1 for r in records if matches.get(r["id"], {}).get("in_catalog"))

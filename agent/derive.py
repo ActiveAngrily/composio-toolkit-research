@@ -131,8 +131,13 @@ def derive_buildability(extracted: dict, access: str, registry: dict | None = No
     if product == "no-public-api":
         return out("not-buildable", "no-public-api", "no public API exists")
     if in_catalog:
-        return out("build-now", "none",
-                   f"already in Composio's catalog as {registry.get('composio_slug')}")
+        # Keep the real blocker: Composio shipping a toolkit proves the credential is
+        # obtainable, not that the next integrator walks in unimpeded.
+        residual = {"partner-or-sales-gate": "partner-gate", "app-review": "app-review",
+                    "admin-consent": "admin-consent", "paid-tier-required": "paid-plan"}
+        return out("already-built", residual.get(access, "none"),
+                   f"already in Composio's catalog as {registry.get('composio_slug')}"
+                   + (f"; new integrators still face {access}" if access in residual else ""))
     if access in ("partner-or-sales-gate",):
         return out("needs-outreach", "partner-gate", f"access={access}")
     if access == "admin-consent":
@@ -158,15 +163,20 @@ def reconcile(extracted: dict, access: dict, buildability: dict) -> list[str]:
     that disagrees with itself should be visible, not smoothed over."""
     problems = []
     model_blocker = _val(extracted, "primary_blocker")
-    derived_blocker = buildability["blocker"]
-    gated = {"paid-tier-required", "app-review", "admin-consent", "partner-or-sales-gate"}
+    gated_access = {"paid-tier-required", "app-review", "admin-consent", "partner-or-sales-gate"}
+    gated_blockers = {"paid-plan", "app-review", "admin-consent", "partner-gate"}
 
-    if model_blocker == "none" and access["value"] in gated:
+    # Only disagreement about WHETHER access is gated counts. An exact-value mismatch
+    # between the model's blocker and the derived one is usually just the registry or a
+    # probe knowing more, which is the system working rather than contradicting itself.
+    if model_blocker == "none" and access["value"] in gated_access:
         problems.append(
             f"model said primary_blocker=none but access derives to {access['value']} "
             f"({access['basis']})")
-    if model_blocker not in ("unclear", "unknown", None) and derived_blocker != model_blocker:
-        problems.append(f"model blocker={model_blocker}, derived blocker={derived_blocker}")
+    if model_blocker in gated_blockers and access["value"] in ("free",):
+        problems.append(
+            f"model said primary_blocker={model_blocker} but access derives to free "
+            f"({access['basis']})")
     if _val(extracted, "product_class") == "api" and not (_val(extracted, "protocol") or []):
         problems.append("product_class=api but no protocol found")
     return problems
@@ -174,25 +184,39 @@ def reconcile(extracted: dict, access: dict, buildability: dict) -> list[str]:
 
 # ------------------------------------------------------------- unknown accounting
 
-def fill_unknown_reasons(extracted: dict, reasons: dict, pages_fetched: int) -> dict:
-    """Every blank field ends up with a reason. This is what turns several hundred
-    abstentions from an embarrassment into a finding: 'the vendor does not publish
-    this' and 'our crawler missed it' are different results, and pass 1 reported
-    them identically as `unknown`."""
+def fill_unknown_reasons(extracted: dict, reasons: dict, pages_fetched: int,
+                         never_queried: set[str] | None = None) -> dict:
+    """Give every blank field a reason, and only assert one we can defend.
+
+    Separating "the vendor does not publish this" from "we failed to find it" is what
+    turns several hundred abstentions from an embarrassment into a finding. But the
+    separation has to be earned. Only three of these are ever asserted here:
+
+      not-applicable    the product class rules the question out
+      retrieval-failed  we can PROVE we did not look -- no pages fetched, or no query
+                        was ever issued for this field
+      unclassified      everything else
+
+    `not-stated-publicly` is a real claim about a vendor and is only recorded when the
+    model says so from the sources. Inferring it from "we have pages and no answer"
+    would let every retrieval gap launder itself into a finding about the app.
+    """
     reasons = dict(reasons or {})
     product = _val(extracted, "product_class")
+    never_queried = never_queried or set()
     api_fields = {"auth_methods", "protocol", "rate_limits_documented",
                   "api_access_tier", "credential_self_issue", "approval_gate"}
     for field in schema.FIELDS:
         if not schema.is_blank(field.name, _val(extracted, field.name)):
             reasons.pop(field.name, None)
             continue
-        if field.name in reasons and reasons[field.name] in schema.UNKNOWN_REASONS:
+        if reasons.get(field.name) in schema.UNKNOWN_REASONS and \
+                reasons[field.name] != "unclassified":
             continue
         if product in ("cli-only", "no-public-api") and field.name in api_fields:
             reasons[field.name] = "not-applicable"
-        elif pages_fetched == 0:
+        elif pages_fetched == 0 or field.name in never_queried:
             reasons[field.name] = "retrieval-failed"
         else:
-            reasons[field.name] = "not-stated-publicly"
+            reasons[field.name] = "unclassified"
     return reasons

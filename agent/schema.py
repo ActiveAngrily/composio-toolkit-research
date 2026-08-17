@@ -72,7 +72,8 @@ SELF_SERVE = [
     "free", "free-trial", "paid-tier-required", "admin-consent",
     "app-review", "partner-or-sales-gate", "no-public-api", "unknown",
 ]
-BUILDABILITY = ["build-now", "build-with-caveats", "needs-outreach", "not-buildable", "unknown"]
+BUILDABILITY = ["already-built", "build-now", "build-with-caveats",
+                "needs-outreach", "not-buildable", "unknown"]
 AUTH_FAMILIES = ["static-secret", "oauth-dance", "both", "none", "unknown"]
 
 # Pass 1 could not express "this app has no API" -- Mermaid CLI came back with
@@ -87,6 +88,13 @@ UNKNOWN_REASONS = [
     "contradictory-sources", # sources disagree
     "not-applicable",        # the question does not apply to this product
     "quote-failed-validation",  # quarantined by the validator
+    # Deliberately the default. Deciding between "the vendor does not publish this"
+    # and "we failed to find it" requires knowing what was searched, and pass 1 never
+    # recorded a reason at all. Defaulting to not-stated-publicly would have produced a
+    # flattering "98% of our gaps are the world's fault" -- a number about our own
+    # default, not about any app. An honest unclassified is worth more than a
+    # confident guess, which is the same rule we hold the model to.
+    "unclassified",
 ]
 
 
@@ -208,7 +216,9 @@ ABSENCE_VALUES = {
 
 
 def is_absence_claim(field_name: str, value) -> bool:
-    return value in ABSENCE_VALUES.get(field_name, set())
+    # Only scalar enum values can be absence claims; list fields (auth_methods,
+    # protocol) express absence by being empty, which is_blank already covers.
+    return isinstance(value, str) and value in ABSENCE_VALUES.get(field_name, set())
 
 
 # ------------------------------------------------------------------- source tiers

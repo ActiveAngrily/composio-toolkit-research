@@ -1,0 +1,154 @@
+{
+  "auth": {
+    "families": {
+      "both": 45,
+      "static-secret": 37,
+      "oauth-dance": 13,
+      "unknown": 4,
+      "none": 1
+    },
+    "raw_methods": {
+      "OAUTH2": 58,
+      "BEARER": 45,
+      "API_KEY": 43,
+      "BASIC": 14,
+      "JWT": 8,
+      "NONE": 1
+    },
+    "headline_static_secret_path": 82
+  },
+  "access_by_category": {
+    "AI, Research and Media-native": {
+      "unknown": 4,
+      "partner-or-sales-gate": 3,
+      "free": 2,
+      "no-public-api": 1
+    },
+    "CRM and Sales": {
+      "partner-or-sales-gate": 2,
+      "unknown": 6,
+      "free": 2
+    },
+    "Communications and Messaging": {
+      "unknown": 5,
+      "free": 2,
+      "paid-tier-required": 1,
+      "app-review": 2
+    },
+    "Data, SEO and Scraping": {
+      "paid-tier-required": 3,
+      "app-review": 1,
+      "unknown": 2,
+      "free": 2,
+      "no-public-api": 1,
+      "partner-or-sales-gate": 1
+    },
+    "Developer, Infra and Data platforms": {
+      "free": 6,
+      "free-trial": 1,
+      "unknown": 2,
+      "paid-tier-required": 1
+    },
+    "Ecommerce": {
+      "paid-tier-required": 2,
+      "free": 2,
+      "unknown": 6
+    },
+    "Finance and Fintech": {
+      "unknown": 4,
+      "paid-tier-required": 2,
+      "app-review": 3,
+      "free-trial": 1
+    },
+    "Marketing, Ads, Email and Social": {
+      "app-review": 4,
+      "partner-or-sales-gate": 1,
+      "paid-tier-required": 1,
+      "free": 2,
+      "unknown": 2
+    },
+    "Productivity and Project Management": {
+      "unknown": 6,
+      "free": 3,
+      "app-review": 1
+    },
+    "Support and Helpdesk": {
+      "unknown": 2,
+      "paid-tier-required": 4,
+      "partner-or-sales-gate": 1,
+      "free": 2,
+      "app-review": 1
+    }
+  },
+  "access_overall": {
+    "unknown": 39,
+    "free": 23,
+    "paid-tier-required": 14,
+    "app-review": 12,
+    "partner-or-sales-gate": 8,
+    "no-public-api": 2,
+    "free-trial": 2
+  },
+  "blockers": {
+    "none": 48,
+    "unclear": 16,
+    "paid-plan": 14,
+    "app-review": 12,
+    "partner-gate": 8,
+    "no-public-api": 2
+  },
+  "buildability": {
+    "already-built": 56,
+    "unknown": 16,
+    "build-with-caveats": 14,
+    "build-now": 9,
+    "needs-outreach": 5
+  },
+  "catalog": {
+    "in_catalog": 56,
+    "missing": 44,
+    "by_category": {
+      "AI, Research and Media-native": 3,
+      "CRM and Sales": 5,
+      "Communications and Messaging": 4,
+      "Data, SEO and Scraping": 6,
+      "Developer, Infra and Data platforms": 8,
+      "Ecommerce": 2,
+      "Finance and Fintech": 5,
+      "Marketing, Ads, Email and Social": 8,
+      "Productivity and Project Management": 9,
+      "Support and Helpdesk": 6
+    },
+    "missing_with_official_mcp": 11,
+    "missing_build_now": [
+      "Twenty",
+      "LiveAgent",
+      "systeme.io",
+      "WooCommerce",
+      "Ecwid",
+      "Netlify",
+      "MongoDB Atlas",
+      "Reducto",
+      "higgsfield"
+    ],
+    "missing_needs_outreach": [
+      "Podio",
+      "Pylon",
+      "Waterfall.io",
+      "Otter AI",
+      "Grain"
+    ]
+  },
+  "mcp": {
+    "unknown": 75,
+    "official": 23,
+    "community": 2
+  },
+  "breadth": {
+    "unknown": 44,
+    "broad": 18,
+    "narrow": 16,
+    "medium": 15,
+    "very-broad": 7
+  }
+}

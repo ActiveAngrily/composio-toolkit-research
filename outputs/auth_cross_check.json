@@ -1,0 +1,122 @@
+{
+  "sample": 56,
+  "token_level_agree": 46,
+  "family_level_agree": 52,
+  "token_pct": 82.1,
+  "family_pct": 92.9,
+  "disagreements": [
+    {
+      "app": "Freshdesk",
+      "registry": [
+        "API_KEY"
+      ],
+      "agent": [
+        "BASIC"
+      ],
+      "family_agrees": true,
+      "cause": "transport-vs-credential"
+    },
+    {
+      "app": "Plain",
+      "registry": [
+        "API_KEY"
+      ],
+      "agent": [
+        "BEARER"
+      ],
+      "family_agrees": true,
+      "cause": "transport-vs-credential"
+    },
+    {
+      "app": "Discord",
+      "registry": [
+        "OAUTH2"
+      ],
+      "agent": [
+        "API_KEY",
+        "BEARER"
+      ],
+      "family_agrees": false,
+      "cause": "recall-miss"
+    },
+    {
+      "app": "Shopify",
+      "registry": [
+        "API_KEY",
+        "OAUTH2"
+      ],
+      "agent": [
+        "BEARER"
+      ],
+      "family_agrees": true,
+      "cause": "transport-vs-credential"
+    },
+    {
+      "app": "Firecrawl",
+      "registry": [
+        "API_KEY"
+      ],
+      "agent": [
+        "BEARER"
+      ],
+      "family_agrees": true,
+      "cause": "transport-vs-credential"
+    },
+    {
+      "app": "GitHub",
+      "registry": [
+        "OAUTH2"
+      ],
+      "agent": [
+        "API_KEY",
+        "BEARER",
+        "JWT"
+      ],
+      "family_agrees": false,
+      "cause": "recall-miss"
+    },
+    {
+      "app": "Vercel",
+      "registry": [
+        "API_KEY"
+      ],
+      "agent": [],
+      "family_agrees": false,
+      "cause": "recall-miss"
+    },
+    {
+      "app": "Coda",
+      "registry": [
+        "API_KEY"
+      ],
+      "agent": [
+        "BEARER"
+      ],
+      "family_agrees": true,
+      "cause": "transport-vs-credential"
+    },
+    {
+      "app": "Brex",
+      "registry": [
+        "API_KEY",
+        "OAUTH2"
+      ],
+      "agent": [
+        "BEARER"
+      ],
+      "family_agrees": true,
+      "cause": "transport-vs-credential"
+    },
+    {
+      "app": "NotebookLM",
+      "registry": [
+        "OAUTH2"
+      ],
+      "agent": [
+        "NONE"
+      ],
+      "family_agrees": false,
+      "cause": "recall-miss"
+    }
+  ]
+}

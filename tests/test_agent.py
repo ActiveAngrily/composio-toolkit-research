@@ -197,10 +197,18 @@ def test_buildability():
                                         "no-public-api")
     check("Mermaid-CLI shape: wrap the CLI", (mermaid["value"], mermaid["blocker"]),
           ("build-with-caveats", "no-public-api"))
-    in_catalog = derive.derive_buildability(
+    # Google Ads is in Composio's catalog AND its developer token needs Google's
+    # approval. Catalog membership proves a toolkit is possible; it does not delete the
+    # gate the next integrator hits. So it is its own verdict and the blocker survives.
+    google_ads = derive.derive_buildability(
         schema.normalise({"protocol": {"value": ["REST"]}, "product_class": {"value": "api"}}),
         "app-review", {"in_catalog": True, "composio_slug": "google_ads"})
-    check("already shipped by Composio", in_catalog["value"], "build-now")
+    check("in catalog is its own verdict", google_ads["value"], "already-built")
+    check("and the real gate survives it", google_ads["blocker"], "app-review")
+    free_and_new = derive.derive_buildability(
+        schema.normalise({"protocol": {"value": ["REST"]}, "product_class": {"value": "api"}}),
+        "free", {})
+    check("not in catalog, self-serve", free_and_new["value"], "build-now")
 
 
 def test_contradictions():
@@ -241,6 +249,33 @@ def test_registry():
     # all three are approval- or partner-gated. So catalog membership proves the
     # credential is obtainable, NOT that it is self-serve.
     check("catalog implies obtainable, not self-serve", matches[31]["credential_obtainable"], True)
+
+
+def test_cross_check_families_are_sets():
+    """Family compatibility is a set intersection, not equality. Composio recording
+    {API_KEY, OAUTH2} and us finding {API_KEY} is agreement -- checking equality called
+    it a miss, which made family-level agreement score LOWER than token-level, i.e.
+    backwards by construction."""
+    section("registry cross-check: family compatibility")
+    recs = [
+        {"id": 1, "app": "Both vs one", "extracted": {"auth_methods": {"value": ["API_KEY"]}}},
+        {"id": 2, "app": "Transport confusion", "extracted": {"auth_methods": {"value": ["BEARER"]}}},
+        {"id": 3, "app": "Real recall miss", "extracted": {"auth_methods": {"value": ["API_KEY"]}}},
+    ]
+    matches = {
+        1: {"in_catalog": True, "composio_auth_schemes": ["API_KEY", "OAUTH2"]},
+        2: {"in_catalog": True, "composio_auth_schemes": ["API_KEY"]},
+        3: {"in_catalog": True, "composio_auth_schemes": ["OAUTH2"]},
+    }
+    out = registry.cross_check_auth(recs, matches)
+    check("sample size", out["sample"], 3)
+    check("token-level agreement", out["token_level_agree"], 1)
+    check("family-level is never worse", out["family_level_agree"] >= out["token_level_agree"], True)
+    check("family-level agreement", out["family_level_agree"], 2)
+    causes = {r["app"]: r["cause"] for r in out["disagreements"]}
+    check("Bearer vs API_KEY is our taxonomy", causes.get("Transport confusion"),
+          "transport-vs-credential")
+    check("missing OAuth2 is a real miss", causes.get("Real recall miss"), "recall-miss")
 
 
 def test_redaction():
@@ -314,7 +349,7 @@ def test_end_to_end_offline():
     check("auth family", rec["auth_family"], "static-secret")
     check("protocol normalised", rec["extracted"]["protocol"]["value"], ["REST"])
     check("access derived", rec["self_serve"]["value"], "paid-tier-required")
-    check("buildability derived", rec["buildability"]["value"], "build-now")
+    check("buildability derived", rec["buildability"]["value"], "already-built")
     check("breadth from the registry", rec["breadth"]["bucket"], "broad")
     check("contradiction caught in its own output", len(rec["contradictions"]), 1)
     # No network in CI: probes must degrade to a recorded error, not raise.
@@ -329,7 +364,8 @@ def main() -> int:
     for fn in [test_source_tier, test_auth_family, test_normalisation,
                test_grading_is_url_strict, test_absence_claims, test_quarantine_acts,
                test_admin_consent_detected, test_derivation_and_basis, test_buildability,
-               test_contradictions, test_breadth_buckets, test_registry, test_redaction,
+               test_contradictions, test_breadth_buckets, test_registry,
+               test_cross_check_families_are_sets, test_redaction,
                test_prompt_renders, test_end_to_end_offline]:
         fn()
     print()
